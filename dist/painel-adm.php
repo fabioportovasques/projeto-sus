@@ -58,7 +58,7 @@
 <body class="sb-nav-fixed">
  
         <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #55d6be">
-            <a class="navbar-brand" href="#" style="color: #F2F7FD">TEC SUS</a>
+            <a class="navbar-brand" href="#" style="color: #ffffff">TEC SUS</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -108,12 +108,12 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             
-                            <a class="nav-link" style="color: #030A14" href="index.php">
-                                <div style="color: #030A14" class="sb-nav-link-icon" style="color: #030A14"><i class="fas fa-tachometer-alt"></i></div>
+                            <a class="nav-link" style="color: #F6FAEF" href="index.php">
+                                <div style="color: #F6FAEF" class="sb-nav-link-icon" style="color: #F6FAEF"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
                             
-                            <a class="nav-link  collapsed" style="color: #030A14" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link  collapsed" style="color: #F6FAEF" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"></div>
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-text-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                          <path fill-rule="evenodd" d="M12 1H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
@@ -122,9 +122,9 @@
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" style="color: #030A14" href="#">Cadastro Pacientes</a>
-                                    <a class="nav-link" style="color: #030A14" href="#">Cadastro Médicos</a>
-                                    <a class="nav-link" style="color: #030A14" href="#">Cadastro de Agente de Saúde</a>
+                                    <a class="nav-link" style="color: #F6FAEF" href="#">Cadastro Pacientes</a>
+                                    <a class="nav-link" style="color: #F6FAEF" href="#">Cadastro Médicos</a>
+                                    <a class="nav-link" style="color: #F6FAEF" href="#">Cadastro de Agente de Saúde</a>
                                    
                                 </nav>
                             </div>
@@ -132,7 +132,7 @@
 
                            
                             
-                            <a class="nav-link collapsed" style="color: #030A14" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <a class="nav-link collapsed" style="color: #F6FAEF" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 
 
                                 <!--icone-->
@@ -147,19 +147,19 @@
 
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" style="color: #030A14" href="#">
+                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
                                         Pacientes
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                     <a class="nav-link collapsed" style="color: #030A14" href="#">
+                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
                                         Agendas
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                    <a class="nav-link collapsed" style="color: #030A14" href="#">
+                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
                                         Médicos
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                    <a class="nav-link collapsed" style="color: #030A14" href="#">
+                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
                                         Especialidades
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
