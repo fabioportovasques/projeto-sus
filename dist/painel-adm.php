@@ -8,6 +8,11 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Tec Sus</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
         <link href="css/style.css" rel="stylesheet"/>
         <link href="css/styles.css" rel="stylesheet"/>
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
@@ -198,15 +203,15 @@
             </ul>
              <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h3>HOME</h3>
+      <h3>Médico</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
     <div id="menu1" class="tab-pane fade">
-      <h3>Menu 1</h3>
+      <h3>Paciente</h3>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
     <div id="menu2" class="tab-pane fade">
-      <h3>Menu 2</h3>
+      <h3>Agente de Saúde</h3>
       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
     </div>
     <div id="menu3" class="tab-pane fade">
@@ -217,7 +222,7 @@
 </div>
 
 
-<button class="btn btn-default">Ir para Tab Home</button>
+
 
 
 
