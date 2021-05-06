@@ -122,9 +122,6 @@
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" style="color: #F6FAEF" href="#">Cadastro Pacientes</a>
-                                    <a class="nav-link" style="color: #F6FAEF" href="#">Cadastro Médicos</a>
-                                    <a class="nav-link" style="color: #F6FAEF" href="#">Cadastro de Agente de Saúde</a>
                                    
                                 </nav>
                             </div>
@@ -189,16 +186,42 @@
     <div class="row">
       <div class="col-sm-12">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-  </li>
-</ul>
+              <li class="nav-item">
+                   <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Médico</a>
+
+                   <form>
+
+                      <br /><br />
+
+                      <div class="row">
+                        <div class="col-sm-6">
+
+                     <label>Nome do Médico</label> <br /><br />
+                      <input class="form-control" type="text" name="madico">
+                   </form>
+
+
+                 </div>
+                  </div>
+
+                   <div class="row">
+                        <div class="col-sm-6">
+
+                     <label>Sobrenome do Médico</label> <br /><br />
+                      <input class="form-control" type="text" name="madico">
+                   </form>
+
+
+                 </div>
+                  </div>
+              </li>
+              <li class="nav-item">
+                   <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Paciente</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Agente de Saúde</a>
+              </li>
+            </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
