@@ -33,6 +33,12 @@
         $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();   
         });
+
+
+        $('button').click(function(){
+        $('a[href="#home"]').tab('show');
+        })
+
     </script>   
 
         <!--Link para icones-->
@@ -46,11 +52,9 @@
           font-size: 20px
           }
 
-          .texto{
+         
 
-              color: black;
 
-          }
         
       </style>
 
@@ -185,43 +189,39 @@
                 <br />
     <div class="row">
       <div class="col-sm-12">
-          <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                   <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Médico</a>
-
-                   <form>
-
-                      <br /><br />
-
-                      <div class="row">
-                        <div class="col-sm-6">
-
-                     <label>Nome do Médico</label> <br /><br />
-                      <input class="form-control" type="text" name="madico">
-                   </form>
-
-
-                 </div>
-                  </div>
-
-                   <div class="row">
-                        <div class="col-sm-6">
-
-                     <label>Sobrenome do Médico</label> <br /><br />
-                      <input class="form-control" type="text" name="madico">
-                   </form>
-
-
-                 </div>
-                  </div>
-              </li>
-              <li class="nav-item">
-                   <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Paciente</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Agente de Saúde</a>
-              </li>
+          <div class="container">
+            <h2>Cadastros</h2>
+            <ul class="nav nav-tabs">
+                  <li class="active"><a data-toggle="tab" href="#home">Médico</a></li>
+                  <li><a data-toggle="tab" href="#menu1">Paciente</a></li>
+                  <li><a data-toggle="tab" href="#menu2">Agente de Saúde</a></li>
             </ul>
+             <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>
+
+
+<button class="btn btn-default">Ir para Tab Home</button>
+
+
+
+
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
