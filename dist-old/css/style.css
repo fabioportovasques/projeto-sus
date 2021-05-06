@@ -1,0 +1,167 @@
+
+
+
+.campo-obrigatorio{
+	color: red;
+	font-size: 50px;
+}
+
+
+
+
+        
+     body{
+              padding: 10px;
+              margin: 0px;
+
+          }
+
+
+
+          .marcador{
+             
+             
+          }
+
+          .marcador-container1{
+             
+            
+
+              
+          }
+
+
+          .campo-obrigatorio{
+            font-size: 20px;
+            color: red;
+          }
+
+
+   
+
+  @media (max-width: 566px) {
+          body{
+           
+            
+          }
+          .bot1{
+
+            margin: 1px;
+            padding: 0px;
+          }
+
+          .item {
+        
+          padding: 10px;
+          margin-top: 20px;
+        }
+          
+        .item2 {
+        
+        padding: 0px;
+        margin-top: 20px;
+        }  
+
+        .item3 {
+        
+        padding: 50px;
+        margin-top: 35px;
+        }
+
+        .item4 {
+        
+        padding:  0px;
+        margin-top: 33px;
+        width: 20px;
+        }
+
+       .item5 {
+        
+        padding-top: 14px;
+        margin-top: 10px;
+        }
+
+        .item8 {
+        
+        padding: 0px;
+        margin-top: 20px;
+        }  
+       
+        
+       } 
+       .formulario {
+                    
+            bottom: -600px;  
+     
+          }
+
+@media (min-width: 567px) {
+          body{
+           
+            
+          }
+          
+          .bot1{
+
+            margin: 5px;
+            padding: 0px;
+          }
+
+          .bot-pesquisa{
+           margin-top: 30px;
+          }
+
+        .item {
+        
+        padding: 10px;
+        margin-left: -40px;
+        margin-top: 20px;
+        }
+
+         .item2 {
+        
+        padding: 10px;
+        margin-left: -40px;
+        margin-top: 15px;
+        }
+
+        .item3 {
+        
+        padding: 50px;
+        margin-top: 35px;
+        }
+
+         .item4 {
+        
+        padding: 0px;
+        margin-top: 33px;
+        width: 20px;
+        }
+
+         .item5 {
+        
+        padding-top: 14px;
+        margin-top: 10px;
+        }
+
+        .item6 {
+        
+        padding-top: 15px;
+        margin-left: -35px;
+        margin-top: 10px;
+        } 
+
+        .item8 {
+        
+        padding: 0px;
+        margin-top: 20px;
+        }  
+       
+
+
+        .formulario {
+                    
+            bottom: -600px;  
+     
+          }
+     }
