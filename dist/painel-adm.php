@@ -57,7 +57,7 @@
     </head>
 <body class="sb-nav-fixed">
  
-        <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #311E10">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #55d6be">
             <a class="navbar-brand" href="#" style="color: #F2F7FD">TEC SUS</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -104,7 +104,7 @@
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" style="background-color: #D9DD92" id="sidenavAccordion">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" style="background-color: #2e5eaa" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             
