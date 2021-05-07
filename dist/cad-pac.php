@@ -199,7 +199,7 @@
                  
     
             <h2>Cadastro De Pacientes</h2><br />
-            <ul class="nav nav-tabs flex-column flex-sm-row">
+            <ul class="nav nav-pills flex-column flex-sm-row">
                   <li class="active"><a data-toggle="tab" href="#dados-pessoais">Dados Pessoais</a></li>
                   <li><a data-toggle="tab" href="#dados-acesso">Dados de Acesso</a></li>
             </ul>
