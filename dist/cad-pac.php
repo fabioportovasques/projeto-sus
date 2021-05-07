@@ -228,7 +228,7 @@
                                 <div class="form-group">
                                     <div class="   col">
                                         <label > Sobrenome do Paciente</label>
-                                       <span class="campo-obrigatorio"></span>
+                                       <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Sobrenome Cliente" required="" >    
                                     </div>
                                 </div>
@@ -297,11 +297,57 @@
                    <!--Fim da coluna-->            
                  </div>  
 
+
+                      <!--Início da coluna-->         
+                   <div class="col-md-4">
+                           
+
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > RG do Paciente</label>
+                                       <span class="campo-obrigatorio"></span>
+                                        <input type="text" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>  
+
+                  <!--Início da coluna-->         
+                   <div class="col-md-4">
+                           
+
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > Data de Nacimento</label>
+                                       <span class="campo-obrigatorio"></span>
+                                        <input type="date" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>  
+
+                  <!--Início da coluna-->         
+                   <div class="col-md-4">
+                           
+
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > Cidade</label>
+                                       <span class="campo-obrigatorio"></span>
+                                        <input type="text" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div> 
+
                  <br />
                  <br />                
                  <br />
                  <br />
-                   <button class="btn btn-success">Avançar</button>
+                   <button class="btn btn-success">Proxima Página</button>
 
              </div>
 
