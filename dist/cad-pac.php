@@ -45,9 +45,10 @@
         */
 
         $('button').click(function(){
-        $('a[href="#"]').tab('show');
-        })
+        $('a[href="#dados-acesso"]').tab('show');
+      })
 
+      
     </script>   
 
         <!--Link para icones-->
@@ -198,12 +199,12 @@
                  
     
             <h2>Cadastro De Pacientes</h2><br />
-            <ul class="nav nav-pills flex-column flex-sm-row">
-                  <li class="active"><a data-toggle="tab" href="#home">Dados Pessoais</a></li>
-                  <li><a data-toggle="tab" href="#menu1">Dados de Acesso</a></li>
+            <ul class="nav nav-tabs flex-column flex-sm-row">
+                  <li class="active"><a data-toggle="tab" href="#dados-pessoais">Dados Pessoais</a></li>
+                  <li><a data-toggle="tab" href="#dados-acesso">Dados de Acesso</a></li>
             </ul>
              <div class="tab-content">
-        <div id="home" class="tab-pane fade in active">
+        <div id="dados-pessoais" class="tab-pane fade in active">
 
           <h3>Dados Pessoais</h3>
           <br />
@@ -232,7 +233,7 @@
                                     <div class="col">
                                         <label > Sobrenome do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Sobrenome" required="" >    
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Sobrenome">    
                                     </div>
                                 </div>
 
@@ -246,7 +247,7 @@
                                     <div class="col">
                                         <label > CPF do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF" required="" >    
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF">    
                                     </div>
                                 </div>
 
@@ -260,7 +261,7 @@
                                     <div class="   col">
                                         <label > Data de Nascimento do Paciente</label>
                                        <span class="campo-obrigatorio"></span>
-                                        <input type="date" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome" required="" >    
+                                        <input type="date" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome">    
                                     </div>
                                 </div>
 
@@ -274,7 +275,7 @@
                                     <div class="col">
                                         <label > RG do Paciente</label>
                                        <span class="campo-obrigatorio"></span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="RG" required="" >    
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="RG">    
                                     </div>
                                 </div>
 
@@ -288,7 +289,7 @@
                                     <div class="col">
                                         <label > Nº Cartão SUS do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cartão SUS" required="" >    
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cartão SUS">    
                                     </div>
                                 </div>
 
@@ -304,7 +305,7 @@
                                     <div class="   col">
                                         <label > Rua do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Rua" required="" >    
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Rua">    
                                     </div>
                                 </div>
 
@@ -318,7 +319,7 @@
                                     <div class="col">
                                         <label > Bairro do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Bairro" required="" >    
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Bairro" >    
                                     </div>
                                 </div>
 
@@ -332,7 +333,7 @@
                                     <div class="col">
                                         <label > Nº Casa do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nº casa" required="" >    
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nº casa" >    
                                     </div>
                                 </div>
 
@@ -349,9 +350,12 @@
                                     <div class="   col">
                                         <label > Cidade do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cidade" required="" >    
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cidade"  >    
                                     </div>
                                 </div>
+
+                     <!--Botão para navegar até a próxima página-->
+                   <button class="btn btn-success">Proxima Página ...</button> 
 
                    <!--Fim da coluna-->            
                  </div>  
@@ -363,7 +367,7 @@
                                     <div class="col">
                                         <label > UF do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="UF" required="" >    
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="UF" >    
                                     </div>
                                 </div>
 
@@ -377,7 +381,7 @@
                                     <div class="col">
                                         <label > Pais do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="pais" required="" >    
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="pais">    
                                     </div>
                                 </div>
 
@@ -394,7 +398,7 @@
 
     
 
-        <div id="menu1" class="tab-pane fade">
+        <div id="dados-acesso" class="tab-pane fade">
           <h3>Dados de Acesso</h3>
 
                   <br />
@@ -457,6 +461,10 @@
                                        </select>
                                     </div>
                                 </div>
+
+
+                     <!--Botão para navegar até a próxima página-->
+                   <button class="btn btn-success">Voltar ...</button>             
 
                    <!--Fim da coluna-->            
                  </div> 
