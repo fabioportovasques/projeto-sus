@@ -309,6 +309,10 @@
                                         <input type="text" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
                                     </div>
                                 </div>
+                   <br />             
+
+                   <!--Botão para navegar até a próxima página-->
+                   <button class="btn btn-success">Proxima Página ...</button>              
 
                    <!--Fim da coluna-->            
                  </div>  
@@ -340,12 +344,14 @@
                                     </div>
                                 </div>
 
+
+
                    <!--Fim da coluna-->            
                  </div> 
 
                  <br />
 
-                   <button class="btn btn-success">Proxima Página ...</button>
+                  
 
               <!-- Fim da TAB-->    
              </div>
