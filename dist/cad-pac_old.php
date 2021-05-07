@@ -132,7 +132,7 @@
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
-                                     <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
+                                     <a class="nav-link" href="#">Cadastro Pacientes</a>
                                       <a class="nav-link" href="#">Cadastro Agentes de Saúde</a>
 
                                 </nav>
@@ -196,117 +196,66 @@
             <h2>Cadastro De Pacientes</h2><br />
             <ul class="nav nav-pills flex-column flex-sm-row">
                   <li class="active"><a data-toggle="tab" href="#home">Dados Pessoais</a></li>
-                  <li><a data-toggle="tab" href="#menu1">Níveis de Acesso</a></li>
+                  <li><a data-toggle="tab" href="#menu2">Níveis de Acesso</a></li>
             </ul>
              <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
-
           <h3>Dados Pessoais</h3>
-          <br />
-          
+              <!--Início da coluna-->         
+               <div class="marcador1 col-md-4">
+                                                                       
+                        <form action="#"  method="POST"> 
 
-                    <!--Início da coluna-->         
-                   <div class="col-md-4">
-                                                                           
-                            <form action="#"  method="POST"> 
-
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > Nome do Paciente</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome Cliente" required="" >    
-                                    </div>
+                            <div class="form-group">
+                                <div class="   col">
+                                    <label > Nome do Paciente</label>
+                                   <span class="campo-obrigatorio">*</span>
+                                    <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome Cliente" required="" >    
                                 </div>
+                            </div>
 
-                   <!--Fim da coluna-->            
-                 </div>  
-
-                 <!--Início da coluna-->         
-                   <div class="col-md-4">
-                           
-
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > Sobrenome do Paciente</label>
-                                       <span class="campo-obrigatorio"></span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Sobrenome Cliente" required="" >    
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div>  
-
-                  <!--Início da coluna-->         
-                   <div class="col-md-4">
-                           
-
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > CPF do Paciente</label>
-                                       <span class="campo-obrigatorio"></span>
-                                        <input type="text" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div>   
-
+               <!--Fim da coluna-->            
+             </div>  
 
              <!--Início da coluna-->         
-                   <div class="col-md-4">
-                           
+               <div class="marcador1 col-md-4">
+                       
 
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > RG do Paciente</label>
-                                       <span class="campo-obrigatorio"></span>
-                                        <input type="text" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
-                                    </div>
+                            <div class="form-group">
+                                <div class="   col">
+                                    <label > Sobrenome do Paciente</label>
+                                   <span class="campo-obrigatorio"></span>
+                                    <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Sobrenome Cliente" required="" >    
                                 </div>
+                            </div>
 
-                   <!--Fim da coluna-->            
-                 </div>  
+               <!--Fim da coluna-->            
+             </div>  
 
-                  <!--Início da coluna-->         
-                   <div class="col-md-4">
-                           
+              <!--Início da coluna-->         
+               <div class="marcador1 col-md-4">
+                       
 
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > CPF do Paciente</label>
-                                       <span class="campo-obrigatorio"></span>
-                                        <input type="text" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
-                                    </div>
+                            <div class="form-group">
+                                <div class="   col">
+                                    <label > CPF do Paciente</label>
+                                   <span class="campo-obrigatorio"></span>
+                                    <input type="text" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
                                 </div>
+                            </div>
 
-                   <!--Fim da coluna-->            
-                 </div>  
-
-                  <!--Início da coluna-->         
-                   <div class="col-md-4">
-                           
-
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > CPF do Paciente</label>
-                                       <span class="campo-obrigatorio"></span>
-                                        <input type="text" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div>  
-
-
-             </div>
-
-
-
+               <!--Fim da coluna-->            
+             </div>          
+        </div>
         <div id="menu1" class="tab-pane fade">
           <h3>Níveis de Acesso</h3>
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
         </div>
-      
+        <div id="menu3" class="tab-pane fade">
+          <h3>Menu 3</h3>
+          <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+  
 
 
 
