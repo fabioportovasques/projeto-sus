@@ -193,7 +193,7 @@
                 <br />
                  
     
-            <h2>Cadastro De Pacientes</h2><br />
+            <h2>Cadastro De Médico</h2><br />
             <ul class="nav nav-pills flex-column flex-sm-row">
                   <li class="active"><a data-toggle="tab" href="#home">Dados Pessoais</a></li>
                   <li><a data-toggle="tab" href="#menu1">Especialidades</a></li>

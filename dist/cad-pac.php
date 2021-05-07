@@ -131,8 +131,8 @@
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#">Cadastro Médicos</a>
-                                     <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
+                                    <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
+                                     <a class="nav-link" href="#">Cadastro Pacientes</a>
                                       <a class="nav-link" href="#">Cadastro Agentes de Saúde</a>
 
                                 </nav>
@@ -196,7 +196,6 @@
             <h2>Cadastro De Pacientes</h2><br />
             <ul class="nav nav-pills flex-column flex-sm-row">
                   <li class="active"><a data-toggle="tab" href="#home">Dados Pessoais</a></li>
-                  <li><a data-toggle="tab" href="#menu1">Especialidades</a></li>
                   <li><a data-toggle="tab" href="#menu2">Níveis de Acesso</a></li>
             </ul>
              <div class="tab-content">
@@ -205,10 +204,6 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
         <div id="menu1" class="tab-pane fade">
-          <h3>Especialidades</h3>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div id="menu2" class="tab-pane fade">
           <h3>Níveis de Acesso</h3>
           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
         </div>
