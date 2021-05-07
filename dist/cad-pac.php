@@ -273,9 +273,9 @@
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > CPF do Paciente</label>
+                                        <label > Data de Nacimento</label>
                                        <span class="campo-obrigatorio"></span>
-                                        <input type="text" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
+                                        <input type="date" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
                                     </div>
                                 </div>
 
@@ -288,7 +288,7 @@
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > CPF do Paciente</label>
+                                        <label > Cidade</label>
                                        <span class="campo-obrigatorio"></span>
                                         <input type="text" name="cpf_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF Paciente" required="" >    
                                     </div>
@@ -297,10 +297,16 @@
                    <!--Fim da coluna-->            
                  </div>  
 
+                 <br />
+                 <br />                
+                 <br />
+                 <br />
+                   <button class="btn btn-success">Avançar</button>
 
              </div>
 
 
+    
 
         <div id="menu1" class="tab-pane fade">
           <h3>Níveis de Acesso</h3>
