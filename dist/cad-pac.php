@@ -344,11 +344,10 @@
                  </div> 
 
                  <br />
-                 <br />                
-                 <br />
-                 <br />
-                   <button class="btn btn-success">Proxima Página</button>
 
+                   <button class="btn btn-success">Proxima Página ...</button>
+
+              <!-- Fim da TAB-->    
              </div>
 
 
