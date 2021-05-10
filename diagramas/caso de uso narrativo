@@ -1,0 +1,54 @@
+Caso de Uso: Cadastro no sistema
+Ator:Paciente:
+1- O ator inicia o caso de uso autenticando-se no sistema
+2- se for a primeira vez ele vai fazer um cadastro no sistema.
+3- consulta a agenda das ezpecialidades com seus respectivos médicos
+4-Solicitar consulta.
+5-o Sistema informará que a solicitação dele foi enviada ao agente de saúde e estará em análise.
+
+---------------------------------------------------------------------------------------------
+
+Caso de Uso: Cadastro no sistema
+Ator:Agente de Saúde
+1- Autentica-se no sistema
+2-consulta a agenda das ezpecialidades com seus respectivos médicos
+3-Verifica se há pedidos em análise
+4-aprova/reprova pedidos de consultas
+5-Se aprovar, marca consulta
+6- o Sistema informa o Status do pedido de consulta ao paciente
+7-Ele não atualiza agenda
+
+------------------------------------------------------------------------------------------------
+
+Caso de Uso: Cadastro no sistema
+Ator:UBS
+
+1-Realiza login no siistema
+2-Consulta agenda de especialidades com seus respectivos médicos
+3-Agenda Consultas
+4-Atualiza agenda
+5-Consulta vagas de consultas disponibilizadas pelo CR
+6-Consulta vagas de exames disponibilizadas pelo CR
+7-Pode encaixar pacientes nas vagas
+8-Gerencia Usuários do sistema
+9-Vincula Agente de Saúde a sua respectiva zona de atendimento dentro do sistema
+
+------------------------------------------------------------------------------------------------
+
+Caso de Uso: Cadastro no sistema
+Ator:CR(centro de regulação)
+1-Login no sistema
+2-Verificar agenda de todas as UE da região
+3-Disponibiliza Consultas e exames em UES da região.
+
+------------------------------------------------------------------------------------------------
+
+Caso de Uso: Cadastro no sistema
+Ator:UE(Unidades executantes)
+1-Login no sistema
+2-Recebe agendamentos de consultas e exames vindos da UBS (CR disponibiliza número x de consultas e exames nas UES, através disso as UBS poderão marcar).
+3-Executa a consulta/Exame
+4-Atualiza agenda com nova fila de espera.
+
+
+
