@@ -434,40 +434,37 @@
                    <!--Fim da coluna-->            
                  </div> 
 
-                 <div class="col-md-3">
-                             
+
+                  <div class="col-md-3">
+                          
+
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Perfil de Acesso</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="Text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Perfil de Acesso" required="" >    
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div> 
-
-              <div class="col-md-11">
-                             
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > Tipo de Usuario</label>
+                                        <label > Agente de Saúde</label>
                                        <span class="campo-obrigatorio">*</span>
                                        <select class="form-control">
                                          <option>Selecionar</option>
-                                         <option>Medico</option>
-                                         <option>Paciente</option>
-                                         <option>Agente de Saúde</option>
+                                          <option>Fulano A</option>
+                                           <option>Fulano B</option>
+                                           <option>Fulano C</option>
                                        </select>
                                     </div>
                                 </div>
 
+                   <!--Fim da coluna-->            
+                 </div> 
 
-                     <!--Botão para navegar até a próxima página-->
-                   <button class="btn btn-success">Voltar ...</button>             
+               <div class="col-md-12">
+                          
+                       <!--Botão para navegar até a próxima página-->
+                       <button class="btn btn-success">Voltar ...</button>             
+
 
                    <!--Fim da coluna-->            
                  </div> 
+
+                              
+         </div> 
 
 
 

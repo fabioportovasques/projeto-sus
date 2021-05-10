@@ -18,7 +18,7 @@
 
     <div id="central-login">
       <div class="content" align="center">
-        <label class="label-control label">Login TEC SUS</label>
+        <label class="label-control label">TEC SUS</label>
         <form method="POST" action="login.php" class="col-sm-4">
           <div class="input-container">            
             <i class="fa fa-user icon"></i>
@@ -30,7 +30,7 @@
               <input type="password" name="senha" class="form-control" placeholder="***********"><br>
           </div>
 
-          <input type="submit" name="Entrar" class="btn btn-outline-success btn-lg btn-block">
+          <input type="submit" name="Entrar" value="Entrar" class="btn btn-outline-success btn-lg btn-block">
         </form>
       </div>
     </div>
