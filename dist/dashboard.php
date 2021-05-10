@@ -138,7 +138,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
-                                      <a class="nav-link" href="#">Cadastro Agentes de Saúde</a>
+                                      <a class="nav-link" href="cad-agente-saude">Cadastro Agentes de Saúde</a>
 
                                 </nav>
                             </div>
@@ -169,7 +169,7 @@
                                         Agendas
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
+                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="">
                                         Médicos
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>

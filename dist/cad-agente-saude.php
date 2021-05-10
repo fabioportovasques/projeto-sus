@@ -138,7 +138,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
-                                      <a class="nav-link" href="cad-agente-saude">Cadastro Agentes de Saúde</a>
+                                      <a class="nav-link" href="#">Cadastro Agentes de Saúde</a>
 
                                 </nav>
                             </div>
@@ -198,7 +198,7 @@
                 <br />
                  
     
-            <h2>Cadastro De Pacientes</h2><br />
+            <h2>Cadastro De Agentes de Saúde</h2><br />
             <ul class="nav nav-pills flex-column flex-sm-row">
                   <li class="active"><a data-toggle="tab" href="#dados-pessoais">Dados Pessoais</a></li>
                   <li><a data-toggle="tab" href="#dados-acesso">Dados de Acesso</a></li>
@@ -217,7 +217,7 @@
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Nome do Paciente</label>
+                                        <label > Nome do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome" required="" >    
                                     </div>
@@ -231,7 +231,7 @@
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Sobrenome do Paciente</label>
+                                        <label > Sobrenome do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Sobrenome">    
                                     </div>
@@ -245,7 +245,7 @@
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > CPF do Paciente</label>
+                                        <label > CPF do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF">    
                                     </div>
@@ -259,7 +259,7 @@
                            
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Data de Nascimento do Paciente</label>
+                                        <label > Data de Nascimento do Agente</label>
                                        <span class="campo-obrigatorio"></span>
                                         <input type="date" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome">    
                                     </div>
@@ -273,7 +273,7 @@
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > RG do Paciente</label>
+                                        <label > RG do agente</label>
                                        <span class="campo-obrigatorio"></span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="RG">    
                                     </div>
@@ -287,8 +287,8 @@
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Nº Cartão SUS do Paciente</label>
-                                       <span class="campo-obrigatorio">*</span>
+                                        <label > Nº Cartão SUS do Agente</label>
+                                       <span class="campo-obrigatorio"></span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cartão SUS">    
                                     </div>
                                 </div>
@@ -303,7 +303,7 @@
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Rua do Paciente</label>
+                                        <label > Rua do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Rua">    
                                     </div>
@@ -317,7 +317,7 @@
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Bairro do Paciente</label>
+                                        <label > Bairro do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Bairro" >    
                                     </div>
@@ -331,7 +331,7 @@
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Nº Casa do Paciente</label>
+                                        <label > Nº Casa do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nº casa" >    
                                     </div>
@@ -348,7 +348,7 @@
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Cidade do Paciente</label>
+                                        <label > Cidade do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cidade"  >    
                                     </div>
@@ -365,7 +365,7 @@
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > UF do Paciente</label>
+                                        <label > UF do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="UF" >    
                                     </div>
@@ -379,7 +379,7 @@
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Pais do Paciente</label>
+                                        <label > Pais do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="pais">    
                                     </div>
@@ -410,7 +410,7 @@
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Email do Paciente</label>
+                                        <label > Email do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="email" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Email" required="" >    
                                     </div>
@@ -425,7 +425,7 @@
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Senha do Paciente</label>
+                                        <label > Senha do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="password" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="******" required="" >    
                                     </div>
@@ -440,13 +440,13 @@
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Agente de Saúde</label>
+                                        <label > Zona de Atuação</label>
                                        <span class="campo-obrigatorio">*</span>
                                        <select class="form-control">
                                          <option>Selecionar</option>
-                                          <option>Fulano A</option>
-                                           <option>Fulano B</option>
-                                           <option>Fulano C</option>
+                                          <option>Zona Leste</option>
+                                           <option>Zona Oeste</option>
+                                           <option>Zona Sul</option>
                                        </select>
                                     </div>
                                 </div>
