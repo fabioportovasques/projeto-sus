@@ -117,7 +117,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             
-                            <a class="nav-link" style="color: #F6FAEF" href="index.php">
+                            <a class="nav-link" style="color: #F6FAEF" href="dashboard.php">
                                 <div style="color: #F6FAEF" class="sb-nav-link-icon" style="color: #F6FAEF"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -200,19 +200,277 @@
             </ul>
              <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
+          <br />
+          <br />
           <h3>Dados Pessoais</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div id="menu1" class="tab-pane fade">
-          <h3>Especialidades</h3>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div id="menu3" class="tab-pane fade">
-          <h3>Menu 3</h3>
-          <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        </div>
-  
 
+                  <br />
+                  <br />
+
+                    <!--Início da coluna-->         
+                   <div class="col-md-4">
+                                                                           
+                            <form action="#"  method="POST"> 
+
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > Nome do Médico</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome" required="" >    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>  
+
+                   <!--Início da coluna-->         
+                   <div class="col-md-4">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Sobrenome do Médico</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Sobrenome">    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
+
+                  <!--Início da coluna-->         
+                   <div class="col-md-3">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > CPF do Médico</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF">    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
+
+                    <!--Início da coluna-->         
+                   <div class="col-md-4">
+                           
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > Data de Nascimento do Médico</label>
+                                       <span class="campo-obrigatorio"></span>
+                                        <input type="date" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome">    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>  
+
+                   <!--Início da coluna-->         
+                   <div class="col-md-4">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > RG do Médico</label>
+                                       <span class="campo-obrigatorio"></span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="RG">    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
+
+                  <!--Início da coluna-->         
+                   <div class="col-md-3">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Nº Cartão SUS do Médico</label>
+                                       <span class="campo-obrigatorio"></span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cartão SUS">    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
+
+                    <!--Início da coluna-->         
+                   <div class="col-md-4">
+                                                                           
+                            <form action="#"  method="POST"> 
+
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > Rua do Médico</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Rua">    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>  
+
+                   <!--Início da coluna-->         
+                   <div class="col-md-4">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Bairro do Médico</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Bairro" >    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
+
+                  <!--Início da coluna-->         
+                   <div class="col-md-3">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Nº Casa do Médico</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nº casa" >    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
+
+
+                    <!--Início da coluna-->         
+                   <div class="col-md-4">
+                                                                           
+                            <form action="#"  method="POST"> 
+
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > Cidade do Médico</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cidade"  >    
+                                    </div>
+                                </div>
+
+                     <!--Botão para navegar até a próxima página-->
+                   <button class="btn btn-success">Proxima Página ...</button> 
+
+                   <!--Fim da coluna-->            
+                 </div>  
+
+                   <!--Início da coluna-->         
+                   <div class="col-md-4">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > UF do Médico</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="UF" >    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
+
+                  <!--Início da coluna-->         
+                   <div class="col-md-3">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Pais do Médico</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="pais">    
+                                    </div>
+                                </div>
+
+
+                   <!--Fim da coluna-->            
+
+                 </div>  
+
+               </form>
+
+        </div>
+        <!-- FIm da Tab -->
+
+        <div id="menu1" class="tab-pane fade">
+          <br />
+          <h3>Especialidades</h3>
+
+           <br />
+         
+
+          <!-- Inícioi da classe row-->
+          <div class="row">
+
+                    <!--Inicio da coluna-->
+                     <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <div class="col">
+                                            <label > CR Médico</label>
+                                           <span class="campo-obrigatorio">*</span>
+                                            <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CRM" required="" >    
+                                        </div>
+                                    </div>
+
+                     <!--Fim da coluna-->            
+                   </div>  
+
+                          <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <div class="   col">
+                                                <label > Especialidades</label>
+                                               <span class="campo-obrigatorio">*</span>
+                                               <select class="form-control">
+                                                 <option>Selecionar</option>
+                                                  <option>Clinico Geral</option>
+                                                   <option>Neorologista</option>
+                                                   <option>infectologista</option>
+                                               </select>
+                                            </div>
+                                        </div>
+
+                   <!--Fim da coluna-->  
+                 </div>  
+
+
+
+         <!--fechamento da linha -->
+       </div>
+
+              <br />
+              <br />
+
+
+               <!--Início da linha-->     
+                <div class="row">
+                  
+                                <!--Início da coluna-->     
+                                <div class="col-md-2">
+                                         <button class="btn btn-success btn-block" type="submit">Cadastrar</button>
+                                 <!--Fim da coluna-->       
+                                 </div>
+
+
+                                  <!--Início da coluna--> 
+                                  <div class="col-md-2">
+                                     <button class="btn btn-success btn-block" type="submit">Voltar</button>
+                                <!--Fim da coluna-->      
+                                </div>                                
+
+              <!--Fechamento da linha-->
+            </div>
+
+
+
+
+
+    <!-- Fechamento da tab-->    
+    </div>  
+
+    <!-- Fechamento do container -->         
+</div>
 
 
 
@@ -224,11 +482,7 @@
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
 </div>
 
-
-</div>
-</div>
-</div>
-                            
+                    
  
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>

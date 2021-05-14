@@ -138,7 +138,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
-                                      <a class="nav-link" href="cad-agente-saude">Cadastro Agentes de Saúde</a>
+                                      <a class="nav-link" href="cad-agente-saude.php">Cadastro Agentes de Saúde</a>
 
                                 </nav>
                             </div>
@@ -216,6 +216,11 @@
                                     </div>
                                 </div>
                             </div>
+
+                             <br />
+                             <br />
+                             <br />
+                             
                             <div class="col-sm-6">
                                 <div class="card bg-warning text-white">
                                     <div class="card-body">Fichas Restantes para Clicino Geral</div>

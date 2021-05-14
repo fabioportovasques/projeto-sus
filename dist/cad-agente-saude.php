@@ -122,7 +122,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             
-                            <a class="nav-link" style="color: #F6FAEF" href="index.php">
+                            <a class="nav-link" style="color: #F6FAEF" href="dashboard.php">
                                 <div style="color: #F6FAEF" class="sb-nav-link-icon" style="color: #F6FAEF"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>

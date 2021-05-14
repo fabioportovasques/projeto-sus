@@ -25,14 +25,8 @@
            <!--javascript para mascara  CPF/CNPJ-->
          <script src="https://unpkg.com/imask"></script>
 
-         <!--multiplos submit-->
-              <script type="text/javascript">
-                function selecionaAction(script){
-                    document.actionJava.action = script + '.php';
-                    document.actionJava.submit();
-                }
 
-           </script>
+     
 
      <script>
         $(document).ready(function(){
@@ -46,6 +40,10 @@
 
         $('button').click(function(){
         $('a[href="#dados-acesso"]').tab('show');
+      })
+
+      $('button').click(function(){
+      $('a[href="#dados-pessoais"]').tab('show');
       })
 
       
@@ -122,7 +120,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             
-                            <a class="nav-link" style="color: #F6FAEF" href="index.php">
+                            <a class="nav-link" style="color: #F6FAEF" href="dashboard.php">
                                 <div style="color: #F6FAEF" class="sb-nav-link-icon" style="color: #F6FAEF"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -138,7 +136,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
-                                      <a class="nav-link" href="cad-agente-saude">Cadastro Agentes de Saúde</a>
+                                      <a class="nav-link" href="cad-agente-saude.php">Cadastro Agentes de Saúde</a>
 
                                 </nav>
                             </div>
@@ -204,7 +202,7 @@
                   <li><a data-toggle="tab" href="#dados-acesso">Dados de Acesso</a></li>
             </ul>
              <div class="tab-content">
-        <div id="dados-pessoais" class="tab-pane fade in active">
+               <div id="dados-pessoais" class="tab-pane fade in active">
 
           <h3>Dados Pessoais</h3>
           <br />
@@ -476,12 +474,6 @@
 
 
 
-
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-</div>
 
 
 </div>
