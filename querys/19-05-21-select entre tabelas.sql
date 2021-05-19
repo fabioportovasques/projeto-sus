@@ -35,3 +35,4 @@ INSERT INTO `unidade_executante` (`cod_ue`, `nome_ue`, `descricao_ue`, `rua_ue`,
 
 
 
+
