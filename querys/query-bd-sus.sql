@@ -7,8 +7,24 @@
 	Select entre a tabela medico e especialidade
 */
 
-SELECT e.nome_especialidade AS 'Nome da especialidade', nome_medico,sobrenome_medico from
+SELECT e.cod_especialidade, e.nome_especialidade AS 'Nome da especialidade',m.cod_medico, 
+nome_medico,sobrenome_medico,m.crm_medico,m.cpf_medico,e.descricao_especialidade
+from
 medico m
 inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
-inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
+inner join especialidade e on e.cod_especialidade = espec.medico_cod_medico
 ;
+
+/*
+	Select entre a tabela medico e UBS
+*/
+SELECT m.cod_medico, m.nome_medico,sobrenome_medico, 
+m.cidade_medico, u.cod_ubs, u.bairro_ubs,
+u.nome_ubs AS 'lOCAL DE ATENDIMENTO'
+from
+medico m
+inner join medico_atende_ubs me on m.cod_medico = me.medico_cod_medico
+inner join ubs u on u.cod_ubs = me.ubs_cod_ubs
+;
+
+
