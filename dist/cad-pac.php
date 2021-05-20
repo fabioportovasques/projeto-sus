@@ -89,7 +89,8 @@ if(empty($_SESSION['lg'])) {
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             </form>
-            <div class="menu"></div>
+        <div class="menu" style = "color: #ffffff "><?php include 'listar.php';  ?></div>
+
 
     <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
@@ -148,7 +149,7 @@ if(empty($_SESSION['lg'])) {
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#" id="medico">Cadastro Médicos</a>
+                                    <a class="nav-link" href="cad-medico.php" id="medico">Cadastro Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
                                       <a class="nav-link" href="cad-agente-saude.php">Cadastro Agentes de Saúde</a>
 
