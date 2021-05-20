@@ -143,9 +143,11 @@ if(empty($_SESSION['lg'])) {
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
-                                     <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
-                                      <a class="nav-link" href="cad-agente-saude.php">Cadastro Agentes de Saúde</a>
+                                    <a class="nav-link" href="cad-medico.php">Médicos</a>
+                                     <a class="nav-link" href="cad-pac.php">Pacientes</a>
+                                     <a class="nav-link" href="cad-pac.php">Especialidades</a>
+                                     <a class="nav-link" href="cad-pac.php">Agendamentos</a>
+                                      
 
                                 </nav>
                             </div>
