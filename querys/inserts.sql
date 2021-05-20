@@ -8,8 +8,11 @@ SELECT * FROM medico_atende_ubs;
 SELECT * FROM agenda_ubs;
 SELECT * FROM agenda_ue;
 SELECT * FROM medico_atende_ubs;
+SELECT * FROM usuario;
 
 
+INSERT INTO usuario (usuario,senha,status) VALUES ("Gieder",
+md5("224460"),"A");
 
 INSERT INTO `central_reguladora` (`cod_cr`, `nome_cr`, `rua_cr`, `numero_rua_cr`, `bairro_cr`, `cidade_cr`, `email_cr`, `uf_cr`) VALUES
 (1, 'teste', 'sete de setembro', '795', 'centro', 'Porto Alegre', 'teste@gmail.com', 'rs');

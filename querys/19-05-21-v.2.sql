@@ -42,3 +42,4 @@ inner join medico m on m.cod_medico = a.medico_cod_medico
 
 
 
+

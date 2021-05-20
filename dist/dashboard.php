@@ -1,4 +1,11 @@
-
+<?php
+session_start();
+require 'config.php';
+if(empty($_SESSION['lg'])) {
+    header("Location: index.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -77,7 +84,7 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             </form>
-            <div class="menu"></div>
+           <div class="menu" style = "color: #ffffff "><?php include 'listar.php';  ?></div>
 
     <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
@@ -91,7 +98,7 @@
                                 </svg>
                        &nbsp Trocar Usuário</a>
 
-                        <a class="dropdown-item"   href="/tcc/segware-epi/sobre.php">
+                        <a class="dropdown-item"   href="#">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
                         </svg>

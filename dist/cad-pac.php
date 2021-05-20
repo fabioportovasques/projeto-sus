@@ -1,3 +1,11 @@
+<?php
+session_start();
+require 'config.php';
+if(empty($_SESSION['lg'])) {
+    header("Location: index.php");
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +26,10 @@
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--link para ajax-->
+         <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script> 
+         <script type="text/javascript" src="./js/script2.js"></script>   
+
          <!--javascript para API IBGE Valida cep-->
         <script type="text/javascript" src="./js/validaCep.js"></script>
             <!--javascript para validar CPF/CNPJ-->
@@ -29,7 +41,9 @@
      
 
      <script>
-        $(document).ready(function(){
+
+     
+              $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();   
         });
 
@@ -134,7 +148,7 @@
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
+                                    <a class="nav-link" href="#" id="medico">Cadastro Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
                                       <a class="nav-link" href="cad-agente-saude.php">Cadastro Agentes de Saúde</a>
 
@@ -185,7 +199,8 @@
       
                 </div>
                 <br />
-              
+       
+  <div id="pagina">            
 
 <!--CONTEUDO DO MEIO -->
   <div class="container">
@@ -285,7 +300,7 @@
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Nº Cartão SUS do Paciente</label>
+                                        <label > Nº Cartão SUS</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cartão SUS">    
                                     </div>
@@ -470,7 +485,7 @@
         </div>
       
 
-
+</div>
 
 
 
