@@ -1,11 +1,25 @@
+
+
 <?php
 session_start();
 require 'config.php';
 if(empty($_SESSION['lg'])) {
-    header("Location: index.php");
-    exit;
-}
-?>
+    header("Location:index.php");
+    exit; 
+}   
+
+        require 'agendamento.class.php';
+
+        $agendamento = new Agendamento();
+
+       $lista = $agendamento->select();
+          foreach ($lista as $item):
+          
+    ?>
+
+                <?php endforeach;  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -46,16 +60,11 @@ if(empty($_SESSION['lg'])) {
         $('[data-toggle="tooltip"]').tooltip();   
         });
 
-        /*
-            Função do botão que navega entre as paginas (tab)
-          
-        */
 
         $('button').click(function(){
-        $('a[href="#dados-acesso"]').tab('show');
-      })
+        $('a[href="#home"]').tab('show');
+        })
 
-      
     </script>   
 
         <!--Link para icones-->
@@ -79,12 +88,12 @@ if(empty($_SESSION['lg'])) {
 <body class="sb-nav-fixed">
  
         <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #55d6be">
-            <a class="navbar-brand" href="#" style="color: #ffffff">TEC SUS <br /> Centro Social Urbano <br /> </a>
+            <a class="navbar-brand" href="#" style="color: #ffffff">TEC SUS</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             </form>
-           <div class="menu" style = "color: #ffffff "><?php include 'listar.php';  ?></div>
+            <div class="menu"></div>
 
     <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
@@ -98,7 +107,7 @@ if(empty($_SESSION['lg'])) {
                                 </svg>
                        &nbsp Trocar Usuário</a>
 
-                        <a class="dropdown-item"   href="#">
+                        <a class="dropdown-item"   href="/tcc/segware-epi/sobre.php">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bell-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
                         </svg>
@@ -143,11 +152,9 @@ if(empty($_SESSION['lg'])) {
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="cad-medico.php">Médicos</a>
-                                     <a class="nav-link" href="cad-pac.php">Pacientes</a>
-                                     <a class="nav-link" href="cad-pac.php">Especialidades</a>
-                                     <a class="nav-link" href="cad-pac.php">Agendamentos</a>
-                                      
+                                    <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
+                                     <a class="nav-link" href="#">Cadastro Pacientes</a>
+                                      <a class="nav-link" href="#">Cadastro Agentes de Saúde</a>
 
                                 </nav>
                             </div>
@@ -174,11 +181,11 @@ if(empty($_SESSION['lg'])) {
                                         Pacientes
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="cons-consulta.php">
+                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
                                         Agendas
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="">
+                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
                                         Médicos
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
@@ -201,59 +208,79 @@ if(empty($_SESSION['lg'])) {
 <!--CONTEUDO DO MEIO -->
   <div class="container">
 
-                     <br />
-                     <br />
-                     <br />
-                     <h3>Dashboard</h3>
-                     <br />
-                     <br />
-                    
+                <br />
+                <br />
+                <br />
+                <br />
+                 
+    
+            <h2>Agendamento de Consultas</h2><br />
+          
+          <br />
+
+              <p class="text-center text-sm-left">Agendamentos</p>
+  <hr />
+  <br />
+  <div class="table-responsive-sm">
+      <table class="table">
+          <thead class="thead-light">
+            <tr>
+              
+              <th scope="col">Nome Especialidade</th>
+              <th scope="col">Nome Médico</th>
+              <th scope="col">Data da Consulta</th>
+              <th scope="col">Horário Consulta</th>
+              <th scope="col">Número Fichas Disponíveis</th>
+              <th scope="col" colspan="2">Ações</th>
+
+            </tr>
+          </thead>
+            <tbody>
+
+              <?php foreach ($lista as $item){
+            ?>
+                <tr>
+                  
+                  <td><?php echo $item['nome_especialidade']; ?></td>
+                  <td><?php echo $item['nome_medico']; ?></td>
+                  
+                  <td>
+                    <?php 
+                       echo date('d/m/Y', strtotime($item['data_agendamento']));
+                      ?>
+                  </td>
+                  <td><?php echo $item['hora_agendamento']; ?></td>
+
+                  <td><?php echo $item['num_fichas']; ?></td>
+
+                  <td><button class="btn btn-success btn-block icones" type="submit"><i class="fas fa-calendar-check"></i>&nbsp &nbspAgendar</button></td>
+                  
+                </tr>
+
+                <?php
+            }
+            ?>
+            
+            </tbody>
+
+    </table> 
+       
+  
 
 
 
-                        <div class="row justify-content-md-center">
-                            
-                             <div class="col-sm-6">
-                                <div class="card bg-success  text-white">
-
-                                    <div class="card-body">Fichas Disponiveis para Clinico Geral</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#.php">
-
-                                        
-
-                                          </a>
-                                       
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                             <br />
-                             <br />
-                             <br />
-                             
-                            <div class="col-sm-6">
-                                <div class="card bg-warning text-white">
-                                    <div class="card-body">Fichas Restantes para Clicino Geral</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#.php">
-                                          
-                                  
-                                        </a>
-
-                                          
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                           
-                      
-                       <hr />
-                           
-                       
 
 
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>
+
+
+</div>
+</div>
 </div>
                             
  
