@@ -1,11 +1,25 @@
+
+
 <?php
 session_start();
 require 'config.php';
 if(empty($_SESSION['lg'])) {
-    header("Location: index.php");
-    exit;
-}
-?>
+    header("Location:index.php");
+    exit; 
+}   
+
+        require 'agendamento.class.php';
+
+        $agendamento = new Agendamento();
+
+       $lista = $agendamento->select();
+          foreach ($lista as $item):
+          
+    ?>
+
+                <?php endforeach;  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -138,8 +152,8 @@ if(empty($_SESSION['lg'])) {
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#">Cadastro Médicos</a>
-                                     <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
+                                    <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
+                                     <a class="nav-link" href="#">Cadastro Pacientes</a>
                                       <a class="nav-link" href="#">Cadastro Agentes de Saúde</a>
 
                                 </nav>
@@ -200,29 +214,57 @@ if(empty($_SESSION['lg'])) {
                 <br />
                  
     
-            <h2>Cadastro De Pacientes</h2><br />
-            <ul class="nav nav-pills flex-column flex-sm-row">
-                  <li class="active"><a data-toggle="tab" href="#home">Dados Pessoais</a></li>
-                  <li><a data-toggle="tab" href="#menu1">Especialidades</a></li>
-                  <li><a data-toggle="tab" href="#menu2">Níveis de Acesso</a></li>
-            </ul>
-             <div class="tab-content">
-        <div id="home" class="tab-pane fade in active">
-          <h3>Dados Pessoais</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div id="menu1" class="tab-pane fade">
-          <h3>Especialidades</h3>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div id="menu2" class="tab-pane fade">
-          <h3>Níveis de Acesso</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        </div>
-        <div id="menu3" class="tab-pane fade">
-          <h3>Menu 3</h3>
-          <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        </div>
+            <h2>Agendamento de Consultas</h2><br />
+          
+          <br />
+
+              <p class="text-center text-sm-left">Agendamentos</p>
+  <hr />
+  <br />
+  <div class="table-responsive-sm">
+      <table class="table">
+          <thead class="thead-light">
+            <tr>
+              
+              <th scope="col">Nome Especialidade</th>
+              <th scope="col">Nome Médico</th>
+              <th scope="col">Data da Consulta</th>
+              <th scope="col">Horário Consulta</th>
+              <th scope="col">Número Fichas Disponíveis</th>
+              <th scope="col" colspan="2">Ações</th>
+
+            </tr>
+          </thead>
+            <tbody>
+
+              <?php foreach ($lista as $item){
+            ?>
+                <tr>
+                  
+                  <td><?php echo $item['nome_especialidade']; ?></td>
+                  <td><?php echo $item['nome_medico']; ?></td>
+                  
+                  <td>
+                    <?php 
+                       echo date('d/m/Y', strtotime($item['data_agendamento']));
+                      ?>
+                  </td>
+                  <td><?php echo $item['hora_agendamento']; ?></td>
+
+                  <td><?php echo $item['num_fichas']; ?></td>
+
+                  <td><button class="btn btn-success btn-block icones" type="submit"><i class="fas fa-calendar-check"></i>&nbsp &nbspAgendar</button></td>
+                  
+                </tr>
+
+                <?php
+            }
+            ?>
+            
+            </tbody>
+
+    </table> 
+       
   
 
 
