@@ -223,6 +223,19 @@ if(empty($_SESSION['lg'])) {
           <h3>Dados Pessoais</h3>
           <br />
           
+              <!--Início da coluna-->         
+                   <div class="col-md-4">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > CPF do Paciente</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF">    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>
 
                     <!--Início da coluna-->         
                    <div class="col-md-4">
@@ -241,7 +254,7 @@ if(empty($_SESSION['lg'])) {
                  </div>  
 
                    <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-3">
                           
                                 <div class="form-group">
                                     <div class="col">
@@ -254,19 +267,7 @@ if(empty($_SESSION['lg'])) {
                    <!--Fim da coluna-->            
                  </div>     
 
-                  <!--Início da coluna-->         
-                   <div class="col-md-3">
-                          
-                                <div class="form-group">
-                                    <div class="col">
-                                        <label > CPF do Paciente</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF">    
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div>     
+                     
 
                     <!--Início da coluna-->         
                    <div class="col-md-4">

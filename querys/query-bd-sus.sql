@@ -41,4 +41,19 @@ inner join medico m on m.cod_medico = a.medico_cod_medico
 ;
 
 
+/*
+	count ente agenda_ubs 
+*/
+SELECT 
+count(num_fichas) AS TOTAL,
+nome_especialidade,m.nome_medico, u.nome_ubs,u.bairro_ubs,
+a.data_agendamento,a.hora_agendamento,a.num_fichas
+ from 
+agenda_ubs a 
+inner join ubs u on u.cod_ubs = a.ubs_cod_ubs
+inner join especialidade e on e.cod_especialidade = a.especialidade_cod_especialidade
+inner join medico m on m.cod_medico = a.medico_cod_medico
+where cod_especialidade='4'
+;
+
 

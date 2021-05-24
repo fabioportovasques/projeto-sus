@@ -220,7 +220,25 @@ if(empty($_SESSION['lg'])) {
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#.php">
 
-                                        
+
+                                          <?php 
+
+                                            $sql = "select  
+                                              a.num_fichas AS total
+                                            from 
+                                                agenda_ubs a 
+                                            inner join ubs u on u.cod_ubs = a.ubs_cod_ubs
+                                            inner join especialidade e on e.cod_especialidade = a.especialidade_cod_especialidade
+                                            inner join medico m on m.cod_medico = a.medico_cod_medico
+                                                ";
+
+                                              $sql= $pdo->query($sql);
+                                              $sql=$sql->fetch();
+                                              $total= $sql['total'];
+                                             
+                                               echo $total;
+
+                                            ?>    
 
                                           </a>
                                        
