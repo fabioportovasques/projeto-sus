@@ -231,7 +231,7 @@ if(empty($_SESSION['lg'])) {
               <th scope="col">Nome Médico</th>
               <th scope="col">Data da Consulta</th>
               <th scope="col">Horário Consulta</th>
-              <th scope="col">Número Fichas Disponíveis</th>
+              <th scope="col">Fichas Disponíveis</th>
               <th scope="col" colspan="2">Ações</th>
 
             </tr>

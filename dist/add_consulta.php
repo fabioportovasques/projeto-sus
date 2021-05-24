@@ -178,8 +178,8 @@ if(empty($_SESSION['lg'])) {
                                         Pacientes
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
-                                        Agendas
+                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="cons-consulta.php">
+                                        Agendamentos
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
@@ -369,9 +369,7 @@ if(empty($_SESSION['lg'])) {
                                     </div>
                                 </div>
 
-                     <!--Botão para navegar até a próxima página-->
-                   <button class="btn btn-success">Proxima Página ...</button> 
-
+                  
                    <!--Fim da coluna-->            
                  </div>  
 
@@ -400,18 +398,24 @@ if(empty($_SESSION['lg'])) {
                                     </div>
                                 </div>
 
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <!-- Espaço no final da tab dados "pessoais" -->
 
                    <!--Fim da coluna-->            
-
                  </div>  
 
-               </form>
+             
 
               <!-- Fim da TAB-->    
              </div>
 
 
-    
+
+             
+        
 
         <div id="especialidade" class="tab-pane fade">
           <h3>Especialidade</h3>
@@ -454,13 +458,23 @@ if(empty($_SESSION['lg'])) {
                  </div> 
 
 
-                
-               <div class="col-md-12">
+                <!-- inicio da coluna-->
+               <div class="col-md-6">
+
+
+                  <br />
+                  <br />
                           
                        <!--Botão para navegar até a próxima página-->
-                       <button class="btn btn-success">Voltar ...</button>             
+                       <button class="btn btn-success">Cancelar </button>             
 
+                          
+                       <!--Botão para navegar até a próxima página-->
+                       <button class="btn btn-success">Cadastrar</button>             
 
+                      
+
+                     </form>
                    <!--Fim da coluna-->            
                  </div> 
 

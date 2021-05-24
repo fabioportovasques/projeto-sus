@@ -224,15 +224,20 @@ if(empty($_SESSION['lg'])) {
 
                                           <?php 
 
-                                            $sql = "select  
-                                              a.num_fichas AS total
-                                            from 
-                                                agenda_ubs a 
-                                            inner join ubs u on u.cod_ubs = a.ubs_cod_ubs
-                                            inner join especialidade e on e.cod_especialidade = a.especialidade_cod_especialidade
-                                            inner join medico m on m.cod_medico = a.medico_cod_medico
-                                            WHERE 
-                                                cod_especialidade='4'
+                                            $sql = "
+
+                                            select  a.num_fichas AS total 
+                                            from
+                                                medico m 
+                                            inner join medico_atende_ubs me on m.cod_medico = me.medico_cod_medico
+                                            inner join ubs u on u.cod_ubs = me.ubs_cod_ubs
+                                            inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
+                                            inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
+                                            inner join agenda_ubs a on a.cod_agenda = espec.especialidade_cod_especialidade
+                                            where 
+                                                nome_especialidade='clinico geral' AND status_agenda ='a'
+
+                                                ;
                                                 ";
 
                                               $sql= $pdo->query($sql);
