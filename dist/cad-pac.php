@@ -5,6 +5,10 @@ if(empty($_SESSION['lg'])) {
     header("Location: index.php");
     exit;
 }
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -227,13 +231,13 @@ if(empty($_SESSION['lg'])) {
                     <!--Início da coluna-->         
                    <div class="col-md-4">
                                                                            
-                            <form action="#"  method="POST"> 
+                            <form action="insert_pac.php"  method="POST"> 
 
                                 <div class="form-group">
                                     <div class="   col">
                                         <label > Nome do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome" required="" >    
+                                        <input type="text" name="nome_pac" id="nome_pac" class="form-control" autocomplete="off"  placeholder="Nome" required="" >    
                                     </div>
                                 </div>
 
@@ -247,7 +251,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Sobrenome do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Sobrenome">    
+                                        <input type="text" name="sobrenome_pac" id="sobrenome_pac" class="form-control" autocomplete="off"  placeholder="Sobrenome">    
                                     </div>
                                 </div>
 
@@ -261,7 +265,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > CPF do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF">    
+                                        <input type="text" name="cpf_pac" id="cpf_pac" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"  placeholder="CPF">    
                                     </div>
                                 </div>
 
@@ -275,7 +279,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="   col">
                                         <label > Data de Nascimento do Paciente</label>
                                        <span class="campo-obrigatorio"></span>
-                                        <input type="date" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome">    
+                                        <input type="date" name="data_nascimento_pac" id="data_nascimento_pac" class="form-control" autocomplete="off"  placeholder="Nome">    
                                     </div>
                                 </div>
 
@@ -289,7 +293,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > RG do Paciente</label>
                                        <span class="campo-obrigatorio"></span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="RG">    
+                                        <input type="text" name="rg_pac" id="rg_pac" class="form-control" autocomplete="off"  placeholder="RG">    
                                     </div>
                                 </div>
 
@@ -303,7 +307,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Nº Cartão SUS</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cartão SUS">    
+                                        <input type="text" name="cartao_sus" id="cartao_sus" class="form-control" autocomplete="off"  placeholder="Cartão SUS">    
                                     </div>
                                 </div>
 
@@ -319,7 +323,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="   col">
                                         <label > Rua do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Rua">    
+                                        <input type="text" name="rua_pac" id="rua_pac" class="form-control" autocomplete="off"  placeholder="Rua">    
                                     </div>
                                 </div>
 
@@ -333,7 +337,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Bairro do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Bairro" >    
+                                        <input type="text" name="bairro_pac" id="bairro_pac" class="form-control" autocomplete="off"  placeholder="Bairro" >    
                                     </div>
                                 </div>
 
@@ -347,7 +351,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Nº Casa do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nº casa" >    
+                                        <input type="text" name="numero_casa" id="numero_casa" class="form-control" autocomplete="off"  placeholder="Nº casa" >    
                                     </div>
                                 </div>
 
@@ -364,7 +368,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="   col">
                                         <label > Cidade do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cidade"  >    
+                                        <input type="text" name="cidade_pac" id="cidade_pac" class="form-control" autocomplete="off"  placeholder="Cidade"  >    
                                     </div>
                                 </div>
 
@@ -418,15 +422,15 @@ if(empty($_SESSION['lg'])) {
                   <br />
 
                     <!--Início da coluna-->         
-                   <div class="col-md-6">
+                   <div class="col-md-4">
                                                                            
                             <form action="#"  method="POST"> 
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Email do Paciente</label>
+                                        <label > Email </label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="email" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Email" required="" >    
+                                        <input type="email" name="email_pac" id="email_pac" class="form-control" autocomplete="off"  placeholder="Email" required="" >    
                                     </div>
                                 </div>
 
@@ -434,20 +438,33 @@ if(empty($_SESSION['lg'])) {
                  </div>  
 
 
-                 <div class="col-md-5">
+                 <div class="col-md-4">
                    <!--inicio da coluna-->       
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Senha do Paciente</label>
+                                        <label >Usuário de acesso </label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="password" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="******" required="" >    
+                                        <input type="password" name="usuario" id="usuario" class="form-control" autocomplete="off"  data-toggle="tooltip"  title="Insira seu CPF para mais tarde efetuar login no sistema" placeholder="Insira seu  CPF" required="" >    
                                     </div>
                                 </div>
 
                    <!--Fim da coluna-->            
                  </div> 
 
+                 <div class="col-md-4">
+                   <!--inicio da coluna-->       
+
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > Senha do Paciente</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="password" name="senha" id="senha" class="form-control" autocomplete="off"  placeholder="******" required="" >    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div> 
 
 
                <div class="col-md-12">
