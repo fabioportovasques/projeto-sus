@@ -38,6 +38,7 @@ agenda_ubs a
 inner join ubs u on u.cod_ubs = a.ubs_cod_ubs
 inner join especialidade e on e.cod_especialidade = a.especialidade_cod_especialidade
 inner join medico m on m.cod_medico = a.medico_cod_medico
+
 ;
 
 
@@ -53,7 +54,39 @@ agenda_ubs a
 inner join ubs u on u.cod_ubs = a.ubs_cod_ubs
 inner join especialidade e on e.cod_especialidade = a.especialidade_cod_especialidade
 inner join medico m on m.cod_medico = a.medico_cod_medico
-where cod_especialidade='4'
+
 ;
 
 
+/*
+medicos que atendem somente em uma UBS
+*/
+SELECT m.cod_medico, m.nome_medico,sobrenome_medico, 
+m.cidade_medico, u.cod_ubs, u.bairro_ubs,
+u.nome_ubs AS 'lOCAL DE ATENDIMENTO'
+from
+medico m
+inner join medico_atende_ubs me on m.cod_medico = me.medico_cod_medico
+inner join ubs u on u.cod_ubs = me.ubs_cod_ubs
+inner join especialidade_compoe_medico espec on especialidade_cod_especialidade =cod_medico
+WHERE 
+cod_ubs='1'
+;
+
+
+/*
+	Select entre a tabela agenda_ubs e UBS teste
+*/
+SELECT m.cod_medico, m.nome_medico,sobrenome_medico,
+m.cidade_medico, u.cod_ubs, u.bairro_ubs,
+u.nome_ubs AS 'lOCAL DE ATENDIMENTO'
+from
+medico m
+inner join medico_atende_ubs me on m.cod_medico = me.medico_cod_medico
+inner join ubs u on u.cod_ubs = me.ubs_cod_ubs
+inner join especialidade_compoe_medico espec on especialidade_cod_especialidade =cod_medico
+
+inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
+WHERE 
+cod_ubs='1'
+;

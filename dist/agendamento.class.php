@@ -49,6 +49,7 @@
 					inner join ubs u on u.cod_ubs = a.ubs_cod_ubs
 					inner join especialidade e on e.cod_especialidade = a.especialidade_cod_especialidade
 					inner join medico m on m.cod_medico = a.medico_cod_medico
+					
 						;
 
 						";
