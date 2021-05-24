@@ -1,12 +1,11 @@
-
-
 <?php
 session_start();
 require 'config.php';
 if(empty($_SESSION['lg'])) {
-    header("Location:index.php");
-    exit; 
-}   
+    header("Location: index.php");
+    exit;
+}
+
 
         require 'agendamento.class.php';
 
@@ -93,7 +92,8 @@ if(empty($_SESSION['lg'])) {
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             </form>
-            <div class="menu"></div>
+           <div class="menu" style = "color: #ffffff "><?php include 'listar.php';  ?></div>
+
 
     <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
@@ -222,6 +222,7 @@ if(empty($_SESSION['lg'])) {
   <hr />
   <br />
   <div class="table-responsive-sm">
+    <form method="POST" action="add_consulta.php">
       <table class="table">
           <thead class="thead-light">
             <tr>
@@ -253,7 +254,7 @@ if(empty($_SESSION['lg'])) {
 
                   <td><?php echo $item['num_fichas']; ?></td>
 
-                  <td><button class="btn btn-success btn-block icones" type="submit"><i class="fas fa-calendar-check"></i>&nbsp &nbspAgendar</button></td>
+                  <td><button  class="btn btn-success btn-block icones" type="submit"><i class="fas fa-calendar-check"></i>&nbsp &nbspAgendar</button></td>
                   
                 </tr>
 
@@ -262,6 +263,7 @@ if(empty($_SESSION['lg'])) {
             ?>
             
             </tbody>
+          </form>
 
     </table> 
        
