@@ -138,7 +138,7 @@ if(empty($_SESSION['lg'])) {
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             
-                            <a class="nav-link" style="color: #F6FAEF" href="index.php">
+                            <a class="nav-link" style="color: #F6FAEF" href="dashboard.php">
                                 <div style="color: #F6FAEF" class="sb-nav-link-icon" style="color: #F6FAEF"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -152,9 +152,9 @@ if(empty($_SESSION['lg'])) {
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
-                                     <a class="nav-link" href="#">Cadastro Pacientes</a>
-                                      <a class="nav-link" href="#">Cadastro Agentes de Saúde</a>
+                                    <a class="nav-link" href="cad-medico.php">Médicos</a>
+                                     <a class="nav-link" href="#">Pacientes</a>
+                                      <a class="nav-link" href="#">Aagendamentos</a>
 
                                 </nav>
                             </div>
@@ -181,8 +181,8 @@ if(empty($_SESSION['lg'])) {
                                         Pacientes
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
-                                        Agendas
+                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="cons-consulta.php">
+                                        Agendamentos
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="#">

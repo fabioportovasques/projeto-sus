@@ -149,9 +149,9 @@ if(empty($_SESSION['lg'])) {
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="cad-medico.php" id="medico">Cadastro Médicos</a>
-                                     <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
-                                      <a class="nav-link" href="cad-agente-saude.php">Cadastro Agentes de Saúde</a>
+                                    <a class="nav-link" href="cad-medico.php" id="medico">Médicos</a>
+                                     <a class="nav-link" href="cad-pac.php">Pacientes</a>
+                                      <a class="nav-link" href="#.php">Agendamentos</a>
 
                                 </nav>
                             </div>
@@ -178,8 +178,8 @@ if(empty($_SESSION['lg'])) {
                                         Pacientes
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
-                                        Agendas
+                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="cons-consulta.php">
+                                        Agendamentos
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
@@ -418,7 +418,7 @@ if(empty($_SESSION['lg'])) {
                   <br />
 
                     <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-6">
                                                                            
                             <form action="#"  method="POST"> 
 
@@ -434,8 +434,8 @@ if(empty($_SESSION['lg'])) {
                  </div>  
 
 
-                 <div class="col-md-4">
-                          
+                 <div class="col-md-5">
+                   <!--inicio da coluna-->       
 
                                 <div class="form-group">
                                     <div class="   col">
@@ -449,24 +449,6 @@ if(empty($_SESSION['lg'])) {
                  </div> 
 
 
-                  <div class="col-md-3">
-                          
-
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > Agente de Saúde</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                       <select class="form-control">
-                                         <option>Selecionar</option>
-                                          <option>Fulano A</option>
-                                           <option>Fulano B</option>
-                                           <option>Fulano C</option>
-                                       </select>
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div> 
 
                <div class="col-md-12">
                           

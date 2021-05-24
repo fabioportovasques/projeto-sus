@@ -175,7 +175,8 @@ if(empty($_SESSION['lg'])) {
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                      <a class="nav-link collapsed" style="color: #F6FAEF" href="cons-consulta.php">
-                                        Agendas
+                                        Agendamentos
+
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="">
@@ -230,6 +231,8 @@ if(empty($_SESSION['lg'])) {
                                             inner join ubs u on u.cod_ubs = a.ubs_cod_ubs
                                             inner join especialidade e on e.cod_especialidade = a.especialidade_cod_especialidade
                                             inner join medico m on m.cod_medico = a.medico_cod_medico
+                                            WHERE 
+                                                cod_especialidade='4'
                                                 ";
 
                                               $sql= $pdo->query($sql);
