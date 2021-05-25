@@ -153,7 +153,7 @@ if(empty($_SESSION['lg'])) {
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="cad-medico.php">Médicos</a>
-                                     <a class="nav-link" href="#">Pacientes</a>
+                                     <a class="nav-link" href="cad-pac.php">Pacientes</a>
                                       <a class="nav-link" href="#">Aagendamentos</a>
 
                                 </nav>
@@ -177,7 +177,7 @@ if(empty($_SESSION['lg'])) {
 
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
+                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="cad-pac.php">
                                         Pacientes
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>

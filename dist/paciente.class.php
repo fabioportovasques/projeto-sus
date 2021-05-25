@@ -1,4 +1,4 @@
- <!--
+
 
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,7 @@
 	<title></title>
 </head>
 
-		links bootstrap
+		
         <link rel="stylesheet" href="css/style.css">
         <link href="css/styles.css" rel="stylesheet"/>
         <link href="css/style.css" rel="stylesheet"/>
@@ -19,11 +19,10 @@
 </body>
 </html>
 
--->
 
   <?php 
 
-  class Agendamento {
+  class Paciente {
 
 	private $pdo;
 
@@ -38,55 +37,77 @@
 
 						//create
 
+		
 
-
-		public function adicionar ($nome_cliente,$sobrenome_cliente,$telefone1_cliente,$telefone2_cliente,
-			$cpf_cliente,$rg_cliente,$rua_cliente,$numero_rua_cliente,$cidade_cliente,$uf_cliente,$data_nascimento_cliente,$sexo_cliente,$bairro_cliente,$cep_cliente) {
-			if($this->verificaCpf($cpf_cliente) == false) {
-					$sql = $this->pdo->prepare("INSERT INTO cliente SET nome_cliente = :nome_cliente, sobrenome_cliente = :sobrenome_cliente,
-					telefone1_cliente =:telefone1_cliente,telefone2_cliente =:telefone2_cliente,cpf_cliente =:cpf_cliente,rg_cliente=:rg_cliente,rua_cliente=:rua_cliente,
-					numero_rua_cliente=:numero_rua_cliente,cidade_cliente=:cidade_cliente,uf_cliente=:uf_cliente,data_nascimento_cliente=:data_nascimento_cliente,
-					sexo_cliente=:sexo_cliente,bairro_cliente=:bairro_cliente,cep_cliente=:cep_cliente");
+		public function adicionar ($nome_pac,$sobrenome_pac,$data_nascimento_pac,
+		$cpf_pac,$rg_pac,$rua_pac,$bairro_pac,$cidade_pac,$cep_pac,
+		$uf_pac,$pais_pac,$email_pac,$telefone1_pac,$telefone2_pac,$cartao_sus,$numero_casa,
+		$sexo_pac,$ubs_cod_ubs,$senha) {
+			if($this->verificaCpf($cpf_pac) == false) {
+					$sql = $this->pdo->prepare("INSERT INTO paciente SET nome_pac = :nome_pac,sobrenome_pac =:sobrenome_pac,
+					data_nascimento_pac=:data_nascimento_pac,cpf_pac=:cpf_pac,rg_pac=:rg_pac,rua_pac=:rua_pac,bairro_pac=:bairro_pac,
+					cidade_pac=:cidade_pac,cep_pac=:cep_pac,uf_pac=:uf_pac,pais_pac=:pais_pac,email_pac=:email_pac,telefone1_pac=:telefone1_pac,
+					telefone2_pac=:telefone2_pac,cartao_sus=:cartao_sus,numero_casa=:numero_casa,sexo_pac=:sexo_pac,ubs_cod_ubs=:ubs_cod_ubs,
+					senha = MD5(:senha)");
 					
 
-					$sql->bindParam(":nome_cliente",$nome_cliente);
-					$sql->bindParam(":sobrenome_cliente",$sobrenome_cliente);
-					$sql->bindParam(":telefone1_cliente",$telefone1_cliente);
-					$sql->bindParam(":telefone2_cliente",$telefone2_cliente);
-					$sql->bindParam(":cpf_cliente",$cpf_cliente);
-					$sql->bindParam(":rg_cliente",$rg_cliente);
-					$sql->bindParam(":rua_cliente",$rua_cliente);
-					$sql->bindParam(":numero_rua_cliente",$numero_rua_cliente);
-					$sql->bindParam(":cidade_cliente",$cidade_cliente);
-					$sql->bindParam(":uf_cliente",$uf_cliente);
-					$sql->bindParam(":data_nascimento_cliente",$data_nascimento_cliente);
-					$sql->bindParam(":sexo_cliente",$sexo_cliente);
-					$sql->bindParam(":bairro_cliente",$bairro_cliente);
-					$sql->bindParam(":cep_cliente",$cep_cliente);
+					$sql->bindParam(":nome_pac",$nome_pac);
+					$sql->bindParam(":sobrenome_pac",$sobrenome_pac);
+					$sql->bindParam(":data_nascimento_pac",$data_nascimento_pac);
+					$sql->bindParam(":cpf_pac",$cpf_pac);
+					$sql->bindParam(":rg_pac",$rg_pac);
+					$sql->bindParam(":rua_pac",$rua_pac);
+					$sql->bindParam(":bairro_pac",$bairro_pac);
+					$sql->bindParam(":cidade_pac",$cidade_pac);
+					$sql->bindParam(":cep_pac",$cep_pac);
+					$sql->bindParam(":uf_pac",$uf_pac);
+					$sql->bindParam(":pais_pac",$pais_pac);
+					$sql->bindParam(":email_pac",$email_pac);
+					$sql->bindParam(":telefone1_pac",$telefone1_pac);
+					$sql->bindParam(":telefone2_pac",$telefone2_pac);
+					$sql->bindParam(":cartao_sus",$cartao_sus);
+					$sql->bindParam(":numero_casa",$numero_casa);
+					$sql->bindParam(":sexo_pac",$sexo_pac);
+					$sql->bindParam(":ubs_cod_ubs",$ubs_cod_ubs);
+					$sql->bindParam(":senha",$senha);
 					$sql->execute();
 			
 				print '<div class="alert alert-success" role="alert">
-						  Inserido Com Sucesso!
+						  Paciente Inserido Com Sucesso!
 						</div>';
-				print '<script>window.setTimeout(function(){window.location=\'cad-cliente.php\';}, 2000);</script>';
+				print '<script>window.setTimeout(function(){window.location=\'cad-pac.php\';}, 2000);</script>';
 
 				} else {
 					
 				print '<div class="alert alert-warning" role="alert">
 						CPF Já Existe!
 						</div>';
-				print '<script>window.setTimeout(function(){window.location=\'cad-cliente.php\';}, 2000);</script>';
+				print '<script>window.setTimeout(function(){window.location=\'cad-pac.php\';}, 2000);</script>';
 
 
 				}
 
+			
 
-		
-		}
-		
+				
+			}	
+				
+
+			private function verificaCpf ($cpf_cliente) {
+
+			$sql = "select * FROM paciente WHERE cpf_pac = :cpf_pac";
+			$sql = $this->pdo->prepare($sql);
+			$sql->bindValue(':cpf_pac', $cpf_pac);
+			$sql->execute();
+
+			if($sql->rowCount() > 0) {
+				return true;
+			} else {
+				return false;
+			}
 
 
-						
+		}	
 
 
 			

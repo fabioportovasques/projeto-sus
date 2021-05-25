@@ -79,7 +79,7 @@ if(empty($_SESSION['lg'])) {
 <body class="sb-nav-fixed">
  
         <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color: #55d6be">
-            <a class="navbar-brand" href="#" style="color: #ffffff">TEC SUS <br /> Centro Social Urbano <br /> </a>
+            <a class="navbar-brand" href="#" style="color: #ffffff">TEC SUS <p  style="font-size: 15px"> Centro Social Urbano</p> <br /> </a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
