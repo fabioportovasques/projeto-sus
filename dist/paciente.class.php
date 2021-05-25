@@ -39,7 +39,6 @@
 
 		
 
-<<<<<<< HEAD
 		public function adicionar ($nome_pac,$sobrenome_pac,$data_nascimento_pac,
 		$cpf_pac,$rg_pac,$rua_pac,$bairro_pac,$cidade_pac,$cep_pac,
 		$uf_pac,$pais_pac,$email_pac,$telefone1_pac,$telefone2_pac,$cartao_sus,$numero_casa,
@@ -71,53 +70,19 @@
 					$sql->bindParam(":sexo_pac",$sexo_pac);
 					$sql->bindParam(":ubs_cod_ubs",$ubs_cod_ubs);
 					$sql->bindParam(":senha",$senha);
-=======
-
-		public function adicionar ($nome_medico,$sobrenome_medico,$telefone1_medico,$telefone2_medico,
-			$cpf_medico,$rg_medico,$rua_medico,$numero_rua_medico,$cidade_medico,$uf_medico,$data_nascimento_medico,$sexo_medico,$bairro_medico,$cep_medico) {
-			if($this->verificaCpf($cpf_medico) == false) {
-					$sql = $this->pdo->prepare("INSERT INTO medico SET nome_medico = :nome_medico, sobrenome_medico = :sobrenome_medico,
-					telefone1_medico =:telefone1_medico,telefone2_medico =:telefone2_medico,cpf_medico =:cpf_medico,rg_medico=:rg_medico,rua_medico=:rua_medico,
-					numero_rua_medico=:numero_rua_medico,cidade_medico=:cidade_medico,uf_medico=:uf_medico,data_nascimento_medico=:data_nascimento_medico,
-					sexo_medico=:sexo_medico,bairro_medico=:bairro_medico,cep_medico=:cep_medico");
-					
-
-					$sql->bindParam(":nome_medico",$nome_medico);
-					$sql->bindParam(":sobrenome_medico",$sobrenome_medico);
-					$sql->bindParam(":telefone1_medico",$telefone1_medico);
-					$sql->bindParam(":telefone2_medico",$telefone2_medico);
-					$sql->bindParam(":cpf_medico",$cpf_medico);
-					$sql->bindParam(":rg_medico",$rg_medico);
-					$sql->bindParam(":rua_medico",$rua_medico);
-					$sql->bindParam(":numero_rua_medico",$numero_rua_medico);
-					$sql->bindParam(":cidade_medico",$cidade_medico);
-					$sql->bindParam(":uf_medico",$uf_medico);
-					$sql->bindParam(":data_nascimento_medico",$data_nascimento_medico);
-					$sql->bindParam(":sexo_medico",$sexo_medico);
-					$sql->bindParam(":bairro_medico",$bairro_medico);
-					$sql->bindParam(":cep_medico",$cep_medico);
->>>>>>> c59fd953f0599bd0a209dc20f529255460f3b1cf
 					$sql->execute();
 			
 				print '<div class="alert alert-success" role="alert">
 						  Paciente Inserido Com Sucesso!
 						</div>';
-<<<<<<< HEAD
 				print '<script>window.setTimeout(function(){window.location=\'cad-pac.php\';}, 2000);</script>';
-=======
-				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
->>>>>>> c59fd953f0599bd0a209dc20f529255460f3b1cf
 
 				} else {
 					
 				print '<div class="alert alert-warning" role="alert">
 						CPF Já Existe!
 						</div>';
-<<<<<<< HEAD
 				print '<script>window.setTimeout(function(){window.location=\'cad-pac.php\';}, 2000);</script>';
-=======
-				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
->>>>>>> c59fd953f0599bd0a209dc20f529255460f3b1cf
 
 
 				}
