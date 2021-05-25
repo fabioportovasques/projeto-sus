@@ -230,7 +230,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > CPF do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="CPF">    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="CPF">    
                                     </div>
                                 </div>
 
@@ -246,7 +246,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="   col">
                                         <label > Nome do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome" required="" >    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Nome" required="" >    
                                     </div>
                                 </div>
 
@@ -260,7 +260,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Sobrenome do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Sobrenome">    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Sobrenome">    
                                     </div>
                                 </div>
 
@@ -276,7 +276,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="   col">
                                         <label > Data de Nascimento do Paciente</label>
                                        <span class="campo-obrigatorio"></span>
-                                        <input type="date" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome">    
+                                        <input type="date" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Nome">    
                                     </div>
                                 </div>
 
@@ -290,7 +290,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > RG do Paciente</label>
                                        <span class="campo-obrigatorio"></span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="RG">    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="RG">    
                                     </div>
                                 </div>
 
@@ -304,7 +304,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Nº Cartão SUS</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cartão SUS">    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Cartão SUS">    
                                     </div>
                                 </div>
 
@@ -320,7 +320,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="   col">
                                         <label > Rua do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Rua">    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Rua">    
                                     </div>
                                 </div>
 
@@ -334,7 +334,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Bairro do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Bairro" >    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Bairro" >    
                                     </div>
                                 </div>
 
@@ -348,7 +348,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Nº Casa do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nº casa" >    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Nº casa" >    
                                     </div>
                                 </div>
 
@@ -365,7 +365,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="   col">
                                         <label > Cidade do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Cidade"  >    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Cidade"  >    
                                     </div>
                                 </div>
 
@@ -380,7 +380,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > UF do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="UF" >    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="UF" >    
                                     </div>
                                 </div>
 
@@ -394,7 +394,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Pais do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="pais">    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="pais">    
                                     </div>
                                 </div>
 
@@ -450,7 +450,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="   col">
                                         <label > Nome do Médico</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="Nome Médico" readonly  required="" >    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Nome Médico" readonly  required="" >    
                                     </div>
                                 </div>
 

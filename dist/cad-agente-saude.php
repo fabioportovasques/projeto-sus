@@ -1,13 +1,4 @@
 
-<?php
-session_start();
-require 'config.php';
-if(empty($_SESSION['lg'])) {
-    header("Location: index.php");
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -48,11 +39,16 @@ if(empty($_SESSION['lg'])) {
         $('[data-toggle="tooltip"]').tooltip();   
         });
 
+        /*
+            Função do botão que navega entre as paginas (tab)
+          
+        */
 
         $('button').click(function(){
-        $('a[href="#home"]').tab('show');
-        })
+        $('a[href="#dados-acesso"]').tab('show');
+      })
 
+      
     </script>   
 
         <!--Link para icones-->
@@ -81,8 +77,7 @@ if(empty($_SESSION['lg'])) {
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             </form>
-           <div class="menu" style = "color: #ffffff "><?php include 'listar.php';  ?></div>
-
+            <div class="menu"></div>
 
     <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
@@ -141,9 +136,9 @@ if(empty($_SESSION['lg'])) {
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="cad-medico.php">Médicos</a>
-                                     <a class="nav-link" href="cad-pac.php">Pacientes</a>
-                                      <a class="nav-link" href="#">Agendamentos</a>
+                                    <a class="nav-link" href="cad-medico.php">Cadastro Médicos</a>
+                                     <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
+                                      <a class="nav-link" href="#">Cadastro Agentes de Saúde</a>
 
                                 </nav>
                             </div>
@@ -170,8 +165,8 @@ if(empty($_SESSION['lg'])) {
                                         Pacientes
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="cons-consulta.php">
-                                        Agendamentos
+                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
+                                        Agendas
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                     <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
@@ -203,19 +198,17 @@ if(empty($_SESSION['lg'])) {
                 <br />
                  
     
-            <h2>Cadastro De Médico</h2><br />
+            <h2>Cadastro De Agentes de Saúde</h2><br />
             <ul class="nav nav-pills flex-column flex-sm-row">
-                  <li class="active"><a data-toggle="tab" href="#home">Dados Pessoais</a></li>
-                  <li><a data-toggle="tab" href="#menu1">Especialidades</a></li>
+                  <li class="active"><a data-toggle="tab" href="#dados-pessoais">Dados Pessoais</a></li>
+                  <li><a data-toggle="tab" href="#dados-acesso">Dados de Acesso</a></li>
             </ul>
              <div class="tab-content">
-        <div id="home" class="tab-pane fade in active">
-          <br />
-          <br />
-          <h3>Dados Pessoais</h3>
+        <div id="dados-pessoais" class="tab-pane fade in active">
 
-                  <br />
-                  <br />
+          <h3>Dados Pessoais</h3>
+          <br />
+          
 
                     <!--Início da coluna-->         
                    <div class="col-md-4">
@@ -224,7 +217,7 @@ if(empty($_SESSION['lg'])) {
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Nome do Médico</label>
+                                        <label > Nome do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Nome" required="" >    
                                     </div>
@@ -238,7 +231,7 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Sobrenome do Médico</label>
+                                        <label > Sobrenome do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Sobrenome">    
                                     </div>
@@ -252,7 +245,7 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > CPF do Médico</label>
+                                        <label > CPF do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="CPF">    
                                     </div>
@@ -266,7 +259,7 @@ if(empty($_SESSION['lg'])) {
                            
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Data de Nascimento do Médico</label>
+                                        <label > Data de Nascimento do Agente</label>
                                        <span class="campo-obrigatorio"></span>
                                         <input type="date" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Nome">    
                                     </div>
@@ -280,7 +273,7 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > RG do Médico</label>
+                                        <label > RG do agente</label>
                                        <span class="campo-obrigatorio"></span>
                                         <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="RG">    
                                     </div>
@@ -294,7 +287,7 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Nº Cartão SUS do Médico</label>
+                                        <label > Nº Cartão SUS do Agente</label>
                                        <span class="campo-obrigatorio"></span>
                                         <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Cartão SUS">    
                                     </div>
@@ -310,7 +303,7 @@ if(empty($_SESSION['lg'])) {
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Rua do Médico</label>
+                                        <label > Rua do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Rua">    
                                     </div>
@@ -324,7 +317,7 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Bairro do Médico</label>
+                                        <label > Bairro do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Bairro" >    
                                     </div>
@@ -338,7 +331,7 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Nº Casa do Médico</label>
+                                        <label > Nº Casa do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Nº casa" >    
                                     </div>
@@ -355,7 +348,7 @@ if(empty($_SESSION['lg'])) {
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Cidade do Médico</label>
+                                        <label > Cidade do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Cidade"  >    
                                     </div>
@@ -372,7 +365,7 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > UF do Médico</label>
+                                        <label > UF do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="UF" >    
                                     </div>
@@ -386,7 +379,7 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Pais do Médico</label>
+                                        <label > Pais do Agente</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="pais">    
                                     </div>
@@ -399,88 +392,86 @@ if(empty($_SESSION['lg'])) {
 
                </form>
 
-        </div>
-        <!-- FIm da Tab -->
+              <!-- Fim da TAB-->    
+             </div>
 
-        <div id="menu1" class="tab-pane fade">
-          <br />
-          <h3>Especialidades</h3>
 
-           <br />
-         
+    
 
-          <!-- Inícioi da classe row-->
-          <div class="row">
+        <div id="dados-acesso" class="tab-pane fade">
+          <h3>Dados de Acesso</h3>
 
-                    <!--Inicio da coluna-->
-                     <div class="col-md-6">
+                  <br />
 
-                                    <div class="form-group">
-                                        <div class="col">
-                                            <label > CR Médico</label>
-                                           <span class="campo-obrigatorio">*</span>
-                                            <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="CRM" required="" >    
-                                        </div>
+                    <!--Início da coluna-->         
+                   <div class="col-md-4">
+                                                                           
+                            <form action="#"  method="POST"> 
+
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > Email do Agente</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="email" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Email" required="" >    
                                     </div>
+                                </div>
 
-                     <!--Fim da coluna-->            
-                   </div>  
-
-                          <div class="col-md-6">
-
-                                        <div class="form-group">
-                                            <div class="   col">
-                                                <label > Especialidades</label>
-                                               <span class="campo-obrigatorio">*</span>
-                                               <select class="form-control">
-                                                 <option>Selecionar</option>
-                                                  <option>Clinico Geral</option>
-                                                   <option>Neorologista</option>
-                                                   <option>infectologista</option>
-                                               </select>
-                                            </div>
-                                        </div>
-
-                   <!--Fim da coluna-->  
+                   <!--Fim da coluna-->            
                  </div>  
 
 
+                 <div class="col-md-4">
+                          
 
-         <!--fechamento da linha -->
-       </div>
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > Senha do Agente</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="password" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="******" required="" >    
+                                    </div>
+                                </div>
 
-              <br />
-              <br />
-
-
-               <!--Início da linha-->     
-                <div class="row">
-                  
-                                <!--Início da coluna-->     
-                                <div class="col-md-2">
-                                         <button class="btn btn-success btn-block" type="submit">Cadastrar</button>
-                                 <!--Fim da coluna-->       
-                                 </div>
+                   <!--Fim da coluna-->            
+                 </div> 
 
 
-                                  <!--Início da coluna--> 
-                                  <div class="col-md-2">
-                                     <button class="btn btn-success btn-block" type="submit">Voltar</button>
-                                <!--Fim da coluna-->      
-                                </div>                                
+                  <div class="col-md-3">
+                          
 
-              <!--Fechamento da linha-->
-            </div>
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > Zona de Atuação</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                       <select class="form-control">
+                                         <option>Selecionar</option>
+                                          <option>Zona Leste</option>
+                                           <option>Zona Oeste</option>
+                                           <option>Zona Sul</option>
+                                       </select>
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div> 
+
+               <div class="col-md-12">
+                          
+                       <!--Botão para navegar até a próxima página-->
+                       <button class="btn btn-success">Voltar ...</button>             
+
+
+                   <!--Fim da coluna-->            
+                 </div> 
+
+                              
+         </div> 
 
 
 
+        <!-- fim da tab-->
+        </div>
+      
 
-
-    <!-- Fechamento da tab-->    
-    </div>  
-
-    <!-- Fechamento do container -->         
-</div>
 
 
 
@@ -492,7 +483,11 @@ if(empty($_SESSION['lg'])) {
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
 </div>
 
-                    
+
+</div>
+</div>
+</div>
+                            
  
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>

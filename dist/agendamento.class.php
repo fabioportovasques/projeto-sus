@@ -64,7 +64,7 @@
 
 							if ($sql->rowCount() > 0) {
 
-								//retorna todos os clientes
+								//retorna todos os medicos
 								return $sql ->fetchAll();
 
 							}else {

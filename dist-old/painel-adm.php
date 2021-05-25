@@ -167,7 +167,7 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="cad-cliente.php">Cadastro Clientes</a>
+                                    <a class="nav-link" href="cad-medico.php">Cadastro medicos</a>
                                     <a class="nav-link" href="cad-veiculo.php">Cadastro Veiculos</a>
                                     <a class="nav-link" href="cad-troca.php">Troca de Óleo</a>
                                    
@@ -192,8 +192,8 @@
 
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="cons-cliente.php">
-                                        Clientes
+                                    <a class="nav-link collapsed" href="cons-medico.php">
+                                        medicos
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
                                      <a class="nav-link collapsed" href="cons-veiculo.php">
@@ -232,7 +232,7 @@
                                              <form action=""  method="POST" name="actionJava" > 
                                                    <div class="col">
                                                           <label for="proprietario">Proprietário</label>
-                                                           <input type="text" name="cpf_cliente" id="cpf_cnpj" class="form-control" placeholder="CPF Proprietário"  autocomplete="off" onblur="validar(getElementById('cpf_cnpj').value)"  value="<?php echo $item['cpf_cliente']; ?>" >
+                                                           <input type="text" name="cpf_medico" id="cpf_cnpj" class="form-control" placeholder="CPF Proprietário"  autocomplete="off" onblur="validar(getElementById('cpf_cnpj').value)"  value="<?php echo $item['cpf_medico']; ?>" >
                                                     </div>
                                 <!--Fim da coluna-->  
                               </div>
@@ -251,7 +251,7 @@
                           <div class="marcado1r col-md-4">
                                                    <div class="col">
                                                                   <label for="proprietario">Nome do Proprietário</label>
-                                                                 <input type="text" name="nome_cliente" disabled="" id="nome_cliente" class="form-control" placeholder="Nome Proprietário"  autocomplete="off"  value="<?php echo $item['nome_cliente']; ?>" >
+                                                                 <input type="text" name="nome_medico" disabled="" id="nome_medico" class="form-control" placeholder="Nome Proprietário"  autocomplete="off"  value="<?php echo $item['nome_medico']; ?>" >
                                                     </div>
 
                            <!--Fim da coluna-->  
@@ -261,9 +261,9 @@
                         <!--Início da coluna-->         
                           <div class="marcado1r col-md-4">
                                        <div class="col">
-                                                <!--tras o cod do cliente do banco -->
+                                                <!--tras o cod do medico do banco -->
                                                 <label for="proprietario">Cod do Proprietário</label>
-                                                <input type="number" name="cliente_codcliente" class="form-control" readonly value="<?php echo $item['codcliente'] ?>">
+                                                <input type="number" name="medico_codmedico" class="form-control" readonly value="<?php echo $item['codmedico'] ?>">
                                            </div>
          
                         <!--Fim da coluna-->  
