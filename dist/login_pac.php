@@ -29,7 +29,7 @@ if (isset($_POST['cpf_pac']) && !empty($_POST['cpf_pac'])) {
 
 
         $_SESSION['lg'] = $cod_pac; 
-        $_SESSION['cpf_pac'] = $cpf_pac;
+        $_SESSION['nome_pac'] = $nome_pac;
 
         
 
