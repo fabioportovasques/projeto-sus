@@ -418,7 +418,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Bairro</label>
                                        <span class="campo-obrigatorio">*</span>
-<<<<<<< HEAD
+
                                         <input type="text" name="bairro_pac" id="bairro_pac" class="form-control" autocomplete="off"  placeholder="Bairro" >    
                                     </div>
                                 </div>
@@ -435,9 +435,8 @@ if(empty($_SESSION['lg'])) {
                                         <label > UF </label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="uf_pac" id="uf_pac" class="form-control" autocomplete="off"  placeholder="UF" >    
-=======
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="UF" >    
->>>>>>> c59fd953f0599bd0a209dc20f529255460f3b1cf
+
+
                                     </div>
                                 </div>
 
@@ -451,11 +450,9 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Pais </label>
                                        <span class="campo-obrigatorio">*</span>
-<<<<<<< HEAD
+
                                         <input type="text" name="pais_pac" id="pais_pac" class="form-control" autocomplete="off"  placeholder="pais">    
-=======
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="pais">    
->>>>>>> c59fd953f0599bd0a209dc20f529255460f3b1cf
+
                                     </div>
                                 </div>
 

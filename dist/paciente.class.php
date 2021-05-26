@@ -93,7 +93,7 @@
 			}	
 				
 
-			private function verificaCpf ($cpf_cliente) {
+			private function verificaCpf ($cpf_pac) {
 
 			$sql = "select * FROM paciente WHERE cpf_pac = :cpf_pac";
 			$sql = $this->pdo->prepare($sql);
