@@ -5,7 +5,7 @@
 		require 'config.php';
 		
 		    
-		    echo "Bem Vindo: " . $_SESSION['usuario'];    
+		    echo "Bem Vindo: " . $_SESSION['nome_user'];    
 
 
 		?>

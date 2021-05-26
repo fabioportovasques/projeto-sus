@@ -22,7 +22,7 @@
         <form method="POST" action="login.php" class="col-sm-4">
           <div class="input-container">            
             <i class="fa fa-user icon"></i>
-              <input type="text" name="usuario" class="form-control" autocomplete="off" placeholder="Usuario" required=""><br>
+              <input type="text" name="cpf_user" class="form-control" autocomplete="off" placeholder="CPF" required=""><br>
           </div>
 
           <div class="input-container">

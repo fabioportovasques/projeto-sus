@@ -7,27 +7,32 @@ require 'config.php';
 
 
 
-if (isset($_POST['usuario']) && !empty($_POST['usuario'])) {
+if (isset($_POST['cpf_user']) && !empty($_POST['cpf_user'])) {
 
-    $usuario = $_POST['usuario'];
+    $cpf_user = $_POST['cpf_user'];
     $senha = $_POST['senha'];
 
-    $sql = "SELECT * FROM usuario WHERE usuario = :usuario AND senha = MD5(:senha) AND status = 'A' ";
+
+   
+
+    $sql = "SELECT * FROM usuario WHERE cpf_user = :cpf_user AND senha = MD5(:senha) AND status = 'A' ";
     $sql = $pdo->prepare($sql);
-    $sql->bindValue(":usuario", $usuario);
+    $sql->bindValue(":cpf_user", $cpf_user);
     $sql->bindValue(":senha", $senha);
+     
     $sql->execute();
 
     if ($sql->rowCount() > 0) {                                   //Se Houve Resultado...
 
         $sql = $sql->fetch();
         $cod_user = $sql['cod_user'];
-        $usuario = $sql['usuario'];
+        $cpf_user = $sql['cpf_user'];
+        $nome_user = $sql['nome_user'];
       
 
 
         $_SESSION['lg'] = $cod_user; 
-        $_SESSION['usuario'] = $usuario;
+        $_SESSION['nome_user'] = $nome_user;
 
         
 
