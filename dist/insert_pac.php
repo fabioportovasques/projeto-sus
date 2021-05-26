@@ -1,37 +1,37 @@
 <?php
 
-	include 'cliente.class.php';
+	include 'medico.class.php';
 
-	$cliente = new Cliente();
+	$medico = new medico();
 
 
 		
 
-	if (!empty($_POST['cpf_cliente'])) {
+	if (!empty($_POST['cpf_medico'])) {
 
 		/*remove a mascara do campo cpf/cnpj para inserir no banco*/
 		
 
-		$nome_cliente = $_POST['nome_cliente'];
-		$sobrenome_cliente = $_POST['sobrenome_cliente'];
-		$telefone1_cliente = $_POST['telefone1_cliente'];
-		$telefone2_cliente= $_POST['telefone2_cliente'];
-		$cpf_cliente = $_POST['cpf_cliente'];
-		$rg_cliente = $_POST['rg_cliente'];
-		$rua_cliente = $_POST['rua_cliente'];
-		$numero_rua_cliente = $_POST['numero_rua_cliente'];
-		$cidade_cliente = $_POST['cidade_cliente'];
-		$uf_cliente = $_POST['uf_cliente'];
-		$data_nascimento_cliente = $_POST['data_nascimento_cliente'];
-		$sexo_cliente = $_POST['sexo_cliente'];
-		$bairro_cliente = $_POST['bairro_cliente'];
-		$cep_cliente = $_POST['cep_cliente'];
+		$nome_medico = $_POST['nome_medico'];
+		$sobrenome_medico = $_POST['sobrenome_medico'];
+		$telefone1_medico = $_POST['telefone1_medico'];
+		$telefone2_medico= $_POST['telefone2_medico'];
+		$cpf_medico = $_POST['cpf_medico'];
+		$rg_medico = $_POST['rg_medico'];
+		$rua_medico = $_POST['rua_medico'];
+		$numero_rua_medico = $_POST['numero_rua_medico'];
+		$cidade_medico = $_POST['cidade_medico'];
+		$uf_medico = $_POST['uf_medico'];
+		$data_nascimento_medico = $_POST['data_nascimento_medico'];
+		$sexo_medico = $_POST['sexo_medico'];
+		$bairro_medico = $_POST['bairro_medico'];
+		$cep_medico = $_POST['cep_medico'];
 
-		//$cliente ->verificaCpf($cpf_cliente);
+		//$medico ->verificaCpf($cpf_medico);
 
-		$cliente ->adicionar($nome_cliente,$sobrenome_cliente,$telefone1_cliente,
-		$telefone2_cliente,$cpf_cliente,$rg_cliente,$rua_cliente,$numero_rua_cliente,
-		$cidade_cliente,$uf_cliente,$data_nascimento_cliente,$sexo_cliente,$bairro_cliente,$cep_cliente);
+		$medico ->adicionar($nome_medico,$sobrenome_medico,$telefone1_medico,
+		$telefone2_medico,$cpf_medico,$rg_medico,$rua_medico,$numero_rua_medico,
+		$cidade_medico,$uf_medico,$data_nascimento_medico,$sexo_medico,$bairro_medico,$cep_medico);
 
 		
 	}

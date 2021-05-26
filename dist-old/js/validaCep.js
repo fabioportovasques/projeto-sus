@@ -3,20 +3,20 @@
     
     function limpa_formulário_cep() {
             //Limpa valores do formulário de cep.
-            document.getElementById('rua_cliente').value=("");
-            document.getElementById('bairro_cliente').value=("");
-            document.getElementById('cidade_cliente').value=("");
-            document.getElementById('uf_cliente').value=("");
+            document.getElementById('rua_medico').value=("");
+            document.getElementById('bairro_medico').value=("");
+            document.getElementById('cidade_medico').value=("");
+            document.getElementById('uf_medico').value=("");
           
     }
 
     function meu_callback(conteudo) {
         if (!("erro" in conteudo)) {
             //Atualiza os campos com os valores.
-            document.getElementById('rua_cliente').value=(conteudo.logradouro);
-            document.getElementById('bairro_cliente').value=(conteudo.bairro);
-            document.getElementById('cidade_cliente').value=(conteudo.localidade);
-            document.getElementById('uf_cliente').value=(conteudo.uf);
+            document.getElementById('rua_medico').value=(conteudo.logradouro);
+            document.getElementById('bairro_medico').value=(conteudo.bairro);
+            document.getElementById('cidade_medico').value=(conteudo.localidade);
+            document.getElementById('uf_medico').value=(conteudo.uf);
          
         } //end if.
         else {
@@ -41,10 +41,10 @@
             if(validacep.test(cep)) {
 
                 //Preenche os campos com "..." enquanto consulta webservice.
-                document.getElementById('rua_cliente').value="...";
-                document.getElementById('bairro_cliente').value="...";
-                document.getElementById('cidade_cliente').value="...";
-                document.getElementById('uf_cliente').value="...";
+                document.getElementById('rua_medico').value="...";
+                document.getElementById('bairro_medico').value="...";
+                document.getElementById('cidade_medico').value="...";
+                document.getElementById('uf_medico').value="...";
                 
 
                 //Cria um elemento javascript.
@@ -55,7 +55,7 @@
 
                 //Insere script no documento e carrega o conteúdo.
                 document.body.appendChild(script);
-                document.getElementById("numero_rua_cliente").focus();
+                document.getElementById("numero_rua_medico").focus();
 
             } //end if.
             else {

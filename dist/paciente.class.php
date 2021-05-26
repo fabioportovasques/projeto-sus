@@ -40,42 +40,42 @@
 
 
 
-		public function adicionar ($nome_cliente,$sobrenome_cliente,$telefone1_cliente,$telefone2_cliente,
-			$cpf_cliente,$rg_cliente,$rua_cliente,$numero_rua_cliente,$cidade_cliente,$uf_cliente,$data_nascimento_cliente,$sexo_cliente,$bairro_cliente,$cep_cliente) {
-			if($this->verificaCpf($cpf_cliente) == false) {
-					$sql = $this->pdo->prepare("INSERT INTO cliente SET nome_cliente = :nome_cliente, sobrenome_cliente = :sobrenome_cliente,
-					telefone1_cliente =:telefone1_cliente,telefone2_cliente =:telefone2_cliente,cpf_cliente =:cpf_cliente,rg_cliente=:rg_cliente,rua_cliente=:rua_cliente,
-					numero_rua_cliente=:numero_rua_cliente,cidade_cliente=:cidade_cliente,uf_cliente=:uf_cliente,data_nascimento_cliente=:data_nascimento_cliente,
-					sexo_cliente=:sexo_cliente,bairro_cliente=:bairro_cliente,cep_cliente=:cep_cliente");
+		public function adicionar ($nome_medico,$sobrenome_medico,$telefone1_medico,$telefone2_medico,
+			$cpf_medico,$rg_medico,$rua_medico,$numero_rua_medico,$cidade_medico,$uf_medico,$data_nascimento_medico,$sexo_medico,$bairro_medico,$cep_medico) {
+			if($this->verificaCpf($cpf_medico) == false) {
+					$sql = $this->pdo->prepare("INSERT INTO medico SET nome_medico = :nome_medico, sobrenome_medico = :sobrenome_medico,
+					telefone1_medico =:telefone1_medico,telefone2_medico =:telefone2_medico,cpf_medico =:cpf_medico,rg_medico=:rg_medico,rua_medico=:rua_medico,
+					numero_rua_medico=:numero_rua_medico,cidade_medico=:cidade_medico,uf_medico=:uf_medico,data_nascimento_medico=:data_nascimento_medico,
+					sexo_medico=:sexo_medico,bairro_medico=:bairro_medico,cep_medico=:cep_medico");
 					
 
-					$sql->bindParam(":nome_cliente",$nome_cliente);
-					$sql->bindParam(":sobrenome_cliente",$sobrenome_cliente);
-					$sql->bindParam(":telefone1_cliente",$telefone1_cliente);
-					$sql->bindParam(":telefone2_cliente",$telefone2_cliente);
-					$sql->bindParam(":cpf_cliente",$cpf_cliente);
-					$sql->bindParam(":rg_cliente",$rg_cliente);
-					$sql->bindParam(":rua_cliente",$rua_cliente);
-					$sql->bindParam(":numero_rua_cliente",$numero_rua_cliente);
-					$sql->bindParam(":cidade_cliente",$cidade_cliente);
-					$sql->bindParam(":uf_cliente",$uf_cliente);
-					$sql->bindParam(":data_nascimento_cliente",$data_nascimento_cliente);
-					$sql->bindParam(":sexo_cliente",$sexo_cliente);
-					$sql->bindParam(":bairro_cliente",$bairro_cliente);
-					$sql->bindParam(":cep_cliente",$cep_cliente);
+					$sql->bindParam(":nome_medico",$nome_medico);
+					$sql->bindParam(":sobrenome_medico",$sobrenome_medico);
+					$sql->bindParam(":telefone1_medico",$telefone1_medico);
+					$sql->bindParam(":telefone2_medico",$telefone2_medico);
+					$sql->bindParam(":cpf_medico",$cpf_medico);
+					$sql->bindParam(":rg_medico",$rg_medico);
+					$sql->bindParam(":rua_medico",$rua_medico);
+					$sql->bindParam(":numero_rua_medico",$numero_rua_medico);
+					$sql->bindParam(":cidade_medico",$cidade_medico);
+					$sql->bindParam(":uf_medico",$uf_medico);
+					$sql->bindParam(":data_nascimento_medico",$data_nascimento_medico);
+					$sql->bindParam(":sexo_medico",$sexo_medico);
+					$sql->bindParam(":bairro_medico",$bairro_medico);
+					$sql->bindParam(":cep_medico",$cep_medico);
 					$sql->execute();
 			
 				print '<div class="alert alert-success" role="alert">
 						  Inserido Com Sucesso!
 						</div>';
-				print '<script>window.setTimeout(function(){window.location=\'cad-cliente.php\';}, 2000);</script>';
+				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
 
 				} else {
 					
 				print '<div class="alert alert-warning" role="alert">
 						CPF Já Existe!
 						</div>';
-				print '<script>window.setTimeout(function(){window.location=\'cad-cliente.php\';}, 2000);</script>';
+				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
 
 
 				}

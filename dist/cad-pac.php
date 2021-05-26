@@ -385,7 +385,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > UF do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="UF" >    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="UF" >    
                                     </div>
                                 </div>
 
@@ -399,7 +399,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Pais do Paciente</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_cliente" id="nome_cliente" class="form-control" autocomplete="off"  placeholder="pais">    
+                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="pais">    
                                     </div>
                                 </div>
 
