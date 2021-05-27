@@ -241,7 +241,7 @@ if(empty($_SESSION['lg'])) {
               <!--Início da coluna-->         
                    <div class="col-md-2 col-md-offset-1">
                                                                            
-                              <form action=""  method="POST">
+                              <form action=""  method="POST" name="actionJava">
 
                                 <div class="form-group">
                                     <div class="   col">
@@ -254,10 +254,13 @@ if(empty($_SESSION['lg'])) {
                                            onblur="validar(getElementById('cpf_cnpj').value)"  
                                         autocomplete="off" value="<?php echo $item['cpf_user']; ?>" >
 
-                                        <!-- <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs" class="form-control" autocomplete="off"  placeholder="cod UBS" value="1" > -->
+                                      <input type="hidden" name="usuario_ubs_cod_ubs" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
+                                    placeholder="cod UBS" value="1" >
+                                    <input type="hidden" name="usuario_cod_user" id="usuario_cod_user" class="form-control" autocomplete="off" 
+                                  placeholder="cod UBS" value="<?php  echo $item ['cod_user']; ?>" >
 
-                                    </div>
                                 </div>
+                            </div>
 
                    <!--Fim da coluna-->            
                  </div>  
@@ -561,7 +564,7 @@ if(empty($_SESSION['lg'])) {
 
                           
                        <!--Botão para cadastrar-->
-                       <button type="submit" class="btn btn-success">Cadastrar</button>
+                       <button type="submit" class="btn btn-success" onclick="selecionaAction('insert_pac');">Cadastrar</button>
 
                       
                       </form>
