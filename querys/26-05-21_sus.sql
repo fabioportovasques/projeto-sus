@@ -14,8 +14,8 @@ SELECT * FROM paciente;
 
 INSERT INTO usuario( nome_user,sobrenome_user,data_nascimento_user,cpf_user,rg_user,rua_user,bairro_user,cidade_user,cep_user,
                     uf_user,pais_user,email_user,telefone1_user,telefone2_user,cartao_sus,numero_casa,sexo_user,senha,ubs_cod_ubs,status) VALUES (
-"teste2","teste2","1987-11-17","12345678","1096853931","joaquim gasso borges","pedra branca","bagé","9641884070",
-"rs","Brasil","fabioportovasques321@gmail.com","53999367651","","423432","841","m",md5("224460"),'1',"A"
+"Gieder3","Loreto","1987-11-17","15","0987455","joaquim gasso borges","pedra branca","bagé","9641884070",
+"rs","Brasil","fabioportovasques321@gmail.com","53999367651","","4234324666545","841","m",md5("224460"),'1',"A"
 );
 
 

@@ -9,18 +9,19 @@ SELECT * FROM agenda_ubs;
 SELECT * FROM agenda_ue;
 SELECT * FROM medico_atende_ubs;
 SELECT * FROM usuario;
+SELECT * FROM permissao;
+SELECT * FROM paciente;
 
+SELECT * FROM paciente WHERE cpf_pac = '02041884070';
 
-INSERT INTO usuario (usuario,senha,status) VALUES ("Gieder",
-md5("224460"),"A");
+INSERT INTO usuario (usuario,senha,status) VALUES ("teste",
+md5("123456"), "I");
 
 INSERT INTO `central_reguladora` (`cod_cr`, `nome_cr`, `rua_cr`, `numero_rua_cr`, `bairro_cr`, `cidade_cr`, `email_cr`, `uf_cr`) VALUES
 (1, 'teste', 'sete de setembro', '795', 'centro', 'Porto Alegre', 'teste@gmail.com', 'rs');
 
 INSERT INTO `especialidade` (`cod_especialidade`, `nome_especialidade`, `descricao_especialidade`) VALUES
-(1, 'neurologista', 'especialista que trata doenças no cérebro e medula espinhal'),
-(2, 'Anestesiologia', 'é a especialidade médica que estuda e proporciona ausência ou alívio da dor'),
-(3, 'Dermatologia', 'trata doenças da pele');
+(null,"ginecologista", "trata a saúde do aparelho reprodutor feminino");
 
 
 

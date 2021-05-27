@@ -1,4 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
 
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+</body>
+</html>
 
 
 <?php
@@ -44,17 +58,14 @@ if (isset($_POST['cpf_user']) && !empty($_POST['cpf_user'])) {
     } else {
 
 
-        ?>
-        <script>
-            {
-                alert("Usuário não encontrado");
-                window.location="index.php";
-            }
-        </script>
-        <?php 
+
+                print '<div class="alert alert-warning" role="alert">
+                        Usuário ou Senha incorretos!
+                        </div>';
+                print '<script>window.setTimeout(function(){window.location=\'index.php\';}, 2000);</script>';
 
 
-
+        
 
      } 
         

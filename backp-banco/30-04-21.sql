@@ -1,6 +1,8 @@
 
 SELECT * FROM `medico` ;
 
+SELECT * FROM agenda_ubs;
+
 SELECT * FROM especialidade ;
 
 SELECT * 
@@ -36,8 +38,8 @@ SELECT
 * 
 FROM especialidade espec 
 inner join medico m 
-on
-especialidade.cod-especialidade  = m.cod-medico
+on 
+m.cod-medico  = espec.cod-especialidade
 inner join especialidade_has_medico e
 on
 e.medico_cod-medico = m.cod-medico
