@@ -31,7 +31,7 @@
 
 		//conexão banco de dados
 
-		$this -> pdo = new PDO("mysql:dbname=bd-sus;host=localhost","root","F@bio102030");
+		$this -> pdo = new PDO("mysql:dbname=sus;host=localhost","root","F@bio102030");
 	
 		}
 
@@ -42,20 +42,19 @@
 
 					$sql = "
 				
-						select m.cod_medico, m.nome_medico,sobrenome_medico,a.hora_agendamento,a.num_fichas,
-							a.data_agendamento,m.cidade_medico, u.cod_ubs, u.bairro_ubs,e.nome_especialidade,
+					select  a.hora_agendamento,a.num_fichas,user.nome_user AS 'nome do medico',
+							a.data_agendamento,u.cod_ubs, u.bairro_ubs,e.nome_especialidade,
 							u.nome_ubs AS 'lOCAL DE ATENDIMENTO'
-						from
+					from
 							medico m 
-						inner join medico_atende_ubs me on m.cod_medico = me.medico_cod_medico
-						inner join ubs u on u.cod_ubs = me.ubs_cod_ubs
-						inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
-						inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
-						inner join agenda_ubs a on a.cod_agenda = espec.especialidade_cod_especialidade
-						where 
-							cod_ubs='1' AND status_agenda ='a'
-
-						;
+					inner join medico_atende_ubs me on m.cod_medico = me.medico_cod_medico
+					inner join ubs u on u.cod_ubs = me.ubs_cod_ubs
+					inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
+					inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
+					inner join agenda_ubs a on a.cod_agenda = espec.especialidade_cod_especialidade
+					inner join usuario user on  user.cod_user = m.usuario_cod_user
+							where cod_ubs='1' AND status_agenda ='A'
+							;
 
 						";
 						

@@ -243,7 +243,7 @@ if(empty($_SESSION['lg'])) {
                 <tr>
                   
                   <td><?php echo $item['nome_especialidade']; ?></td>
-                  <td><?php echo $item['nome_medico']; ?></td>
+                  <td><?php echo $item['nome do medico']; ?></td>
                   
                   <td>
                     <?php 

@@ -60,7 +60,7 @@ if (isset($_POST['cpf_user']) && !empty($_POST['cpf_user'])) {
 
 
                 print '<div class="alert alert-warning" role="alert">
-                        Usuário ou Senha incorretos!
+                        Usuário ou Senha Incorretos!
                         </div>';
                 print '<script>window.setTimeout(function(){window.location=\'index.php\';}, 2000);</script>';
 
