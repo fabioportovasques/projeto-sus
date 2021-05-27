@@ -39,37 +39,15 @@
 
 		
 
-		public function adicionar ($nome_pac,$sobrenome_pac,$data_nascimento_pac,
-		$cpf_pac,$rg_pac,$rua_pac,$bairro_pac,$cidade_pac,$cep_pac,
-		$uf_pac,$pais_pac,$email_pac,$telefone1_pac,$telefone2_pac,$cartao_sus,$numero_casa,
-		$sexo_pac,$ubs_cod_ubs,$senha) {
-			if($this->verificaCpf($cpf_pac) == false) {
-					$sql = $this->pdo->prepare("INSERT INTO paciente SET nome_pac = :nome_pac,sobrenome_pac =:sobrenome_pac,
-					data_nascimento_pac=:data_nascimento_pac,cpf_pac=:cpf_pac,rg_pac=:rg_pac,rua_pac=:rua_pac,bairro_pac=:bairro_pac,
-					cidade_pac=:cidade_pac,cep_pac=:cep_pac,uf_pac=:uf_pac,pais_pac=:pais_pac,email_pac=:email_pac,telefone1_pac=:telefone1_pac,
-					telefone2_pac=:telefone2_pac,cartao_sus=:cartao_sus,numero_casa=:numero_casa,sexo_pac=:sexo_pac,ubs_cod_ubs=:ubs_cod_ubs,
-					senha = MD5(:senha)");
+		public function adicionar ($usuario_ubs_cod_ubs,$usuario_cod_user) {
+			if($this->verificaCpf($cpf_user) == false) {
+					$sql = $this->pdo->prepare("INSERT INTO paciente SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user
+					");
 					
 
-					$sql->bindParam(":nome_pac",$nome_pac);
-					$sql->bindParam(":sobrenome_pac",$sobrenome_pac);
-					$sql->bindParam(":data_nascimento_pac",$data_nascimento_pac);
-					$sql->bindParam(":cpf_pac",$cpf_pac);
-					$sql->bindParam(":rg_pac",$rg_pac);
-					$sql->bindParam(":rua_pac",$rua_pac);
-					$sql->bindParam(":bairro_pac",$bairro_pac);
-					$sql->bindParam(":cidade_pac",$cidade_pac);
-					$sql->bindParam(":cep_pac",$cep_pac);
-					$sql->bindParam(":uf_pac",$uf_pac);
-					$sql->bindParam(":pais_pac",$pais_pac);
-					$sql->bindParam(":email_pac",$email_pac);
-					$sql->bindParam(":telefone1_pac",$telefone1_pac);
-					$sql->bindParam(":telefone2_pac",$telefone2_pac);
-					$sql->bindParam(":cartao_sus",$cartao_sus);
-					$sql->bindParam(":numero_casa",$numero_casa);
-					$sql->bindParam(":sexo_pac",$sexo_pac);
-					$sql->bindParam(":ubs_cod_ubs",$ubs_cod_ubs);
-					$sql->bindParam(":senha",$senha);
+					$sql->bindParam(":usuario_ubs_cod_ubs",$usuario_ubs_cod_ubs);
+					$sql->bindParam(":usuario_cod_user",$usuario_cod_user);
+					
 					$sql->execute();
 			
 				print '<div class="alert alert-success" role="alert">
@@ -93,11 +71,11 @@
 			}	
 				
 
-			private function verificaCpf ($cpf_pac) {
+			private function verificaCpf ($cpf_user) {
 
-			$sql = "select * FROM paciente WHERE cpf_pac = :cpf_pac";
+			$sql = "select * FROM usuario WHERE cpf_user = :cpf_user";
 			$sql = $this->pdo->prepare($sql);
-			$sql->bindValue(':cpf_pac', $cpf_pac);
+			$sql->bindValue(':cpf_user', $cpf_user);
 			$sql->execute();
 
 			if($sql->rowCount() > 0) {

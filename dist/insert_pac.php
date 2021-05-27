@@ -15,11 +15,10 @@
 		$usuario_ubs_cod_ubs = $_POST['usuario_ubs_cod_ubs'];
 		$usuario_cod_user = $_POST['usuario_cod_user'];
 		
-		echo $usuario_ubs_cod_ubs;
-		echo $usuario_cod_user;
+		
 					
 
-		$usuario ->adicionar($usuario_ubs_cod_ubs,$usuario_cod_user);
+		$paciente ->adicionar($usuario_ubs_cod_ubs,$usuario_cod_user);
 
 
 		
