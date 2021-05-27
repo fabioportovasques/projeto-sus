@@ -7,17 +7,9 @@ if(empty($_SESSION['lg'])) {
 }
 
 
-        require 'agendamento.class.php';
 
-        $agendamento = new Agendamento();
 
-       $lista = $agendamento->select();
-          foreach ($lista as $item):
-          
-    ?>
-
-                <?php endforeach;  ?>
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,12 +30,41 @@ if(empty($_SESSION['lg'])) {
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--link para ajax-->
+         <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script> 
+         <script type="text/javascript" src="./js/script2.js"></script>   
+
          <!--javascript para API IBGE Valida cep-->
         <script type="text/javascript" src="./js/validaCep.js"></script>
             <!--javascript para validar CPF/CNPJ-->
          <script type="text/javascript" src="./js/validaCpfCnpj.js"></script>
            <!--javascript para mascara  CPF/CNPJ-->
          <script src="https://unpkg.com/imask"></script>
+
+
+     
+     <script>
+
+     
+              $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+        });
+
+        /*
+            Função do botão que navega entre as paginas (tab)
+          
+        */
+
+        /*
+
+        $('button').click(function(){
+        $('a[href="#dados-acesso"]').tab('show');
+        })
+
+      */
+
+    </script>
+
 
          <!--multiplos submit-->
               <script type="text/javascript">
@@ -53,18 +74,7 @@ if(empty($_SESSION['lg'])) {
                 }
 
            </script>
-
-     <script>
-        $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();   
-        });
-
-
-        $('button').click(function(){
-        $('a[href="#home"]').tab('show');
-        })
-
-    </script>   
+   
 
         <!--Link para icones-->
        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
@@ -92,7 +102,7 @@ if(empty($_SESSION['lg'])) {
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             </form>
-           <div class="menu" style = "color: #ffffff "><?php include 'listar.php';  ?></div>
+        <div class="menu" style = "color: #ffffff "><?php include 'listar.php';  ?></div>
 
 
     <ul class="navbar-nav ml-auto ml-md-0">
@@ -152,7 +162,7 @@ if(empty($_SESSION['lg'])) {
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="cad-medico.php">Médicos</a>
+                                    <a class="nav-link" href="cad-medico.php" id="medico">Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Pacientes</a>
                                       <a class="nav-link" href="cad-agendamento.php">Agendamentos</a>
 
@@ -177,7 +187,7 @@ if(empty($_SESSION['lg'])) {
 
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="cad-pac.php">
+                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
                                         Pacientes
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
@@ -203,10 +213,11 @@ if(empty($_SESSION['lg'])) {
       
                 </div>
                 <br />
-              
+       
+  <div id="pagina">            
 
 <!--CONTEUDO DO MEIO -->
-  <div class="container">
+  <div class="container ">
 
                 <br />
                 <br />
@@ -214,71 +225,148 @@ if(empty($_SESSION['lg'])) {
                 <br />
                  
     
-            <h2>Agendamento de Consultas</h2><br />
-          
+          <h3 align="center">Agendamento</h3>
           <br />
+          
+                   
+                   <!--Início da coluna-->         
+                   <div class="col-md-2 col-md-offset-1">
+                                                                           
+                              <form action="insert_pac.php"  method="POST">
 
-              <p class="text-center text-sm-left">Agendamentos</p>
-  <hr />
-  <br />
-  <div class="table-responsive-sm">
-    <form method="POST" action="add_consulta.php">
-      <table class="table">
-          <thead class="thead-light">
-            <tr>
+                                <div class="form-group">
+                                    <div class="   col">
+                                        <label > CPF </label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="cpf_pac" id="cpf_pac" class="form-control" autocomplete="off" 
+                                         placeholder="CPF" required="" value="<?php echo $item ['cpf_user']; ?>" >    
+                                         <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs" class="form-control" autocomplete="off"  placeholder="cod UBS" value="1" >    
+
+
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>  
+
+
+                 <!--Início da coluna-->         
+                     <div class="col-md-2 ">
+                          
+                                <div class="form-group">
+                                    <div class="col">                                        
+                                       <span class="campo-obrigatorio"></span>
+                                          <button type="submit" class="btn btn-success" data-toggle="tooltip"  title="Pesquise Aqui"
+                                             style="position: absolute;left: 40px;top: 30px;width: 100px">
+                                               <i class="glyphicon glyphicon-search" style="color:#ffffff;"></i></button>
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
               
-              <th scope="col">Nome Especialidade</th>
-              <th scope="col">Nome Médico</th>
-              <th scope="col">Data da Consulta</th>
-              <th scope="col">Horário Consulta</th>
-              <th scope="col">Fichas Disponíveis</th>
-              <th scope="col" colspan="2">Ações</th>
 
-            </tr>
-          </thead>
-            <tbody>
+                   <!--Início da coluna-->         
+                   <div class="col-md-4 ">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Data Agendamento </label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="date" name="data_agendamento" id="data_agendamento" class="form-control" autocomplete="off"
+                                        value="<?php echo $item ['data_agendamento']; ?>" required="">    
+                                    </div>
+                                </div>
 
-              <?php foreach ($lista as $item){
-            ?>
-                <tr>
-                  
-                  <td><?php echo $item['nome_especialidade']; ?></td>
-                  <td><?php echo $item['nome do medico']; ?></td>
-                  
-                  <td>
-                    <?php 
-                       echo date('d/m/Y', strtotime($item['data_agendamento']));
-                      ?>
-                  </td>
-                  <td><?php echo $item['hora_agendamento']; ?></td>
+                   <!--Fim da coluna-->            
+                 </div>     
 
-                  <td><?php echo $item['num_fichas']; ?></td>
+                  <!--Início da coluna-->         
+                   <div class="col-md-3 ">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Hora </label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="time" name="hora_agendamento" id="hora_agendamento" class="form-control" data-toggle="tooltip"  title="Insira horario" autocomplete="off"
+                                        value="<?php echo $item ['hora_agendamento']; ?>"  >    
+                                    </div>
+                                </div>
 
-                  <td><button  class="btn btn-success btn-block icones" type="submit"><i class="fas fa-calendar-check"></i>&nbsp &nbspAgendar</button></td>
-                  
-                </tr>
+                   <!--Fim da coluna-->            
+                 </div>     
 
-                <?php
-            }
-            ?>
-            
-            </tbody>
-          </form>
+                    <!--Início da coluna-->         
+                   <div class="col-md-4 col-md-offset-1">
+                           
+                                <div class="form-group ">
+                                    <div class="   col">
+                                        <label > Fichas</label>
+                                       <span class="campo-obrigatorio"></span>
+                                        <input type="number" name="num_fichas" id="num_fichas" class="form-control" autocomplete="off"
+                                        value="<?php echo $item ['num_fichas']; ?>"  placeholder="Fichas">    
+                                    </div>
+                                </div>
 
-    </table> 
-       
-  
+                   <!--Fim da coluna-->            
+                 </div>  
+
+                   <!--Início da coluna-->         
+                   <div class="col-md-4">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label >Status</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                       <input type="text" name="status_agenda" id="status_agenda" class="form-control" autocomplete="off"
+                                       value="<?php echo $item ['status_agenda']; ?>"  placeholder="Status">    
+                                    </div>
+                                </div>
+
+
+                   <!--Fim da coluna-->            
+
+                 </div> 
+
+                 
+                 
+
+                    
+
+                
+             <!-- inicio da coluna-->
+               <div class="col-md-6 col-md-offset-1">
+
+
+                      <br />
+                      <br />
+                          
+                       <!--Botão para navegar até a próxima página-->
+                       <button class="btn btn-success">Cancelar </button>             
+
+                          
+                       <!--Botão para cadastrar-->
+                       <button type="submit" class="btn btn-success">Cadastrar</button>
+
+                      
+                      </form>
+                     
+                   <!--Fim da coluna-->            
+                 </div> 
+
+                              
+         </div> 
 
 
 
+        <!-- fim da tab-->
+        </div>
+      
 
-
-
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
 </div>
+
+
+
 
 
 </div>
