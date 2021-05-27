@@ -217,7 +217,7 @@ if(empty($_SESSION['lg'])) {
   <div id="pagina">            
 
 <!--CONTEUDO DO MEIO -->
-  <div class="container">
+  <div class="container ">
 
                 <br />
                 <br />
@@ -225,28 +225,21 @@ if(empty($_SESSION['lg'])) {
                 <br />
                  
     
-            <h2>Cadastro De Pacientes</h2><br />
-            <ul class="nav nav-pills flex-column flex-sm-row">
-                  <li class="active"><a data-toggle="tab" href="#dados-pessoais">Dados Pessoais</a></li>
-                  <li><a data-toggle="tab" href="#dados-acesso">Dados de Acesso</a></li>
-            </ul>
-             <div class="tab-content">
-               <div id="dados-pessoais" class="tab-pane fade in active">
-
-          <h3>Dados Pessoais</h3>
+          <h3 align="center">Cadastro de Pacientes</h3>
           <br />
           
                    
               <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-4 col-md-offset-1">
                                                                            
                               <form action="insert_pac.php"  method="POST">
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Nome </label>
+                                        <label > CPF </label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_pac" id="nome_pac" class="form-control" autocomplete="off"  placeholder="Nome" required="" >    
+                                        <input type="text" name="cpf_pac" id="cpf_pac" class="form-control" autocomplete="off" 
+                                         placeholder="Nome" required="" value="<?php echo $item ['cpf_user']; ?>" >    
                                          <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs" class="form-control" autocomplete="off"  placeholder="cod UBS" value="1" >    
 
 
@@ -257,13 +250,14 @@ if(empty($_SESSION['lg'])) {
                  </div>  
 
                    <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-4 ">
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Sobrenome </label>
+                                        <label > Nome </label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="sobrenome_pac" id="sobrenome_pac" class="form-control" autocomplete="off"  placeholder="Sobrenome" required="">    
+                                        <input type="text" name="nome_pac" id="nome_pac" class="form-control" autocomplete="off"
+                                        value="<?php echo $item ['nome_user']; ?>"  placeholder="Nome" required="">    
                                     </div>
                                 </div>
 
@@ -271,13 +265,14 @@ if(empty($_SESSION['lg'])) {
                  </div>     
 
                   <!--Início da coluna-->         
-                   <div class="col-md-3">
+                   <div class="col-md-3 ">
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > E-mail</label>
+                                        <label > Sobrenome</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="email" name="email_pac" id="email_pac" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"  placeholder="E-mail">    
+                                        <input type="email" name="sobrenome_pac" id="email_pac" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"
+                                        value="<?php echo $item ['sobrenome_user']; ?>"  placeholder="Sobrenome">    
                                     </div>
                                 </div>
 
@@ -285,13 +280,14 @@ if(empty($_SESSION['lg'])) {
                  </div>     
 
                     <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-4 col-md-offset-1">
                            
-                                <div class="form-group">
+                                <div class="form-group ">
                                     <div class="   col">
                                         <label > Data de Nascimento</label>
                                        <span class="campo-obrigatorio"></span>
-                                        <input type="date" name="data_nascimento_pac" id="data_nascimento_pac" class="form-control" autocomplete="off"  placeholder="Nome">    
+                                        <input type="date" name="data_nascimento_pac" id="data_nascimento_pac" class="form-control" autocomplete="off"
+                                        value="<?php echo $item ['data_nascimento_user']; ?>"  placeholder="Nome">    
                                     </div>
                                 </div>
 
@@ -305,7 +301,8 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label >sexo</label>
                                        <span class="campo-obrigatorio">*</span>
-                                       <input type="text" name="sexo_pac" id="sexo_pac" class="form-control" autocomplete="off"  placeholder="Telefone 2">    
+                                       <input type="text" name="sexo_pac" id="sexo_pac" class="form-control" autocomplete="off"
+                                       value="<?php echo $item ['sexo_user']; ?>"  placeholder="Telefone 2">    
                                     </div>
                                 </div>
 
@@ -320,15 +317,34 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Cartão SUS</label>
+                                        <label > Email</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="cartao_sus" id="cartao_sus" class="form-control" autocomplete="off"  placeholder="Cartão SUS" required="">    
+                                        <input type="text" name="email_user" id="email_user" class="form-control" autocomplete="off" 
+                                        value="<?php echo $item ['email_user']; ?>" placeholder="Email" required="">    
                                     </div>
                                 </div>
 
                    <!--Fim da coluna-->            
                  </div> 
 
+
+                     <!--Início da coluna-->         
+                   <div class="col-md-4 col-md-offset-1">
+                  
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label >Cartão Sus</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="cartao_sus" id="cartao_sus" class="form-control" autocomplete="off"
+                                          value="<?php echo $item ['cartao_sus']; ?>" placeholder="Cartão Sus">    
+                                    </div>
+                                </div>
+
+
+                   <!--Fim da coluna-->            
+
+                 </div>  
 
                      <!--Início da coluna-->         
                    <div class="col-md-4">
@@ -337,23 +353,8 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label >Telefone 1</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="telefone1_pac" id="telefone1_pac" class="form-control" autocomplete="off"  placeholder="Telefone 1">    
-                                    </div>
-                                </div>
-
-
-                   <!--Fim da coluna-->            
-
-                 </div>  
-
-                     <!--Início da coluna-->         
-                   <div class="col-md-4">
-                          
-                                <div class="form-group">
-                                    <div class="col">
-                                        <label >Telefone 2</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                       <input type="text" name="telefone2_pac" id="telefone2_pac" class="form-control" autocomplete="off"  placeholder="Telefone 2">    
+                                       <input type="text" name="telefone1_pac" id="telefone1_pac" class="form-control" autocomplete="off" 
+                                       value="<?php echo $item ['telefone1_user']; ?>" placeholder="Telefone 2">    
                                     </div>
                                 </div>
 
@@ -367,26 +368,29 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > CEP </label>
+                                        <label >Telefone 2</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="cep_pac" id="cep_pac" class="form-control" autocomplete="off"  placeholder="CEP"  >    
+                                       <input type="text" name="telefone2_pac" id="telefone2_pac" class="form-control" autocomplete="off" 
+                                       value="<?php echo $item ['telefone2_user']; ?>" placeholder="Telefone 2">    
                                     </div>
                                 </div>
 
-                   <!--Fim da coluna-->            
-                 </div>     
+
+                 <!-- Fim da coluna -->
+                 </div> 
 
 
                     <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-4 col-md-offset-1">
                                                                            
                             
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Cidade</label>
+                                        <label > CEP</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="cidade_pac" id="cidade_pac" class="form-control" autocomplete="off"  placeholder="Cidade"  >    
+                                        <input type="text" name="cpf_user" id="cpf_user" class="form-control" autocomplete="off" 
+                                        value="<?php echo $item ['cep_user']; ?>" placeholder="CEP"  >    
                                     </div>
                                 </div>
 
@@ -402,9 +406,10 @@ if(empty($_SESSION['lg'])) {
 
                                 <div class="form-group">
                                     <div class="   col">
-                                        <label > Rua</label>
+                                        <label > Cidade</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="rua_pac" id="rua_pac" class="form-control" autocomplete="off"  placeholder="Rua">    
+                                        <input type="text" name="cidade_user" id="cidade_user" class="form-control" autocomplete="off" 
+                                        value="<?php echo $item ['cidade_user']; ?>" placeholder="Cidade">    
                                     </div>
                                 </div>
 
@@ -416,10 +421,10 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Bairro</label>
+                                        <label > Rua</label>
                                        <span class="campo-obrigatorio">*</span>
-
-                                        <input type="text" name="bairro_pac" id="bairro_pac" class="form-control" autocomplete="off"  placeholder="Bairro" >    
+                                        <input type="text" name="rua_user" id="rua_user" class="form-control" autocomplete="off" 
+                                        value="<?php echo $item ['rua_user']; ?>" placeholder="Rua" >    
                                     </div>
                                 </div>
 
@@ -428,13 +433,14 @@ if(empty($_SESSION['lg'])) {
  
               
                    <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-4 col-md-offset-1">
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > UF </label>
+                                        <label > Bairro </label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="uf_pac" id="uf_pac" class="form-control" autocomplete="off"  placeholder="UF" >    
+                                        <input type="text" name="bairro_user" id="bairro_user" class="form-control" autocomplete="off"
+                                        value="<?php echo $item ['bairro_user']; ?>"  placeholder="Bairro" >    
 
 
                                     </div>
@@ -448,10 +454,10 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Pais </label>
+                                        <label > UF </label>
                                        <span class="campo-obrigatorio">*</span>
-
-                                        <input type="text" name="pais_pac" id="pais_pac" class="form-control" autocomplete="off"  placeholder="pais">    
+                                        <input type="text" name="uf_user" id="uf_user" class="form-control" autocomplete="off"
+                                        value="<?php echo $item ['uf_user']; ?>"  placeholder="UF">    
 
                                     </div>
                                 </div>
@@ -467,40 +473,28 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > RG </label>
+                                        <label > País </label>
                                        <span class="campo-obrigatorio"></span>
-                                        <input type="text" name="rg_pac" id="rg_pac" class="form-control" autocomplete="off"  placeholder="RG" required="">    
+                                        <input type="text" name="pais_user" id="pais_user" class="form-control" autocomplete="off" 
+                                        value="<?php echo $item ['pais_user']; ?>" placeholder="País" required="">    
                                     </div>
                                 </div>
 
-                                
-               <br />
-               <br />
 
                    <!--Fim da coluna-->            
                  </div>     
 
 
-
-
-              <!-- Fim da TAB-->    
-             </div>
-
-
-    
-
-        <div id="dados-acesso" class="tab-pane fade">
-          <h3>Dados de Acesso</h3>
-
                  
                <!--Início da coluna-->         
-                   <div class="col-md-6">
+                   <div class="col-md-4 col-md-offset-1">
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > CPF</label>
+                                        <label > RG</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="cpf_pac" id="cpf_pac" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"  placeholder="CPF" required="">    
+                                        <input type="text" name="rg_user" id="rg_pac" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"
+                                         value="<?php echo $item ['rg_user']; ?>" placeholder="RG" required="">    
                                     </div>
                                 </div>
 
@@ -508,25 +502,26 @@ if(empty($_SESSION['lg'])) {
                  </div>    
 
 
-                  <!--Início da coluna-->         
-                   <div class="col-md-5">
+                 <!--Início da coluna-->         
+                   <div class="col-md-4 ">
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Senha</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="password" name="senha" id="senha" class="form-control" data-toggle="tooltip"  title="Insira uma senha segura" autocomplete="off"  placeholder="****" required="">    
+                                        <label > Número da Casa</label>
+                                       <span class="campo-obrigatorio"></span>
+                                        <input type="text" name="numero_casa" id="numero_casa" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"
+                                         value="<?php echo $item ['numero_casa']; ?>" placeholder="Número da Casa" required="">    
                                     </div>
                                 </div>
 
                    <!--Fim da coluna-->            
-                 </div>   
+                 </div> 
 
                     
 
                 
              <!-- inicio da coluna-->
-               <div class="col-md-6">
+               <div class="col-md-6 col-md-offset-1">
 
 
                       <br />
