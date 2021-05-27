@@ -230,7 +230,7 @@ if(empty($_SESSION['lg'])) {
           
                    
               <!--Início da coluna-->         
-                   <div class="col-md-4 col-md-offset-1">
+                   <div class="col-md-2 col-md-offset-1">
                                                                            
                               <form action="insert_pac.php"  method="POST">
 
@@ -239,7 +239,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > CPF </label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="cpf_pac" id="cpf_pac" class="form-control" autocomplete="off" 
-                                         placeholder="Nome" required="" value="<?php echo $item ['cpf_user']; ?>" >    
+                                         placeholder="CPF" required="" value="<?php echo $item ['cpf_user']; ?>" >    
                                          <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs" class="form-control" autocomplete="off"  placeholder="cod UBS" value="1" >    
 
 
@@ -248,6 +248,22 @@ if(empty($_SESSION['lg'])) {
 
                    <!--Fim da coluna-->            
                  </div>  
+
+
+                 <!--Início da coluna-->         
+                     <div class="col-md-2 ">
+                          
+                                <div class="form-group">
+                                    <div class="col">                                        
+                                       <span class="campo-obrigatorio"></span>
+                                          <button type="submit" class="btn btn-success" data-toggle="tooltip"  title="Pesquise Aqui"
+                                             style="position: absolute;left: 40px;top: 30px;width: 100px">
+                                               <i class="glyphicon glyphicon-search" style="color:#ffffff;"></i></button>
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
 
                    <!--Início da coluna-->         
                    <div class="col-md-4 ">
@@ -493,7 +509,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > RG</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="rg_user" id="rg_pac" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"
+                                        <input type="text" name="rg_user" id="rg_pac" class="form-control" data-toggle="tooltip"  title="Insira seu RG" autocomplete="off"
                                          value="<?php echo $item ['rg_user']; ?>" placeholder="RG" required="">    
                                     </div>
                                 </div>
