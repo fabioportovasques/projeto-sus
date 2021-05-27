@@ -6,10 +6,19 @@ if(empty($_SESSION['lg'])) {
     exit;
 }
 
+   require 'paciente.class.php';
+
+          $paciente = new Paciente();
+
+         $lista = $paciente->pesquisar();
+            foreach ($lista as $item):
+
+
+  ?>
+  <?php endforeach; ?>
 
 
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -232,16 +241,20 @@ if(empty($_SESSION['lg'])) {
               <!--Início da coluna-->         
                    <div class="col-md-2 col-md-offset-1">
                                                                            
-                              <form action="insert_pac.php"  method="POST">
+                              <form action=""  method="POST">
 
                                 <div class="form-group">
                                     <div class="   col">
                                         <label > CPF </label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="cpf_pac" id="cpf_pac" class="form-control" autocomplete="off" 
-                                         placeholder="CPF" required="" value="<?php echo $item ['cpf_user']; ?>" >    
-                                         <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs" class="form-control" autocomplete="off"  placeholder="cod UBS" value="1" >    
+                                         <input type="text" name="cpf_user" id=""
+                                           class="form-control" target="_blank" data-toggle="tooltip"  
+                                             title="Insira um CPF/CNPJ Válido no formato(00000000000000) 
+                                            sem espaço ou pontos" placeholder="CPF" 
+                                           onblur="validar(getElementById('cpf_cnpj').value)"  
+                                        autocomplete="off" value="<?php echo $item['cpf_user']; ?>" >
 
+                                        <!-- <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs" class="form-control" autocomplete="off"  placeholder="cod UBS" value="1" > -->
 
                                     </div>
                                 </div>
@@ -256,9 +269,9 @@ if(empty($_SESSION['lg'])) {
                                 <div class="form-group">
                                     <div class="col">                                        
                                        <span class="campo-obrigatorio"></span>
-                                          <button type="submit" class="btn btn-success" data-toggle="tooltip"  title="Pesquise Aqui"
-                                             style="position: absolute;left: 40px;top: 30px;width: 100px">
-                                               <i class="glyphicon glyphicon-search" style="color:#ffffff;"></i></button>
+                                          <button type="submit" name="pesquisar" value="pesquisar" class="btn btn-success" data-toggle="tooltip"   title="Pesquise Aqui"
+                                              style="position: absolute;left: 40px;top: 30px;width: 100px">
+                                                <i class="glyphicon glyphicon-search" style="color:#ffffff;"></i></button>
                                     </div>
                                 </div>
 
@@ -273,7 +286,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > Nome </label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_pac" id="nome_pac" class="form-control" autocomplete="off"
-                                        value="<?php echo $item ['nome_user']; ?>"  placeholder="Nome" required="">    
+                                        value="<?php echo $item ['nome_user']; ?>"  placeholder="Nome">    
                                     </div>
                                 </div>
 
@@ -287,7 +300,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Sobrenome</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="email" name="sobrenome_pac" id="email_pac" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"
+                                        <input type="email" name="sobrenome_user" id="sobrenome_user" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"
                                         value="<?php echo $item ['sobrenome_user']; ?>"  placeholder="Sobrenome">    
                                     </div>
                                 </div>
@@ -336,7 +349,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > Email</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="email_user" id="email_user" class="form-control" autocomplete="off" 
-                                        value="<?php echo $item ['email_user']; ?>" placeholder="Email" required="">    
+                                        value="<?php echo $item ['email_user']; ?>" placeholder="Email">    
                                     </div>
                                 </div>
 
@@ -405,7 +418,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="   col">
                                         <label > CEP</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="cpf_user" id="cpf_user" class="form-control" autocomplete="off" 
+                                        <input type="text" name="cep_user" id="cep_user" class="form-control" autocomplete="off" 
                                         value="<?php echo $item ['cep_user']; ?>" placeholder="CEP"  >    
                                     </div>
                                 </div>
@@ -492,7 +505,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > País </label>
                                        <span class="campo-obrigatorio"></span>
                                         <input type="text" name="pais_user" id="pais_user" class="form-control" autocomplete="off" 
-                                        value="<?php echo $item ['pais_user']; ?>" placeholder="País" required="">    
+                                        value="<?php echo $item ['pais_user']; ?>" placeholder="País">    
                                     </div>
                                 </div>
 
@@ -510,7 +523,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > RG</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="rg_user" id="rg_pac" class="form-control" data-toggle="tooltip"  title="Insira seu RG" autocomplete="off"
-                                         value="<?php echo $item ['rg_user']; ?>" placeholder="RG" required="">    
+                                         value="<?php echo $item ['rg_user']; ?>" placeholder="RG">    
                                     </div>
                                 </div>
 
@@ -526,7 +539,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > Número da Casa</label>
                                        <span class="campo-obrigatorio"></span>
                                         <input type="text" name="numero_casa" id="numero_casa" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"
-                                         value="<?php echo $item ['numero_casa']; ?>" placeholder="Número da Casa" required="">    
+                                         value="<?php echo $item ['numero_casa']; ?>" placeholder="Número da Casa">    
                                     </div>
                                 </div>
 
@@ -590,8 +603,22 @@ if(empty($_SESSION['lg'])) {
 
 
     </body>
+ </body>
 
-     
-</script> 
+     <!--javascript para mascara  CPF/CNPJ-->
+     <script type="text/javascript">
+        var maskCpfOuCnpj = IMask(document.getElementById('cpf_cnpj'), {
+    mask:[
+        {
+            mask: '000.000.000-00',
+            maxLength: 11
+        },
+        {
+            mask: '00.000.000/0000-00'
+        }
+    ]
+});
+</script>
+
 
 </html>
