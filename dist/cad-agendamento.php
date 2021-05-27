@@ -271,7 +271,7 @@ if(empty($_SESSION['lg'])) {
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Data Agendamentoo </label>
+                                        <label > Data Agendamento </label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="date" name="data_agendamento" id="data_agendamento" class="form-control" autocomplete="off"
                                         value="<?php echo $item ['data_agendamento']; ?>" required="">    
