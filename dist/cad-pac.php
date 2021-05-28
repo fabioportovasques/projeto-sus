@@ -6,7 +6,7 @@ if(empty($_SESSION['lg'])) {
     exit;
 }
 
-   require 'paciente.class.php';
+   require 'modelo/paciente.class.php';
 
           $paciente = new Paciente();
 
