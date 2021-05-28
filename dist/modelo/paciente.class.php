@@ -40,7 +40,7 @@
 		
 
 		public function adicionar ($usuario_ubs_cod_ubs,$usuario_cod_user) {
-			if($this->verificaCpf($cpf_user) == false) {
+			if($this->verificaCpf($usuario_cod_user) == false) {
 					$sql = $this->pdo->prepare("INSERT INTO paciente SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user
 					");
 					
@@ -58,7 +58,7 @@
 				} else {
 					
 				print '<div class="alert alert-warning" role="alert">
-						CPF Já Existe!
+						Usuário já é um Paciente!
 						</div>';
 				print '<script>window.setTimeout(function(){window.location=\'cad-pac.php\';}, 2000);</script>';
 
@@ -71,11 +71,11 @@
 			}	
 				
 
-			private function verificaCpf ($cpf_user) {
+			private function verificaCpf ($usuario_cod_user) {
 
-			$sql = "select * FROM usuario WHERE cpf_user = :cpf_user";
+			$sql = "select * FROM paciente WHERE usuario_cod_user = :usuario_cod_user";
 			$sql = $this->pdo->prepare($sql);
-			$sql->bindValue(':cpf_user', $cpf_user);
+			$sql->bindValue(':usuario_cod_user', $usuario_cod_user);
 			$sql->execute();
 
 			if($sql->rowCount() > 0) {
