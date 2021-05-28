@@ -107,7 +107,16 @@
  								
  							} else {
  								
- 								$sql= "SELECT * FROM usuario WHERE cpf_user like  '".$_POST['cpf_user']."' ";
+ 								$sql= "
+	 								select  
+										*
+									from 
+										usuario u 
+									inner join 
+										medico m on m.usuario_cod_user = u.cod_user
+
+	 								WHERE 
+	 									cpf_user like  '".$_POST['cpf_user']."' ";
 
  							}
 

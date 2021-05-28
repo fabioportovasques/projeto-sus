@@ -7,7 +7,7 @@ if(empty($_SESSION['lg'])) {
 }
 
 
-        require 'agendamento.class.php';
+        require 'modelo/agendamento.class.php';
 
         $agendamento = new Agendamento();
 
