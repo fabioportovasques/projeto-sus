@@ -30,7 +30,7 @@
 
 		//conexão banco de dados
 
-		$this -> pdo = new PDO("mysql:dbname=sus;host=localhost","root","F@bio102030");
+		$this -> pdo = new PDO("mysql:dbname=sus;host=localhost","root","");
 	
 		}
 

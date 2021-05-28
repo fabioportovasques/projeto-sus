@@ -6,7 +6,7 @@ if(empty($_SESSION['lg'])) {
     exit;
 }
 
-   require 'paciente.class.php';
+   require 'modelo/paciente.class.php';
 
           $paciente = new Paciente();
 
@@ -174,7 +174,7 @@ if(empty($_SESSION['lg'])) {
                                    <a class="nav-link" href="cad-user.php">Usuários</a>
                                     <a class="nav-link" href="cad-medico.php" id="medico">Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Pacientes</a>
-                                      <a class="nav-link" href="#.php">Agendamentos</a>
+                                      <a class="nav-link" href="cad-agendamento.php">Agendamentos</a>
 
                                 </nav>
                             </div>

@@ -2,7 +2,7 @@
 
 try {
 
-	$pdo = new PDO("mysql:dbname=sus;host=localhost","root","F@bio102030");
+	$pdo = new PDO("mysql:dbname=sus;host=localhost","root","");
 
 } catch(PDOException $e) {
 	echo "ERRO: ".$e->getMessage();
