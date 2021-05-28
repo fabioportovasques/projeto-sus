@@ -197,7 +197,7 @@ if(empty($_SESSION['lg'])) {
 
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="pesq-pac.php">
+                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
                                         Pacientes
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
@@ -235,7 +235,7 @@ if(empty($_SESSION['lg'])) {
                 <br />
                  
     
-          <h3 align="center">Cadastro de Pacientes</h3>
+          <h3 align="center">Consulta de Pacientes</h3>
           <br />
           
                    
@@ -561,7 +561,7 @@ if(empty($_SESSION['lg'])) {
                       <br />
                           
                        <!--Botão para navegar até a próxima página-->
-                       <button   class="btn btn-success" value="reset">Cancelar </button>             
+                       <button   class="btn btn-success" value="reset">Alterar </button>             
 
                           
                        <!--Botão para cadastrar-->
