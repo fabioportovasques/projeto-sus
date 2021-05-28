@@ -6,11 +6,11 @@ if(empty($_SESSION['lg'])) {
     exit;
 }
 
-   require 'modelo/paciente.class.php';
+   require 'modelo/medico.class.php';
 
-          $paciente = new Paciente();
+          $medico = new Medico();
 
-         $lista = $paciente->pesquisar();
+         $lista = $medico->pesquisar();
             foreach ($lista as $item):
 
 
@@ -235,7 +235,7 @@ if(empty($_SESSION['lg'])) {
                 <br />
                  
     
-          <h3 align="center">Cadastro de Pacientes</h3>
+          <h3 align="center">Cadastro de Médico</h3>
           <br />
           
                    
@@ -257,7 +257,7 @@ if(empty($_SESSION['lg'])) {
                                         <!--funcao valida usa a mascara para cpf/cnpj-->
                                       <input type="hidden" name="usuario_ubs_cod_ubs" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
                                     placeholder="cod UBS" value="1" >
-                                    <input type="hidden" name="usuario_cod_user" id="usuario_cod_user" class="form-control" autocomplete="off" 
+                                    <input type="hidden" name="usuario_cod_user" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
                                   placeholder="cod UBS" value="<?php  echo $item ['cod_user']; ?>" >
 
                                 </div>
@@ -565,7 +565,7 @@ if(empty($_SESSION['lg'])) {
 
                           
                        <!--Botão para cadastrar-->
-                       <button type="submit" class="btn btn-success" onclick="selecionaAction('insert_pac');">Cadastrar</button>
+                       <button type="submit" class="btn btn-success" onclick="selecionaAction('insert_medico');">Cadastrar</button>
 
                       
                       </form>
