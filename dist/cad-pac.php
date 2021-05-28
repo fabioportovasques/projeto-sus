@@ -171,6 +171,7 @@ if(empty($_SESSION['lg'])) {
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+                                   <a class="nav-link" href="cad-user.php">Usuários</a>
                                     <a class="nav-link" href="cad-medico.php" id="medico">Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Pacientes</a>
                                       <a class="nav-link" href="#.php">Agendamentos</a>
@@ -253,7 +254,7 @@ if(empty($_SESSION['lg'])) {
                                             sem espaço ou pontos" placeholder="CPF" 
                                            onblur="validar(getElementById('cpf_cnpj').value)"  
                                         autocomplete="off" value="<?php echo $item['cpf_user']; ?>" >
-
+                                        <!--funcao valida usa a mascara para cpf/cnpj-->
                                       <input type="hidden" name="usuario_ubs_cod_ubs" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
                                     placeholder="cod UBS" value="1" >
                                     <input type="hidden" name="usuario_cod_user" id="usuario_cod_user" class="form-control" autocomplete="off" 
@@ -560,7 +561,7 @@ if(empty($_SESSION['lg'])) {
                       <br />
                           
                        <!--Botão para navegar até a próxima página-->
-                       <button class="btn btn-success">Cancelar </button>             
+                       <button   class="btn btn-success" value="reset">Cancelar </button>             
 
                           
                        <!--Botão para cadastrar-->
