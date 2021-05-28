@@ -162,6 +162,7 @@ if(empty($_SESSION['lg'])) {
                             </a>
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+                                  <a class="nav-link" href="cad-user.php">Usuários</a>
                                     <a class="nav-link" href="cad-medico.php" id="medico">Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Pacientes</a>
                                       <a class="nav-link" href="#.php">Agendamentos</a>
@@ -233,12 +234,12 @@ if(empty($_SESSION['lg'])) {
              <div class="tab-content">
                <div id="dados-pessoais" class="tab-pane fade in active">
 
-          <h3>Dados Pessoais</h3>
+          <h3 align="center">Dados Pessoais</h3>
           <br />
           
                    
               <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-4 col-md-offset-1">
                                                                            
                               <form action="insert_user.php"  method="POST">
 
@@ -247,7 +248,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > Nome </label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_user" id="nome_user" class="form-control" 
-                                          autocomplete="off"  placeholder="Nome">    
+                                          autocomplete="off"  placeholder="Nome" required="">    
                                       <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs"
                                      class="form-control" autocomplete="off" placeholder="cod UBS" value="1" >
                                       <input type="hidden" name="status" id="status"
@@ -267,7 +268,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > Sobrenome </label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="sobrenome_user" id="sobrenome_user" class="form-control" autocomplete="off" 
-                                           placeholder="Sobrenome" >    
+                                           placeholder="Sobrenome" required="" >    
                                     </div>
                                 </div>
 
@@ -289,7 +290,7 @@ if(empty($_SESSION['lg'])) {
                  </div>     
 
                     <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-4 col-md-offset-1">
                            
                                 <div class="form-group">
                                     <div class="   col">
@@ -326,7 +327,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Cartão SUS</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="cartao_sus" id="cartao_sus" class="form-control" autocomplete="off"  placeholder="Cartão SUS">    
+                                        <input type="text" name="cartao_sus" id="cartao_sus" class="form-control" autocomplete="off"  placeholder="Cartão SUS" required="">    
                                     </div>
                                 </div>
 
@@ -335,7 +336,7 @@ if(empty($_SESSION['lg'])) {
 
 
                      <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-4 col-md-offset-1">
                           
                                 <div class="form-group">
                                     <div class="col">
@@ -374,7 +375,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > CEP </label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="cep_user" id="cep_user" class="form-control" autocomplete="off" 
-                                        onblur="pesquisacep(this.value);"  placeholder="CEP"  >    
+                                        onblur="pesquisacep(this.value);"  placeholder="CEP" required="" >    
                                     </div>
                                 </div>
 
@@ -383,11 +384,11 @@ if(empty($_SESSION['lg'])) {
 
 
                     <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-4 col-md-offset-1">
                                                                            
                             
 
-                                <div class="form-group">
+                                <div class="form-group ">
                                     <div class="   col">
                                         <label > Cidade</label>
                                        <span class="campo-obrigatorio">*</span>
@@ -433,7 +434,7 @@ if(empty($_SESSION['lg'])) {
  
               
                    <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-4 col-md-offset-1">
                           
                                 <div class="form-group">
                                     <div class="col">
@@ -495,17 +496,19 @@ if(empty($_SESSION['lg'])) {
     
 
         <div id="dados-acesso" class="tab-pane fade">
-          <h3>Dados de Acesso</h3>
+            <br />
+          <h3  align="center">Dados de Acesso</h3>
 
-                 
+              <br /> 
                <!--Início da coluna-->         
-                   <div class="col-md-6">
-                          
+                   <div class="col-md-6 ">
+
+
                                 <div class="form-group">
                                     <div class="col">
                                         <label > CPF</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="cpf_user" id="cpf_user" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"  placeholder="CPF">    
+                                        <input type="text" name="cpf_user" id="cpf_user" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"  placeholder="CPF" required="">    
                                     </div>
                                 </div>
 
@@ -520,7 +523,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Senha</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="password" name="senha" id="senha" class="form-control" data-toggle="tooltip"  title="Insira uma senha segura" autocomplete="off"  placeholder="****"sus>    
+                                        <input type="password" name="senha" id="senha" class="form-control" data-toggle="tooltip"  title="Insira uma senha segura" autocomplete="off"  placeholder="****" required="">    
                                     </div>
                                 </div>
 
@@ -528,16 +531,11 @@ if(empty($_SESSION['lg'])) {
                  </div>   
 
 
-
-                    
-
-                
              <!-- inicio da coluna-->
                <div class="col-md-6">
 
 
-                      <br />
-                      <br />
+                      
                           
                        <!--Botão para navegar até a próxima página-->
                        <button class="btn btn-success">Cancelar </button>             
