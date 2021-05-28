@@ -165,6 +165,7 @@ if(empty($_SESSION['lg'])) {
                                     <a class="nav-link" href="cad-medico.php" id="medico">Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Pacientes</a>
                                       <a class="nav-link" href="cad-agendamento.php">Agendamentos</a>
+                                      <a class="nav-link" href="cad-especialidade.php">Especialidades</a>
 
                                 </nav>
                             </div>
