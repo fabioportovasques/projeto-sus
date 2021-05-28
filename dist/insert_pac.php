@@ -1,6 +1,6 @@
 <?php
 
-	include 'paciente.class.php';
+	include 'modelo/paciente.class.php';
 
 	$paciente = new Paciente();
 

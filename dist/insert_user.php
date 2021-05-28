@@ -1,6 +1,6 @@
 <?php
 
-	include 'user.class.php';
+	include 'modelo/user.class.php';
 
 	$user = new User();
 

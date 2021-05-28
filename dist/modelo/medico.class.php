@@ -31,7 +31,7 @@ class Medico {
 
       //conexão banco de dados
 
-      $this -> pdo = new PDO("mysql:dbname=bd-sus;host=localhost","root","");
+      $this -> pdo = new PDO("mysql:dbname=bd-sus;host=localhost","root","F@bio102030");
   
       }
 
