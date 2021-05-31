@@ -235,7 +235,7 @@ if(empty($_SESSION['lg'])) {
                 <br />
                  
     
-          <h3 align="center">Consulta de Pacientes</h3>
+          <h3 align="center">Consulta de Usuários</h3>
           <br />
           
                    
@@ -561,7 +561,7 @@ if(empty($_SESSION['lg'])) {
                       <br />
                           
                        <!--Botão para navegar até a próxima página-->
-                       <button   class="btn btn-success" value="reset">Canclar </button>             
+                       <button   class="btn btn-success" value="reset" onclick="selecionaAction('update-user');">Alterar </button>             
 
                           
                        <!--Botão para cadastrar-->
