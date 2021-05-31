@@ -1,4 +1,4 @@
-
+	
 
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@
 
   <?php 
 
-  class Paciente {
+  class Medico {
 
 	private $pdo;
 
@@ -40,8 +40,8 @@
 		
 
 		public function adicionar ($usuario_ubs_cod_ubs,$usuario_cod_user) {
-			if($this->verificaCpf($usuario_cod_user) == false) {
-					$sql = $this->pdo->prepare("INSERT INTO paciente SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user
+			if($this->verificaCod($usuario_cod_user) == false) {
+					$sql = $this->pdo->prepare("INSERT INTO medico SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user
 					");
 					
 
@@ -51,16 +51,16 @@
 					$sql->execute();
 			
 				print '<div class="alert alert-success" role="alert">
-						  Paciente Inserido Com Sucesso!
+						 Medico Inserido Com Sucesso!
 						</div>';
-				print '<script>window.setTimeout(function(){window.location=\'cad-pac.php\';}, 2000);</script>';
+				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
 
 				} else {
 					
 				print '<div class="alert alert-warning" role="alert">
-						Usuário já é um Paciente!
+						O Usuário já é um medico!
 						</div>';
-				print '<script>window.setTimeout(function(){window.location=\'cad-pac.php\';}, 2000);</script>';
+				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
 
 
 				}
@@ -71,9 +71,9 @@
 			}	
 				
 
-			private function verificaCpf ($usuario_cod_user) {
+			private function verificaCod ($usuario_cod_user) {
 
-			$sql = "select * FROM paciente WHERE usuario_cod_user = :usuario_cod_user";
+			$sql = "select * FROM medico WHERE usuario_cod_user = :usuario_cod_user";
 			$sql = $this->pdo->prepare($sql);
 			$sql->bindValue(':usuario_cod_user', $usuario_cod_user);
 			$sql->execute();
@@ -107,7 +107,16 @@
  								
  							} else {
  								
- 								$sql= "SELECT * FROM usuario WHERE cpf_user like  '".$_POST['cpf_user']."' ";
+ 								$sql= "
+	 								select  
+										*
+									from 
+										usuario u 
+									inner join 
+										medico m on m.usuario_cod_user = u.cod_user
+
+	 								WHERE 
+	 									cpf_user like  '".$_POST['cpf_user']."' ";
 
  							}
 
