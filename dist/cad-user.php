@@ -282,7 +282,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > E-mail</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="email" name="email_pac" id="email_user" class="form-control" data-toggle="tooltip"  title="Insira seu E-mail" autocomplete="off"  placeholder="E-mail">    
+                                        <input type="email" name="email_user" id="email_user" class="form-control" data-toggle="tooltip"  title="Insira seu E-mail" autocomplete="off"  placeholder="E-mail">    
                                     </div>
                                 </div>
 
@@ -310,7 +310,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label >sexo</label>
                                        <span class="campo-obrigatorio">*</span>
-                                       <input type="text" name="sexo_user" id="sexo_user" class="form-control" autocomplete="off"  placeholder="Telefone 2">    
+                                       <input type="text" name="sexo_user" id="sexo_user" class="form-control" autocomplete="off"  placeholder="Sexo">    
                                     </div>
                                 </div>
 
