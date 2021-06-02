@@ -289,8 +289,9 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Nome </label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_pac" id="nome_pac" class="form-control" autocomplete="off"
-                                        value="<?php echo $item ['nome_user']; ?>"  placeholder="Nome">    
+                                        <input type="text" name="nome_user" id="nome_user" class="form-control" autocomplete="off"
+                                        value="<?php echo $item ['nome_user']; ?>"  placeholder="Nome"> 
+
                                     </div>
                                 </div>
 
@@ -319,7 +320,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="   col">
                                         <label > Data de Nascimento</label>
                                        <span class="campo-obrigatorio"></span>
-                                        <input type="date" name="data_nascimento_pac" id="data_nascimento_pac" class="form-control" autocomplete="off"
+                                        <input type="date" name="data_nascimento_user" id="data_nascimento_user" class="form-control" autocomplete="off"
                                         value="<?php echo $item ['data_nascimento_user']; ?>"  placeholder="Nome">    
                                     </div>
                                 </div>
@@ -334,7 +335,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label >sexo</label>
                                        <span class="campo-obrigatorio">*</span>
-                                       <input type="text" name="sexo_pac" id="sexo_pac" class="form-control" autocomplete="off"
+                                       <input type="text" name="sexo_user" id="sexo_user" class="form-control" autocomplete="off"
                                        value="<?php echo $item ['sexo_user']; ?>"  placeholder="Telefone 2">    
                                     </div>
                                 </div>
@@ -386,7 +387,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label >Telefone 1</label>
                                        <span class="campo-obrigatorio">*</span>
-                                       <input type="text" name="telefone1_pac" id="telefone1_pac" class="form-control" autocomplete="off" 
+                                       <input type="text" name="telefone1_user" id="telefone1_user" class="form-control" autocomplete="off" 
                                        value="<?php echo $item ['telefone1_user']; ?>" placeholder="Telefone 2">    
                                     </div>
                                 </div>
@@ -403,7 +404,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label >Telefone 2</label>
                                        <span class="campo-obrigatorio">*</span>
-                                       <input type="text" name="telefone2_pac" id="telefone2_pac" class="form-control" autocomplete="off" 
+                                       <input type="text" name="telefone2_user" id="telefone2_user" class="form-control" autocomplete="off" 
                                        value="<?php echo $item ['telefone2_user']; ?>" placeholder="Telefone 2">    
                                     </div>
                                 </div>
@@ -423,7 +424,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > CEP</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="cep_user" id="cep_user" class="form-control" autocomplete="off" 
-                                        value="<?php echo $item ['cep_user']; ?>" placeholder="CEP"  >    
+                                        value="<?php echo $item ['cep_user']; ?>" onblur="pesquisacep(this.value);" placeholder="CEP"  >    
                                     </div>
                                 </div>
 

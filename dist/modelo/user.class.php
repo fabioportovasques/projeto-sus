@@ -164,11 +164,11 @@
 
 		$nome_user = $_POST['nome_user'];
 		$sobrenome_user = $_POST['sobrenome_user'];
-		$email_user = $_POST['email_user'];
 		$data_nascimento_user = $_POST['data_nascimento_user'];
 		$sexo_user = $_POST['sexo_user'];
+		$email_user = $_POST['email_user'];
 		$cartao_sus = $_POST['cartao_sus'];
-		$telefone1_user = $_POST['telefone1_user'];		
+		$telefone1_user = $_POST['telefone1_user'];
 		$telefone2_user = $_POST['telefone2_user'];
 		$cep_user = $_POST['cep_user'];
 		$cidade_user = $_POST['cidade_user'];
@@ -177,10 +177,8 @@
 		$uf_user = $_POST['uf_user'];
 		$pais_user = $_POST['pais_user'];
 		$rg_user = $_POST['rg_user'];
+		$numero_casa = $_POST['numero_casa'];
 		$cpf_user = $_POST['cpf_user'];
-		$senha = $_POST['senha'];
-		$ubs_cod_ubs = $_POST['ubs_cod_ubs'];
-		$status = $_POST['status'];
 
 
 				    // 
@@ -188,32 +186,30 @@
 				        //$pdo = new PDO('mysql:host=localhost;dbname=bd-gbi', $username, $password);
 				        //$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				        //preparo minha query
-				    	$sql = "UPDATE usuario SET nome_user=:nome_user, sobrenome_user=:sobrenome_user,
-							 email_user=:email_user,data_nascimento_user=:data_nascimento_user,sexo_user=:sexo_user,cartao_sus=:cartao_sus,
-							 telefone1_user=:telefone1_user,telefone2_user=:telefone2_user,
-							 cep_user=:cep_user,cidade_user=:cidade_user,rua_user=:rua_user,bairro_user=:bairro_user,uf_user=:uf_user,
-							  pais_user=:pais_user,rg_user=:rg_user,cpf_user=:cpf_user,senha = MD5(:senha), ubs_cod_ubs =:ubs_cod_ubs,status=:status
-					   	WHERE cpf_user = :cpf_user";
+				    	$sql = "UPDATE  usuario SET nome_user=:nome_user,sobrenome_user=:sobrenome_user,
+				    	data_nascimento_user=:data_nascimento_user,sexo_user=:sexo_user,email_user=:email_user,
+				    	cartao_sus=:cartao_sus,telefone1_user=:telefone1_user,telefone2_user=:telefone2_user,
+				    	cep_user=:cep_user,cidade_user=:cidade_user,rua_user=:rua_user,bairro_user=:bairro_user,
+				    	uf_user=:uf_user,pais_user=:pais_user,rg_user=:rg_user,numero_casa=:numero_casa
+					   	WHERE cpf_user =:cpf_user";
 						$sql = $this->pdo->prepare($sql);
 					$sql->bindParam(":nome_user",$nome_user);
 					$sql->bindParam(":sobrenome_user",$sobrenome_user);
-					$sql->bindParam(":email_user",$email_user);
 					$sql->bindParam(":data_nascimento_user",$data_nascimento_user);
 					$sql->bindParam(":sexo_user",$sexo_user);
+					$sql->bindParam(":email_user",$email_user);
+					$sql->bindParam(":cartao_sus",$cartao_sus);
 					$sql->bindParam(":telefone1_user",$telefone1_user);
 					$sql->bindParam(":telefone2_user",$telefone2_user);
-					$sql->bindParam(":cartao_sus",$cartao_sus);
-					$sql->bindParam(":cep_user",$cpf_user);
+					$sql->bindParam(":cep_user",$cep_user);
 					$sql->bindParam(":cidade_user",$cidade_user);
 					$sql->bindParam(":rua_user",$rua_user);
 					$sql->bindParam(":bairro_user",$bairro_user);
 					$sql->bindParam(":uf_user",$uf_user);
 					$sql->bindParam(":pais_user",$pais_user);
 					$sql->bindParam(":rg_user",$rg_user);
+					$sql->bindParam(":numero_casa",$numero_casa);
 					$sql->bindParam(":cpf_user",$cpf_user);
-					$sql->bindParam(":senha",$senha);
-					$sql->bindParam(":ubs_cod_ubs",$ubs_cod_ubs);								
-					$sql->bindParam(":status",$status);		
 					$sql->execute();
 
 				        
