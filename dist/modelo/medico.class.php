@@ -107,7 +107,15 @@
  								
  							} else {
  								
- 								$sql= "SELECT * FROM usuario WHERE cpf_user like  '".$_POST['cpf_user']."' ";
+ 								$sql= "
+
+								select 
+									*
+								from 
+									usuario u 
+								inner join medico m on m.usuario_cod_user = u.cod_user
+
+ 								WHERE cpf_user like  '".$_POST['cpf_user']."' ";
 
  							}
 
@@ -120,7 +128,14 @@
 								return $sql ->fetchAll();
 
 							}else {
-								return array();
+								return 
+
+
+								print '<div class="alert alert-danger" role="alert">
+									  Médico Não Encontrado!
+									</div>';
+								print '<script>window.setTimeout(function(){window.location=\'pesq-medico.php\';}, 4000);</script>';
+
 							}
 				
 					}		
