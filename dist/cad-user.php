@@ -502,7 +502,7 @@ if(empty($_SESSION['lg'])) {
 
               <br /> 
                <!--Início da coluna-->         
-                   <div class="col-md-6 ">
+                   <div class="col-md-4 ">
 
 
                                 <div class="form-group">
@@ -518,7 +518,7 @@ if(empty($_SESSION['lg'])) {
 
 
                   <!--Início da coluna-->         
-                   <div class="col-md-5">
+                   <div class="col-md-4">
                           
                                 <div class="form-group">
                                     <div class="col">
@@ -530,6 +530,25 @@ if(empty($_SESSION['lg'])) {
 
                    <!--Fim da coluna-->            
                  </div>   
+
+                 <!--Início da coluna-->         
+                   <div class="col-md-3">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Tipo Uuario</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                       <select class="form-control">
+                                         <option>Selecionar</option>
+                                           <option>Adm</option>
+                                          <option>Medico</option>
+                                        <option>Paciente</option>
+                                       </select>
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>  
 
 
              <!-- inicio da coluna-->
