@@ -49,7 +49,7 @@ if(empty($_SESSION['lg'])) {
 
         $('button').click(function(){
         $('a[href="#home"]').tab('show');
-        })
+        });
 
     </script>   
 
