@@ -8,4 +8,14 @@
 5. Apresentação em formato PDF. ✓
 
 
-03/05 - ??
+04/05/21 - Procedimento para cadastrar Medicos
+
+para cadastrar o medico
+cadastrar o usuario
+defini-lo como medico
+atribuir a especialidade
+atribuir a ubs
+
+-Procedimento para cadastrar Pacientes:
+cadastrar o usuario
+defini-lo como Paciente
