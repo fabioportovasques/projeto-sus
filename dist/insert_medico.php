@@ -14,11 +14,12 @@
 
 		$usuario_ubs_cod_ubs = $_POST['usuario_ubs_cod_ubs'];
 		$usuario_cod_user = $_POST['usuario_cod_user'];
+		$crm_medico = $_POST['crm_medico'];
 		
 		
 					
 
-		$medico ->adicionar($usuario_ubs_cod_ubs,$usuario_cod_user);
+		$medico ->adicionar($usuario_ubs_cod_ubs,$usuario_cod_user,$crm_medico);
 
 
 		

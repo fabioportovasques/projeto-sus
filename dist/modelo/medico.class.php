@@ -39,14 +39,15 @@
 
 		
 
-		public function adicionar ($usuario_ubs_cod_ubs,$usuario_cod_user) {
+		public function adicionar ($usuario_ubs_cod_ubs,$usuario_cod_user,$crm_medico) {
 			if($this->verificaCod($usuario_cod_user) == false) {
-					$sql = $this->pdo->prepare("INSERT INTO medico SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user
+					$sql = $this->pdo->prepare("INSERT INTO medico SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user,crm_medico=:crm_medico
 					");
 					
 
 					$sql->bindParam(":usuario_ubs_cod_ubs",$usuario_ubs_cod_ubs);
 					$sql->bindParam(":usuario_cod_user",$usuario_cod_user);
+					$sql->bindParam(":crm_medico",$crm_medico);
 					
 					$sql->execute();
 			
