@@ -144,5 +144,60 @@
 			}
 
 
+
+				public function pesquisarMedicoAgendamento ( ) {
+
+							if($_POST['pesquisar'] ) {
+
+							//$pesquisar= $_POST['cpf_cliente'];
+							// preg_replace('/[^0-9]/', '', $pesquisar);
+			
+ 							if (empty($_POST['cpf_user'])) {
+ 								//Se for vázio
+ 								$cpf_user = $_POST['cpf_user'];
+ 								echo $cpf_user;
+
+ 								print '<div class="alert alert-danger" role="alert">
+									  Favor preencher o campo CPF!
+									</div>';
+								print '<script>window.setTimeout(function(){window.location=\'cad-agendamento.php\';}, 2000);</script>';
+ 								
+ 							} else {
+ 								
+ 								$sql= "
+
+								select 
+									*
+								from 
+									usuario u 
+								
+
+ 								WHERE cpf_user like  '".$_POST['cpf_user']."' ";
+
+ 							}
+
+
+ 		 					$sql = $this->pdo->query($sql);
+
+							if ($sql->rowCount() > 0) {
+
+								//retorna todos os clientes
+								return $sql ->fetchAll();
+
+							}else {
+								return 
+
+
+								print '<div class="alert alert-danger" role="alert">
+									  Médico Não Encontrado!
+									</div>';
+								print '<script>window.setTimeout(function(){window.location=\'cad-agendamento.php\';}, 4000);</script>';
+
+							}
+				
+					}		
+
+			}
+
 			
 	}

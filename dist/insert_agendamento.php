@@ -25,9 +25,9 @@
 		
 	}else {
 
-				print '<div class="alert alert-warning" role="alert">
+				print '<div class="alert alert-danger" role="alert">
 						Favor preencher o campo CPF!
 						</div>';
-				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
+				print '<script>window.setTimeout(function(){window.location=\'cad-agendamento.php\';}, 2000);</script>';
 
 	}
