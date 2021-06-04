@@ -374,8 +374,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label >Especialidade</label>
                                        <span class="campo-obrigatorio">*</span>
-                                       <select class="form-control" name="especialidade_cod_especialidade"  value="<?php echo $item ['cod_especialidade']; ?>">
-                                         <option>Selecionar</option>
+                                        <input type="text" name="nome_especialidade" class="form-control"  value="<?php echo $item ['nome_especialidade']; ?>">
                                        </select>
                                     </div>
                                 </div>

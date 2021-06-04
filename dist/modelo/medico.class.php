@@ -166,11 +166,14 @@
  								
  								$sql= "
 
-								select 
-									*
-								from 
-									usuario u 
-								
+								select  e.cod_especialidade, e.nome_especialidade ,u.nome_user,u.sobrenome_user,
+									e.descricao_especialidade
+								from
+									medico m 
+								inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
+								inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
+								inner join usuario u on  u.cod_user = m.usuario_cod_user
+
 
  								WHERE cpf_user like  '".$_POST['cpf_user']."' ";
 
