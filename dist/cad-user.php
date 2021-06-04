@@ -538,7 +538,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Tipo Uuario</label>
                                        <span class="campo-obrigatorio">*</span>
-                                       <select class="form-control">
+                                       <select class="form-control" name="tipo_user" id="tipo_user">
                                          <option>Selecionar</option>
                                            <option>Adm</option>
                                           <option>Medico</option>

@@ -104,4 +104,14 @@ inner join agenda_ubs a on a.cod_agenda = espec.especialidade_cod_especialidade
 
 update usuario set sobrenome_user="vaques2" where cpf_user='02041884070';
 
+/*
+	Exclusão de Médicos
+*/
 
+delete
+
+from 
+	paciente
+where 
+	usuario_cod_user='54';
+;

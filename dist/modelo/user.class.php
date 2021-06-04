@@ -41,13 +41,13 @@
 
 		public function adicionar ($nome_user,$sobrenome_user,$email_user,$data_nascimento_user,$sexo_user,
 			$cartao_sus,$telefone1_user,$telefone2_user,$cep_user,$cidade_user,$rua_user,$bairro_user,
-			$pais_user,$rg_user,$cpf_user,$uf_user,$senha,$ubs_cod_ubs,$status ) {
+			$pais_user,$rg_user,$cpf_user,$uf_user,$senha,$ubs_cod_ubs,$status,$tipo_user ) {
 			if($this->verificaCpf($cpf_user) == false) {
 					$sql = $this->pdo->prepare("INSERT INTO usuario SET nome_user=:nome_user, sobrenome_user=:sobrenome_user,
 					 email_user=:email_user,data_nascimento_user=:data_nascimento_user,sexo_user=:sexo_user,cartao_sus=:cartao_sus,
 					 telefone1_user=:telefone1_user,telefone2_user=:telefone2_user,
 					 cep_user=:cep_user,cidade_user=:cidade_user,rua_user=:rua_user,bairro_user=:bairro_user,uf_user=:uf_user,
-					  pais_user=:pais_user,rg_user=:rg_user,cpf_user=:cpf_user,senha = MD5(:senha), ubs_cod_ubs =:ubs_cod_ubs,status=:status
+					  pais_user=:pais_user,rg_user=:rg_user,cpf_user=:cpf_user,senha = MD5(:senha), ubs_cod_ubs =:ubs_cod_ubs,status=:status,tipo_user=:tipo_user
 					");
 					
 					$sql->bindParam(":nome_user",$nome_user);
@@ -69,6 +69,7 @@
 					$sql->bindParam(":senha",$senha);
 					$sql->bindParam(":ubs_cod_ubs",$ubs_cod_ubs);								
 					$sql->bindParam(":status",$status);
+					$sql->bindParam(":tipo_user",$tipo_user);
 					$sql->execute();
 			
 				print '<div class="alert alert-success" role="alert">

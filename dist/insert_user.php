@@ -31,6 +31,7 @@
 		$senha = $_POST['senha'];
 		$ubs_cod_ubs = $_POST['ubs_cod_ubs'];
 		$status = $_POST['status'];
+		$tipo_user = $_POST['tipo_user'];
 		
 		/*
 
@@ -49,7 +50,7 @@
 						$telefone1_user,$telefone2_user,
 						$cep_user,$cidade_user,$rua_user,$bairro_user,						
 						$pais_user,$rg_user,$cpf_user,
-						$uf_user,$senha,$ubs_cod_ubs,$status
+						$uf_user,$senha,$ubs_cod_ubs,$status,$tipo_user
 						);
 
 		
