@@ -551,6 +551,21 @@ if(empty($_SESSION['lg'])) {
                    <!--Fim da coluna-->            
                  </div> 
 
+                  <!--Início da coluna-->         
+                   <div class="col-md-3 ">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > CRM Médico</label>
+                                       <span class="campo-obrigatorio"></span>
+                                        <input type="text" name="crm_medico" id="crm_medico" class="form-control" data-toggle="tooltip"  title="Insira o CRM do Médico" autocomplete="off"
+                                         value="<?php echo $item ['crm_medico']; ?>" placeholder="CRM Médico">    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div> 
+
                     
 
                 

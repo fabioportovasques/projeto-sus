@@ -10,12 +10,15 @@ SELECT * FROM agenda_ue;
 SELECT * FROM medico_atende_ubs;
 SELECT * FROM usuario;
 SELECT * FROM permissao;
-SELECT * FROM paciente;									
+SELECT * FROM paciente;		
+
+
+UPDATE  usuario set cpf_user ='123';							
 
 INSERT INTO usuario( nome_user,sobrenome_user,data_nascimento_user,cpf_user,rg_user,rua_user,bairro_user,cidade_user,cep_user,
-                    uf_user,pais_user,email_user,telefone1_user,telefone2_user,cartao_sus,numero_casa,sexo_user,senha,ubs_cod_ubs,status) VALUES (
-"teste3","teste3","1987-11-17","900","098745543","joaquim gasso borges","pedra branca","bagé","9641884070",
-"rs","Brasil","fabioportovasques321@gmail.com","53999367651","","4234324","841","m",md5("224460"),'1',"A"
+                    uf_user,pais_user,email_user,telefone1_user,telefone2_user,cartao_sus,numero_casa,sexo_user,senha,ubs_cod_ubs,status,tipo_user) VALUES (
+"fabio","vasques","1987-11-17","02041884070","1096853931","joaquim gasso borges","pedra branca","bagé","9641884070",
+"rs","Brasil","fabioportovasques321@gmail.com","53999367651","","423432334","841","m",md5("224460"),'1',"A","adm"
 );
 
 
@@ -97,8 +100,18 @@ inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_
 inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
 
 inner join agenda_ubs a on a.cod_agenda = espec.especialidade_cod_especialidade
-
-
 ;
 
+update usuario set sobrenome_user="vaques2" where cpf_user='02041884070';
 
+/*
+	Exclusão de Médicos
+*/
+
+delete
+
+from 
+	paciente
+where 
+	usuario_cod_user='54';
+;

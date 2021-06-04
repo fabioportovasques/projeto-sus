@@ -205,7 +205,7 @@ if(empty($_SESSION['lg'])) {
                                         Agendamentos
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="#">
+                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="pesq-medico.php">
                                         Médicos
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
@@ -561,7 +561,7 @@ if(empty($_SESSION['lg'])) {
                       <br />
                           
                        <!--Botão para navegar até a próxima página-->
-                       <button   class="btn btn-success" value="reset">Alterar </button>             
+                       <button   class="btn btn-success" value="reset">Canclar </button>             
 
                           
                        <!--Botão para cadastrar-->

@@ -305,7 +305,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label > Sobrenome</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="email" name="sobrenome_user" id="sobrenome_user" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"
+                                        <input type="text" name="sobrenome_user" id="sobrenome_user" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"
                                         value="<?php echo $item ['sobrenome_user']; ?>"  placeholder="Sobrenome">    
                                     </div>
                                 </div>

@@ -6,10 +6,17 @@ if(empty($_SESSION['lg'])) {
     exit;
 }
 
+   require 'modelo/medico.class.php';
+
+          $medico = new Medico();
+
+         $lista = $medico->pesquisar();
+            foreach ($lista as $item):
 
 
+  ?>
+  <?php endforeach; ?>
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -240,8 +247,9 @@ if(empty($_SESSION['lg'])) {
                                         <label > CPF </label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="cpf_pac" id="cpf_pac" class="form-control" autocomplete="off" 
-                                         placeholder="CPF" required="" value="<?php echo $item ['cpf_user']; ?>" >    
-                                         <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs" class="form-control" autocomplete="off"  placeholder="cod UBS" value="1" >    
+                                         placeholder="CPF"  value="<?php echo $item ['cpf_user']; ?>" >    
+                                         <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs" class="form-control" autocomplete="off"  placeholder="cod UBS" value="1" >  
+
 
 
                                     </div>
@@ -275,7 +283,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > Data Agendamento </label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="date" name="data_agendamento" id="data_agendamento" class="form-control" autocomplete="off"
-                                        value="<?php echo $item ['data_agendamento']; ?>" required="">    
+                                        value="<?php echo $item ['data_agendamento']; ?>" >    
                                     </div>
                                 </div>
 
@@ -324,6 +332,22 @@ if(empty($_SESSION['lg'])) {
                                     </div>
                                 </div>
 
+                    </div>
+                   <!--Fim da coluna-->   
+
+                   <!--Início da coluna-->         
+                   <div class="col-md-3">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label >Especialidade</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                       <select class="form-control" name="especialidade_cod_especialidade"  value="<?php echo $item ['cod_especialidade']; ?>">
+                                         <option>Selecionar</option>
+                                       </select>
+                                    </div>
+                                </div>
+
 
                    <!--Fim da coluna-->            
 
@@ -347,7 +371,7 @@ if(empty($_SESSION['lg'])) {
 
                           
                        <!--Botão para cadastrar-->
-                       <button type="submit" class="btn btn-success">Cadastrar</button>
+                       <button type="submit" class="btn btn-success" onclick="selecionaAction('insert_agendamento');">Cadastrar</button>
 
                       
                       </form>

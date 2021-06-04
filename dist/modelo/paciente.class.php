@@ -98,7 +98,7 @@
  							if (empty($_POST['cpf_user'])) {
  								//Se for vázio
  								$cpf_user = $_POST['cpf_user'];
- 								echo $cpf_user;
+ 								
 
  								print '<div class="alert alert-danger" role="alert">
 									  Favor preencher o campo CPF!
@@ -111,14 +111,11 @@
 
  								select  
 									*
-									from 
+								from 
 									usuario u 
-									inner join paciente pac on pac.usuario_cod_user = u.cod_user
-									
-								WHERE 
-									cpf_user 
-								like  
-									'".$_POST['cpf_user']."' ";
+										
+ 								WHERE 
+ 								 	cpf_user like  '".$_POST['cpf_user']."' ";
 
  							}
 
@@ -131,13 +128,18 @@
 								return $sql ->fetchAll();
 
 							}else {
-								return array();
+								
+								print '<div class="alert alert-danger" role="alert">
+									  Paciente Não Encontrado!
+									</div>';
+								print '<script>window.setTimeout(function(){window.location=\'pesq-pac.php\';}, 4000);</script>';
+
 							}
 				
 					}		
 
 			}
 
-
+			
 			
 	}

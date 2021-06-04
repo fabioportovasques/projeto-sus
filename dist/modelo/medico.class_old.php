@@ -39,15 +39,14 @@
 
 		
 
-		public function adicionar ($usuario_ubs_cod_ubs,$usuario_cod_user,$crm_medico) {
+		public function adicionar ($usuario_ubs_cod_ubs,$usuario_cod_user) {
 			if($this->verificaCod($usuario_cod_user) == false) {
-					$sql = $this->pdo->prepare("INSERT INTO medico SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user,crm_medico=:crm_medico
+					$sql = $this->pdo->prepare("INSERT INTO medico SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user
 					");
 					
 
 					$sql->bindParam(":usuario_ubs_cod_ubs",$usuario_ubs_cod_ubs);
 					$sql->bindParam(":usuario_cod_user",$usuario_cod_user);
-					$sql->bindParam(":crm_medico",$crm_medico);
 					
 					$sql->execute();
 			
@@ -109,14 +108,15 @@
  							} else {
  								
  								$sql= "
+	 								select  
+										*
+									from 
+										usuario u 
+									inner join 
+										medico m on m.usuario_cod_user = u.cod_user
 
-								select 
-									*
-								from 
-									usuario u 
-								
-
- 								WHERE cpf_user like  '".$_POST['cpf_user']."' ";
+	 								WHERE 
+	 									cpf_user like  '".$_POST['cpf_user']."' ";
 
  							}
 
@@ -129,14 +129,7 @@
 								return $sql ->fetchAll();
 
 							}else {
-								return 
-
-
-								print '<div class="alert alert-danger" role="alert">
-									  Médico Não Encontrado!
-									</div>';
-								print '<script>window.setTimeout(function(){window.location=\'pesq-medico.php\';}, 4000);</script>';
-
+								return array();
 							}
 				
 					}		

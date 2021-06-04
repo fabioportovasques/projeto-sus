@@ -1,4 +1,4 @@
-	
+
 
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,7 @@
 
   <?php 
 
-  class Medico {
+  class Paciente {
 
 	private $pdo;
 
@@ -39,29 +39,28 @@
 
 		
 
-		public function adicionar ($usuario_ubs_cod_ubs,$usuario_cod_user,$crm_medico) {
-			if($this->verificaCod($usuario_cod_user) == false) {
-					$sql = $this->pdo->prepare("INSERT INTO medico SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user,crm_medico=:crm_medico
+		public function adicionar ($usuario_ubs_cod_ubs,$usuario_cod_user) {
+			if($this->verificaCpf($usuario_cod_user) == false) {
+					$sql = $this->pdo->prepare("INSERT INTO paciente SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user
 					");
 					
 
 					$sql->bindParam(":usuario_ubs_cod_ubs",$usuario_ubs_cod_ubs);
 					$sql->bindParam(":usuario_cod_user",$usuario_cod_user);
-					$sql->bindParam(":crm_medico",$crm_medico);
 					
 					$sql->execute();
 			
 				print '<div class="alert alert-success" role="alert">
-						 Medico Inserido Com Sucesso!
+						  Paciente Inserido Com Sucesso!
 						</div>';
-				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
+				print '<script>window.setTimeout(function(){window.location=\'cad-pac.php\';}, 2000);</script>';
 
 				} else {
 					
 				print '<div class="alert alert-warning" role="alert">
-						O Usuário já é um medico!
+						Usuário já é um Paciente!
 						</div>';
-				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
+				print '<script>window.setTimeout(function(){window.location=\'cad-pac.php\';}, 2000);</script>';
 
 
 				}
@@ -72,9 +71,9 @@
 			}	
 				
 
-			private function verificaCod ($usuario_cod_user) {
+			private function verificaCpf ($usuario_cod_user) {
 
-			$sql = "select * FROM medico WHERE usuario_cod_user = :usuario_cod_user";
+			$sql = "select * FROM paciente WHERE usuario_cod_user = :usuario_cod_user";
 			$sql = $this->pdo->prepare($sql);
 			$sql->bindValue(':usuario_cod_user', $usuario_cod_user);
 			$sql->execute();
@@ -110,13 +109,16 @@
  								
  								$sql= "
 
-								select 
+ 								select  
 									*
-								from 
+									from 
 									usuario u 
-								
-
- 								WHERE cpf_user like  '".$_POST['cpf_user']."' ";
+									inner join paciente pac on pac.usuario_cod_user = u.cod_user
+									
+								WHERE 
+									cpf_user 
+								like  
+									'".$_POST['cpf_user']."' ";
 
  							}
 
@@ -129,14 +131,7 @@
 								return $sql ->fetchAll();
 
 							}else {
-								return 
-
-
-								print '<div class="alert alert-danger" role="alert">
-									  Médico Não Encontrado!
-									</div>';
-								print '<script>window.setTimeout(function(){window.location=\'pesq-medico.php\';}, 4000);</script>';
-
+								return array();
 							}
 				
 					}		
