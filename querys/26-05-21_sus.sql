@@ -112,8 +112,7 @@ delete
 
 from 
 	medico
-where 
-	usuario_cod_user='55';
+
 ;
 
 
@@ -121,10 +120,75 @@ where
 	Select entre a tabela medico e especialidade e user
 */
 
-SELECT e.cod_especialidade, e.nome_especialidade AS 'Nome da especialidade',m.cod_medico, 
-m.crm_medico,e.descricao_especialidade
+
+
+
+
+
+
+
+SELECT e.cod_especialidade, e.nome_especialidade ,
+e.descricao_especialidade
 from
-medico m
+medico m 
 inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
 inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
 ;
+
+		/*
+			Especialidade + usuario + medico
+        */
+
+
+select  e.cod_especialidade, e.nome_especialidade ,u.nome_user,
+		e.descricao_especialidade,m.cod_medico
+from
+	medico m 
+inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
+inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
+inner join usuario u on  u.cod_user = m.usuario_cod_user;
+
+
+SELECT 
+ espec.nome_especialidade,espec.descricao_especialidade,
+ a.data_agendamento,a.hora_agendamento
+FROM 
+	agenda_ubs a 
+INNER JOIN 
+	especialidade espec on a.cod_agenda = espec.cod_especialidade
+INNER JOIN  especialidade_compoe_medico esp on m.cod_medico = esp.medico_cod_medico 
+INNER JOIN medico m on esp.medico_cod_medico = m.cod_medico
+; 
+
+
+/*
+ Select Medico + Especialidade + UBS + agenda
+*/
+
+select  user.nome_user AS 'nome do medico',
+		u.cod_ubs, u.bairro_ubs,e.nome_especialidade,
+		u.nome_ubs AS 'lOCAL DE ATENDIMENTO', m.cod_medico,a.hora_agendamento,
+        a.data_agendamento,a.num_fichas
+from
+		medico m 
+inner join medico_atende_ubs me on m.cod_medico = me.medico_cod_medico
+inner join ubs u on u.cod_ubs = me.ubs_cod_ubs
+inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
+inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
+
+inner join usuario user on  user.cod_user = m.usuario_cod_user
+inner join agenda_ubs a on user.cod_user = a.usuario_cod_user
+
+
+
+
+
+
+
+
+
+
+
+
+
+

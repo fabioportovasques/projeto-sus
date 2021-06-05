@@ -246,7 +246,7 @@ if(empty($_SESSION['lg'])) {
                               <form action=""  method="POST" name="actionJava">
 
                                 <div class="form-group">
-                                    <div class="   col">
+                                    <div class="col">
                                         <label > CPF </label>
                                        <span class="campo-obrigatorio">*</span>
                                          <input type="text" name="cpf_user" id=""

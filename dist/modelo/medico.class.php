@@ -166,7 +166,7 @@
  								
  								$sql= "
 
-								select  e.cod_especialidade, e.nome_especialidade ,u.nome_user,u.sobrenome_user,
+								select  e.cod_especialidade, e.nome_especialidade ,u.nome_user,u.sobrenome_user,u.cpf_user,
 									e.descricao_especialidade
 								from
 									medico m 
