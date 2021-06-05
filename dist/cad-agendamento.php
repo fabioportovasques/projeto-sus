@@ -283,7 +283,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > Nome do Médico</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="nome_user" id="data_agendamento" class="form-control" autocomplete="off"
-                                        value="<?php echo $item ['nome_user']; ?>" >    
+                                        value="<?php echo $item ['nome_user']; ?>" readonly >    
                                     </div>
                                 </div>
 
@@ -300,7 +300,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > Sobrenome do Médico</label>
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="sobrenome_user" id="data_agendamento" class="form-control" autocomplete="off"
-                                        value="<?php echo $item ['sobrenome_user']; ?>" >    
+                                        value="<?php echo $item ['sobrenome_user']; ?>" readonly >    
                                     </div>
                                 </div>
 
@@ -374,7 +374,7 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label >Especialidade</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_especialidade" class="form-control"  value="<?php echo $item ['nome_especialidade']; ?>">
+                                        <input type="text" name="nome_especialidade" class="form-control"  value="<?php echo $item ['nome_especialidade']; ?>" readonly>
                                        </select>
                                     </div>
                                 </div>
