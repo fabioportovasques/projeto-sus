@@ -144,5 +144,63 @@
 			}
 
 
+
+				public function pesquisarMedicoAgendamento ( ) {
+
+							if($_POST['pesquisar'] ) {
+
+							//$pesquisar= $_POST['cpf_cliente'];
+							// preg_replace('/[^0-9]/', '', $pesquisar);
+			
+ 							if (empty($_POST['cpf_user'])) {
+ 								//Se for vázio
+ 								$cpf_user = $_POST['cpf_user'];
+ 								echo $cpf_user;
+
+ 								print '<div class="alert alert-danger" role="alert">
+									  Favor preencher o campo CPF!
+									</div>';
+								print '<script>window.setTimeout(function(){window.location=\'cad-agendamento.php\';}, 2000);</script>';
+ 								
+ 							} else {
+ 								
+ 								$sql= "
+
+								select  e.cod_especialidade, e.nome_especialidade ,u.nome_user,u.sobrenome_user,
+									e.descricao_especialidade
+								from
+									medico m 
+								inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
+								inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
+								inner join usuario u on  u.cod_user = m.usuario_cod_user
+
+
+ 								WHERE cpf_user like  '".$_POST['cpf_user']."' ";
+
+ 							}
+
+
+ 		 					$sql = $this->pdo->query($sql);
+
+							if ($sql->rowCount() > 0) {
+
+								//retorna todos os clientes
+								return $sql ->fetchAll();
+
+							}else {
+								return 
+
+
+								print '<div class="alert alert-danger" role="alert">
+									  Médico Não Encontrado!
+									</div>';
+								print '<script>window.setTimeout(function(){window.location=\'cad-agendamento.php\';}, 4000);</script>';
+
+							}
+				
+					}		
+
+			}
+
 			
 	}

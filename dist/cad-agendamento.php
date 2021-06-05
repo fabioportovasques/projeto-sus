@@ -10,7 +10,7 @@ if(empty($_SESSION['lg'])) {
 
           $medico = new Medico();
 
-         $lista = $medico->pesquisar();
+         $lista = $medico->pesquisarMedicoAgendamento();
             foreach ($lista as $item):
 
 
@@ -233,24 +233,24 @@ if(empty($_SESSION['lg'])) {
                 <br />
                  
     
-          <h3 align="center">Agendamento</h3>
+          <h3 align="center">Cadastro de Agendamento de Consultas</h3>
           <br />
-          
+            
+                  <!-- Inicio da linha -->
+                  <div class="row">
                    
                    <!--Início da coluna-->         
                    <div class="col-md-2 col-md-offset-1">
                                                                            
-                              <form action="insert_pac.php"  method="POST">
+                              <form action=""  method="POST" name="actionJava">
 
                                 <div class="form-group">
                                     <div class="   col">
                                         <label > CPF </label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="cpf_pac" id="cpf_pac" class="form-control" autocomplete="off" 
+                                        <input type="text" name="cpf_user" id="cpf_user" class="form-control" autocomplete="off" 
                                          placeholder="CPF"  value="<?php echo $item ['cpf_user']; ?>" >    
                                          <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs" class="form-control" autocomplete="off"  placeholder="cod UBS" value="1" >  
-
-
 
                                     </div>
                                 </div>
@@ -265,18 +265,58 @@ if(empty($_SESSION['lg'])) {
                                 <div class="form-group">
                                     <div class="col">                                        
                                        <span class="campo-obrigatorio"></span>
-                                          <button type="submit" class="btn btn-success" data-toggle="tooltip"  title="Pesquise Aqui"
+                                          <button type="submit" name="pesquisar" value="pesquisar" class="btn btn-success" data-toggle="tooltip"  title="Pesquise Aqui"
                                              style="position: absolute;left: 40px;top: 30px;width: 100px">
-                                               <i class="glyphicon glyphicon-search" style="color:#ffffff;"></i></button>
+                                               <i class="glyphicon glyphicon-search" style="color:#ffffff;"></i>
+                                          </button>
                                     </div>
                                 </div>
 
                    <!--Fim da coluna-->            
                  </div>     
               
-
                    <!--Início da coluna-->         
                    <div class="col-md-4 ">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Nome do Médico</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_user" id="data_agendamento" class="form-control" autocomplete="off"
+                                        value="<?php echo $item ['nome_user']; ?>" >    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
+
+                 
+
+                  <!--Início da coluna-->         
+                   <div class="col-md-3 ">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Sobrenome do Médico</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="sobrenome_user" id="data_agendamento" class="form-control" autocomplete="off"
+                                        value="<?php echo $item ['sobrenome_user']; ?>" >    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>  
+
+                 <!--fechamento da linha-->
+                </div>
+
+
+
+                <!-- Inicio da linha -->
+                  <div class="row">
+
+                   <!--Início da coluna-->         
+                   <div class="col-md-4 col-md-offset-1">
                           
                                 <div class="form-group">
                                     <div class="col">
@@ -291,7 +331,7 @@ if(empty($_SESSION['lg'])) {
                  </div>     
 
                   <!--Início da coluna-->         
-                   <div class="col-md-3 ">
+                   <div class="col-md-4 ">
                           
                                 <div class="form-group">
                                     <div class="col">
@@ -306,7 +346,7 @@ if(empty($_SESSION['lg'])) {
                  </div>     
 
                     <!--Início da coluna-->         
-                   <div class="col-md-4 col-md-offset-1">
+                   <div class="col-md-3">
                            
                                 <div class="form-group ">
                                     <div class="   col">
@@ -320,42 +360,35 @@ if(empty($_SESSION['lg'])) {
                    <!--Fim da coluna-->            
                  </div>  
 
+                 <!-- fim da linha -->
+               </div>
+
+
+                   <!-- inicio da nova linha -->
+                  <div class="row">
+
                    <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-11 col-md-offset-1">
                           
-                                <div class="form-group">
+                                 <div class="form-group">
                                     <div class="col">
-                                        <label >Status</label>
+                                        <label >Especialidade</label>
                                        <span class="campo-obrigatorio">*</span>
-                                       <input type="text" name="status_agenda" id="status_agenda" class="form-control" autocomplete="off"
-                                       value="<?php echo $item ['status_agenda']; ?>"  placeholder="Status">    
+                                        <input type="text" name="nome_especialidade" class="form-control"  value="<?php echo $item ['nome_especialidade']; ?>">
+                                       </select>
                                     </div>
                                 </div>
 
                     </div>
                    <!--Fim da coluna-->   
 
-                   <!--Início da coluna-->         
-                   <div class="col-md-3">
-                          
-                                <div class="form-group">
-                                    <div class="col">
-                                        <label >Especialidade</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                       <select class="form-control" name="especialidade_cod_especialidade"  value="<?php echo $item ['cod_especialidade']; ?>">
-                                         <option>Selecionar</option>
-                                       </select>
-                                    </div>
-                                </div>
-
-
-                   <!--Fim da coluna-->            
-
-                 </div> 
-
-                 
                  
 
+                 <!-- FIim da linha -->
+               </div>
+                 
+                  <!-- inicio da nova linha -->
+                  <div class="row">
                     
 
                 
@@ -379,6 +412,8 @@ if(empty($_SESSION['lg'])) {
                    <!--Fim da coluna-->            
                  </div> 
 
+             <!-- FIim da linha -->
+             </div>    
                               
          </div> 
 

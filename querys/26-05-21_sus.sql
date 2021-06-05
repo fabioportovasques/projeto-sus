@@ -111,7 +111,20 @@ update usuario set sobrenome_user="vaques2" where cpf_user='02041884070';
 delete
 
 from 
-	paciente
+	medico
 where 
-	usuario_cod_user='54';
+	usuario_cod_user='55';
+;
+
+
+/*
+	Select entre a tabela medico e especialidade e user
+*/
+
+SELECT e.cod_especialidade, e.nome_especialidade AS 'Nome da especialidade',m.cod_medico, 
+m.crm_medico,e.descricao_especialidade
+from
+medico m
+inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
+inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
 ;
