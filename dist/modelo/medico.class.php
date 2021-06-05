@@ -167,7 +167,7 @@
  								$sql= "
 
 								select  e.cod_especialidade, e.nome_especialidade ,u.nome_user,u.sobrenome_user,u.cpf_user,
-									e.descricao_especialidade
+									e.descricao_especialidade,u.cod_user,m.cod_medico,e.cod_especialidade
 								from
 									medico m 
 								inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico

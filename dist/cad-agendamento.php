@@ -250,7 +250,13 @@ if(empty($_SESSION['lg'])) {
                                        <span class="campo-obrigatorio">*</span>
                                         <input type="text" name="cpf_user" id="cpf_user" class="form-control" autocomplete="off" 
                                          placeholder="CPF"  value="<?php echo $item ['cpf_user']; ?>" >    
-                                         <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs" class="form-control" autocomplete="off"  placeholder="cod UBS" value="1" >  
+                                            <input type="hidden" name="ubs_cod_ubs" id="ubs_cod_ubs" class="form-control" autocomplete="off"  placeholder="cod UBS" value="1" >  
+                                          <input type="hidden" class="form-control" name="usuario_cod_user" value="<?php echo $item ['cod_user']; ?>" >
+                                        <input type="hidden" class="form-control" name="medico_cod_medico" value="<?php echo $item ['cod_medico']; ?>" >
+                                   <input type="hidden" class="form-control" name="especialidade_cod_especialidade" value="<?php echo $item ['cod_especialidade']; ?>" >
+                              <input type="hidden" class="form-control" name="status_agenda" value="A" >
+    
+ 
 
                                     </div>
                                 </div>

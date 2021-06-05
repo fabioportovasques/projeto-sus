@@ -1,4 +1,4 @@
- <!--
+ 
 
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,6 @@
 	<title></title>
 </head>
 
-		links bootstrap
         <link rel="stylesheet" href="css/style.css">
         <link href="css/styles.css" rel="stylesheet"/>
         <link href="css/style.css" rel="stylesheet"/>
@@ -19,7 +18,7 @@
 </body>
 </html>
 
--->
+
 
   <?php 
 
@@ -38,7 +37,48 @@
 		
 
 
-							public function select (){
+	public function adicionar ($ubs_cod_ubs,$usuario_cod_user,$medico_cod_medico,
+								$especialidade_cod_especialidade,$data_agendamento,$hora_agendamento,
+								$num_fichas,$status_agenda) {
+
+			//if($this->verificaCod($usuario_cod_user) == false) {
+					$sql = $this->pdo->prepare("INSERT INTO agenda_ubs SET ubs_cod_ubs=:ubs_cod_ubs,
+												usuario_cod_user=:usuario_cod_user,medico_cod_medico=:medico_cod_medico,
+												especialidade_cod_especialidade=:especialidade_cod_especialidade,data_agendamento=:data_agendamento,
+												hora_agendamento=:hora_agendamento,num_fichas=:num_fichas,status_agenda=:status_agenda
+					");
+					
+
+					$sql->bindParam(":ubs_cod_ubs",$ubs_cod_ubs);
+					$sql->bindParam(":usuario_cod_user",$usuario_cod_user);
+					$sql->bindParam(":medico_cod_medico",$medico_cod_medico);
+					$sql->bindParam(":especialidade_cod_especialidade",$especialidade_cod_especialidade);
+					$sql->bindParam(":data_agendamento",$data_agendamento);
+					$sql->bindParam(":hora_agendamento",$hora_agendamento);
+					$sql->bindParam(":num_fichas",$num_fichas);
+					$sql->bindParam(":status_agenda",$status_agenda);
+					
+					$sql->execute();
+			
+				print '<div class="alert alert-success" role="alert">
+						Agendamento Inserido Com Sucesso!
+						</div>';
+				print '<script>window.setTimeout(function(){window.location=\'cad-agendamento.php\';}, 2000);</script>';
+
+				
+
+				}
+
+			
+
+				
+			
+				
+
+
+
+
+				public function select (){
 
 					$sql = "
 				

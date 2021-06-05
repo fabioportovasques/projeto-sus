@@ -180,6 +180,10 @@ inner join usuario user on  user.cod_user = m.usuario_cod_user
 inner join agenda_ubs a on user.cod_user = a.usuario_cod_user
 
 
+/*
+
+	exclusao de agendamentos ubs
+*/
 
 
 

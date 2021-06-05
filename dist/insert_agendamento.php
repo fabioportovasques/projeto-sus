@@ -11,17 +11,37 @@
 
 		/*remove a mascara do campo cpf/cnpj para inserir no banco*/
 		
+		$ubs_cod_ubs = $_POST['ubs_cod_ubs'];
+		$usuario_cod_user=$_POST['usuario_cod_user'];
+		$medico_cod_medico =$_POST['medico_cod_medico'];
+		$especialidade_cod_especialidade = $_POST['especialidade_cod_especialidade'];
+		$data_agendamento = $_POST['data_agendamento'];
+		$hora_agendamento = $_POST['hora_agendamento'];
+		$num_fichas = $_POST['num_fichas'];
+		$status_agenda = $_POST['status_agenda'];
 
-		$usuario_ubs_cod_ubs = $_POST['usuario_ubs_cod_ubs'];
-		$usuario_cod_user = $_POST['usuario_cod_user'];
-		$crm_medico = $_POST['crm_medico'];
+		/*
+
+		?>
+		<pre>
+		<?php 	
+		print_r($_POST);
+		?>
+		</pre>
+		
+		*/
+
+		
+
+	
+
 		
 		
-					
-
-		$agendamento ->adicionar($usuario_ubs_cod_ubs,$usuario_cod_user,$crm_medico);
-
-
+		$agendamento ->adicionar($ubs_cod_ubs,$usuario_cod_user,$medico_cod_medico,
+								$especialidade_cod_especialidade,$data_agendamento,$hora_agendamento,
+								$num_fichas,$status_agenda);
+		
+		
 		
 	}else {
 
