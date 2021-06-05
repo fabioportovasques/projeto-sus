@@ -1,8 +1,8 @@
 <?php
 
-	include 'modelo/medico.class.php';
+	include 'modelo/agendamento.class.php';
 
-	$medico = new Medico();
+	$agendamento = new Agendamento();
 
 
 		
@@ -19,7 +19,7 @@
 		
 					
 
-		$medico ->adicionar($usuario_ubs_cod_ubs,$usuario_cod_user,$crm_medico);
+		$agendamento ->adicionar($usuario_ubs_cod_ubs,$usuario_cod_user,$crm_medico);
 
 
 		
