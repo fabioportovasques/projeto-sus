@@ -22,7 +22,7 @@
 
   <?php 
 
-  class Medico {
+  class Espec  {
 
 	private $pdo;
 
@@ -39,27 +39,27 @@
 
 		
 
-		public function adicionar ($usuario_ubs_cod_ubs,$usuario_cod_user,$crm_medico) {
-			if($this->verificaCod($usuario_cod_user) == false) {
-					$sql = $this->pdo->prepare("INSERT INTO medico SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user,crm_medico=:crm_medico
+		public function adicionar ($especialidade_cod_especialidade,$medico_cod_medico) {
+			if($this->verificaCod($medico_cod_medico) == false) {
+					$sql = $this->pdo->prepare("INSERT INTO especialidade_compoe_medico SET especialidade_cod_especialidade = :especialidade_cod_especialidade,medico_cod_medico=:medico_cod_medico
 					");
 					
 
-					$sql->bindParam(":usuario_ubs_cod_ubs",$usuario_ubs_cod_ubs);
-					$sql->bindParam(":usuario_cod_user",$usuario_cod_user);
-					$sql->bindParam(":crm_medico",$crm_medico);
+					$sql->bindParam(":especialidade_cod_especialidade",$especialidade_cod_especialidade);
+					$sql->bindParam(":medico_cod_medico",$medico_cod_medico);
+					
 					
 					$sql->execute();
 			
 				print '<div class="alert alert-success" role="alert">
-						 Medico Inserido Com Sucesso!
+						 Especialidade Vinculada com sucesso!
 						</div>';
-				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
+				print '<script>window.setTimeout(function(){window.location=\'cad_vincular_espec.php\';}, 2000);</script>';
 
 				} else {
 					
 				print '<div class="alert alert-warning" role="alert">
-						O Usuário já é um medico!
+						o Medico já possui essa especialidade!
 						</div>';
 				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
 
@@ -72,11 +72,11 @@
 			}	
 				
 
-			private function verificaCod ($usuario_cod_user) {
+			private function verificaCod ($medico_cod_medico) {
 
-			$sql = "select * FROM medico WHERE usuario_cod_user = :usuario_cod_user";
+			$sql = "select * FROM especialidade_compoe_medico WHERE medico_cod_medico = :medico_cod_medico";
 			$sql = $this->pdo->prepare($sql);
-			$sql->bindValue(':usuario_cod_user', $usuario_cod_user);
+			$sql->bindValue(':medico_cod_medico', $medico_cod_medico);
 			$sql->execute();
 
 			if($sql->rowCount() > 0) {
@@ -88,38 +88,21 @@
 
 		}	
 
+public function pesquisar ( ) {
 
-			public function pesquisar ( ) {
-
-							if($_POST['pesquisar'] ) {
-
-							//$pesquisar= $_POST['cpf_cliente'];
-							// preg_replace('/[^0-9]/', '', $pesquisar);
-			
- 							if (empty($_POST['cpf_user'])) {
- 								//Se for vázio
- 								$cpf_user = $_POST['cpf_user'];
- 								echo $cpf_user;
-
- 								print '<div class="alert alert-danger" role="alert">
-									  Favor preencher o campo CPF!
-									</div>';
-								print '<script>window.setTimeout(function(){window.location=\'cad-pac.php\';}, 2000);</script>';
- 								
- 							} else {
- 								
  								$sql= "
+										select
+										*
+										from 
+										usuario u 
+										inner join medico m on m.usuario_cod_user = u.cod_user
 
-								select 
-									*
-								from 
-									usuario u 
-								
+ 										WHERE cpf_user like  '".$_POST['cpf_user']."'
+										;
 
- 								WHERE cpf_user like  '".$_POST['cpf_user']."' ";
+ 								";
 
- 							}
-
+ 							
 
  		 					$sql = $this->pdo->query($sql);
 
@@ -128,20 +111,11 @@
 								//retorna todos os clientes
 								return $sql ->fetchAll();
 
-							}else {
-								return 
-
-
-								print '<div class="alert alert-danger" role="alert">
-									  Médico Não Encontrado!
-									</div>';
-								print '<script>window.setTimeout(function(){window.location=\'pesq-medico.php\';}, 4000);</script>';
-
-							}
-				
-					}		
+							
+					}	
 
 			}
+
 
 
 			

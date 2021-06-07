@@ -60,7 +60,7 @@
 				print '<div class="alert alert-success" role="alert">
 						 Medico Inserido Com Sucesso!
 						</div>';
-				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
+				print '<script>window.setTimeout(function(){window.location=\'cad_vincular_espec.php\';}, 2000);</script>';
 
 				} else {
 					
@@ -131,7 +131,10 @@
 									usuario u 
 								
 
- 								WHERE cpf_user like  '".$_POST['cpf_user']."' ";
+ 								WHERE cpf_user like  '".$_POST['cpf_user']."'
+
+
+ 								";
 
  							}
 
@@ -157,6 +160,31 @@
 					}		
 
 			}
+
+
+			public function pesquisarEspecialidade ( ) {
+
+				$sql = "select * from especialidade";
+
+				$sql = $this->pdo->query($sql);
+
+							if ($sql->rowCount() > 0) {
+
+								//retorna todos os clientes
+								return $sql ->fetchAll();
+
+							}else {
+								return 
+
+
+								print '<div class="alert alert-danger" role="alert">
+									  Não Encontrado!
+									</div>';
+								print '<script>window.setTimeout(function(){window.location=\'pesq-medico.php\';}, 4000);</script>';
+
+							}
+			}
+
 
 
 
