@@ -152,7 +152,7 @@ if(empty($_SESSION['lg'])) {
                                     <a class="nav-link" href="cad-medico.php">Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Pacientes</a>
                                      <a class="nav-link" href="cad-espec#.php">Especialidades</a>
-                                     <a class="nav-link" href="cad-pac.php">Agendamentos</a>
+                                     <a class="nav-link" href="cad-agendamento.php">Agendamentos</a>
                                       
 
                                 </nav>
