@@ -242,8 +242,8 @@ if(empty($_SESSION['lg'])) {
 
 
                              <!--inicio da colunua -->
-                              <div class="col-md-5 ">
-                                           <div class="card bg-success  text-white">
+                              <div class="col-md-5  col-md-offset-1">
+                                           <div class="text-white" style="background-color: #9E9E9E">
                                               <div class="card-body">Consultas</div>
                                                  <div class="card-footer d-flex  justify-content-between">
                                                     <span class="small text-white stretched-link">
