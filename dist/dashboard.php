@@ -5,7 +5,12 @@ if(empty($_SESSION['lg'])) {
     header("Location: index.php");
     exit;
 }
+
+
+  
+                
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -218,74 +223,92 @@ if(empty($_SESSION['lg'])) {
                      <br />
                      <br />
                     
+                  
+                                         
+
+                        <div class="row">
+                       <!--Início da coluna-->  
+
+                        <?php 
+
+                                    require 'modelo/daschboard.class.php';
+
+                                      $daschboard = new Daschboard();
+
+                                     $lista = $daschboard->select();
+                                        foreach ($lista as $item):
+                                        
+                                  ?>
 
 
-                        
-                        <div class="row justify-content-md-center">
-                            
-                             <div class="col-sm-6">
-                                <div class="card bg-success  text-white">
+                             <!--inicio da colunua -->
+                              <div class="col-md-5 ">
+                                           <div class="card bg-success  text-white">
+                                              <div class="card-body">Consultas</div>
+                                                 <div class="card-footer d-flex  justify-content-between">
+                                                    <span class="small text-white stretched-link">
+                                                  
+                                                  <table class="table">
+                                                      <thead class="">
+                                                      <tr>
+                                                        
+                                                        <th scope="col">Nome Especialidade</th>
+                                                        <th scope="col">Nome Médico</th>
+                                                        <th scope="col">Data da Consulta</th>
+                                                        <th scope="col">Horário Consulta</th>
+                                                        <th scope="col">Fichas Disponíveis</th>
+                                                       
 
-                                    <div class="card-body">Total de Fichas Disponiveis para Clinico Geral</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#.php">
+                                                      </tr>
+                                                    </thead>
+                                                            <tbody>
+
+                                                              
+                                                                <tr>
+                                                                  
+                                                                  <td><?php echo $item['nome_especialidade']; ?></td>
+                                                                  <td><?php echo $item['nome do medico']; ?></td>
+                                                                  
+                                                                  <td>
+                                                                    <?php 
+                                                                       echo date('d/m/Y', strtotime($item['data_agendamento']));
+                                                                      ?>
+                                                                  </td>
+                                                                  <td><?php echo $item['hora_agendamento']; ?></td>
+
+                                                                  <td><?php echo $item['num_fichas']; ?></td>
+
+                                                                  
+                                                                </tr>
+
+                                                          </tbody>
+                                                 
+
+                                             </table> 
+                                           
+
+                                                    </span>
+
+                                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                                  </div>                                                                                 
+                                            </div>
+                                             <br />
+                                           
+                              <!-- Fim da coluna-->
+                             </div>
 
 
-                                          <?php 
 
-                                            $sql = "
-
-                                           select   a.num_fichas AS total 
-                                           from
-                                                  medico m 
-                                            inner join medico_atende_ubs me on m.cod_medico = me.medico_cod_medico
-                                            inner join ubs u on u.cod_ubs = me.ubs_cod_ubs
-                                            inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
-                                            inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
-                                            inner join agenda_ubs a on a.cod_agenda = espec.especialidade_cod_especialidade
-;
-                                                ";
-
-                                              $sql= $pdo->query($sql);
-                                              $sql=$sql->fetch();
-                                              $total= $sql['total'];
-                                             
-                                               echo $total;
-
-                                            ?>    
-
-                                          </a>
-                                       
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                             <br />
-                             <br />
-                             <br />
+                             <?php endforeach;  ?>
+                              
                              
-                            <div class="col-sm-6">
-                                <div class="card bg-warning text-white">
-                                    <div class="card-body">Fichas Restantes para Clicino Geral</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#.php">
-                                          
-                                  
-                                        </a>
 
-                                          
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                           <br />
-                           <br />
-                            </div>
-                            
-                          
+                         
+                      </div>  
+                      <!--Fim da linha -->   
+                    
 
-
-                           
+                 
                        <hr />
                            
                        

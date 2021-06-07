@@ -559,7 +559,7 @@ if(empty($_SESSION['lg'])) {
                                         <label > CRM Médico</label>
                                        <span class="campo-obrigatorio"></span>
                                         <input type="text" name="crm_medico" id="crm_medico" class="form-control" data-toggle="tooltip"  title="Insira o CRM do Médico" autocomplete="off"
-                                         value="<?php echo $item ['crm_medico']; ?>" placeholder="CRM Médico">    
+                                         value="<?php echo $item ['crm_medico']; ?>" placeholder="CRM Médico" required >    
                                     </div>
                                 </div>
 
