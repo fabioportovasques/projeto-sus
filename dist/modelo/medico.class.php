@@ -37,9 +37,15 @@
 
 						//create
 
-		
+
 
 		public function adicionar ($usuario_ubs_cod_ubs,$usuario_cod_user,$crm_medico) {
+
+			
+	if (!empty($_POST['crm_medico']) ){
+		
+		$crm_medico = $_POST['crm_medico'];
+			
 			if($this->verificaCod($usuario_cod_user) == false) {
 					$sql = $this->pdo->prepare("INSERT INTO medico SET usuario_ubs_cod_ubs = :usuario_ubs_cod_ubs,usuario_cod_user =:usuario_cod_user,crm_medico=:crm_medico
 					");
@@ -67,7 +73,16 @@
 				}
 
 			
+			}else {
 
+				print '<div class="alert alert-warning" role="alert">
+						Favor Preencher o CRM do Médico	!
+						</div>';
+				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
+
+
+
+			}
 				
 			}	
 				

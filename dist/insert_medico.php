@@ -7,9 +7,9 @@
 
 		
 
-	if (!empty($_POST['cpf_user'])) {
+	if (!empty($_POST['cpf_user']) ){
 
-		/*remove a mascara do campo cpf/cnpj para inserir no banco*/
+	
 		
 
 		$usuario_ubs_cod_ubs = $_POST['usuario_ubs_cod_ubs'];
@@ -26,7 +26,7 @@
 	}else {
 
 				print '<div class="alert alert-warning" role="alert">
-						Favor preencher o campo CPF!
+						Favor preencher o campo CPF 
 						</div>';
 				print '<script>window.setTimeout(function(){window.location=\'cad-medico.php\';}, 2000);</script>';
 
