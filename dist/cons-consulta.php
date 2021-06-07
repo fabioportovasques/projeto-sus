@@ -253,9 +253,16 @@ if(empty($_SESSION['lg'])) {
                   </td>
                   <td><?php echo $item['hora_agendamento']; ?></td>
 
-                  <td><?php echo $item['num_fichas']; ?></td>
+                  <td><?php echo $item['num_fichas'] - $item['total_agendados']; ?></td>
+                 
 
-                  <td><button  class="btn btn-success btn-block icones" type="submit"><i class="fas fa-calendar-check"></i>&nbsp &nbspAgendar</button></td>
+                  <td > <?php if ($item['num_fichas'] > $item['total_agendados'] ){
+                      echo "<button  class='btn btn-success btn-block icones' type='submit'><i class='fas fa-calendar-check'></i>&nbsp &nbspAgendar</button>";
+                   }else {
+                    echo "<button  class='btn btn-muted btn-block icones' type='button'><i class='fas fa-calendar-check'></i>&nbsp &nbspAgendar</button>";
+                   }
+
+                    ?></td>
                   
                 </tr>
 

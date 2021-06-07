@@ -68,7 +68,7 @@
 						select  user.nome_user AS 'nome do medico',
 								u.cod_ubs, u.bairro_ubs,e.nome_especialidade,
 								u.nome_ubs AS 'lOCAL DE ATENDIMENTO', m.cod_medico,a.hora_agendamento,
-						        a.data_agendamento,a.num_fichas
+						        a.data_agendamento,a.num_fichas,a.total_agendados
 						from
 								medico m 
 						inner join medico_atende_ubs me on m.cod_medico = me.medico_cod_medico

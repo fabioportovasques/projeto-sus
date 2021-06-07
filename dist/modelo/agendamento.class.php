@@ -84,7 +84,7 @@
 				
 						select  user.nome_user AS 'nome do medico',
 								u.cod_ubs, u.bairro_ubs,e.nome_especialidade,
-								u.nome_ubs AS 'lOCAL DE ATENDIMENTO', m.cod_medico,a.hora_agendamento,
+								u.nome_ubs AS 'lOCAL DE ATENDIMENTO', m.cod_medico,a.hora_agendamento,a.total_agendados,
 						        a.data_agendamento,a.num_fichas
 						from
 								medico m 

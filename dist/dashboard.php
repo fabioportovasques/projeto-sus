@@ -276,7 +276,7 @@ if(empty($_SESSION['lg'])) {
                                                                   </td>
                                                                   <td><?php echo $item['hora_agendamento']; ?></td>
 
-                                                                  <td><?php echo $item['num_fichas']; ?></td>
+                                                                  <td><?php echo $item['num_fichas'] - $item['total_agendados']; ?></td>
 
                                                                   
                                                                 </tr>
