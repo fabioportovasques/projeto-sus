@@ -311,7 +311,11 @@ if(empty($_SESSION['lg'])) {
                                     <div class="col">
                                         <label >sexo</label>
                                        <span class="campo-obrigatorio">*</span>
-                                       <input type="text" name="sexo_user" id="sexo_user" class="form-control" autocomplete="off"  placeholder="Sexo">    
+                                       <select  class="form-control" name="sexo_user">
+                                         <option>Selecionar</option>
+                                         <option>Masculino</option>
+                                         <option>Femenino</option>
+                                       </select>
                                     </div>
                                 </div>
 
