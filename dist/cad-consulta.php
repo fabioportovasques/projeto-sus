@@ -5,7 +5,22 @@ if(empty($_SESSION['lg'])) {
     header("Location: index.php");
     exit;
 }
-?>
+
+   
+   require 'modelo/consulta.class.php';
+    require 'modelo/agendamento.class.php';
+
+          $consulta = new Consulta();
+
+         $lista = $consulta->pesquisar();
+            foreach ($lista as $item):
+
+
+  ?>
+  <?php endforeach; ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +54,6 @@ if(empty($_SESSION['lg'])) {
 
 
      
-
      <script>
 
      
@@ -52,16 +66,26 @@ if(empty($_SESSION['lg'])) {
           
         */
 
+        /*
+
         $('button').click(function(){
         $('a[href="#dados-acesso"]').tab('show');
-      })
+        })
 
-      $('button').click(function(){
-      $('a[href="#dados-pessoais"]').tab('show');
-      })
+      */
 
-      
-    </script>   
+    </script>
+
+
+         <!--multiplos submit-->
+              <script type="text/javascript">
+                function selecionaAction(script){
+                    document.actionJava.action = script + '.php';
+                    document.actionJava.submit();
+                }
+
+           </script>
+   
 
         <!--Link para icones-->
        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
@@ -150,9 +174,10 @@ if(empty($_SESSION['lg'])) {
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                    <a class="nav-link" href="cad-user.php">Usuários</a>
-                                    <a class="nav-link" href="cad-medico.php" id="medico">Cadastro Médicos</a>
-                                     <a class="nav-link" href="cad-pac.php">Cadastro Pacientes</a>
-                                      <a class="nav-link" href="cad-agente-saude.php">Cadastro Agentes de Saúde</a>
+                                    <a class="nav-link" href="cad-medico.php" id="medico">Médicos</a>
+                                     <a class="nav-link" href="cad-pac.php">Pacientes</a>
+                                      <a class="nav-link" href="cad-agendamento.php">Agendamentos</a>
+                                      <a class="nav-link" href="cad-especialidade.php">Especialidades</a>
 
                                 </nav>
                             </div>
@@ -205,7 +230,7 @@ if(empty($_SESSION['lg'])) {
   <div id="pagina">            
 
 <!--CONTEUDO DO MEIO -->
-  <div class="container">
+  <div class="container ">
 
                 <br />
                 <br />
@@ -213,85 +238,65 @@ if(empty($_SESSION['lg'])) {
                 <br />
                  
     
-            <h2>Agendar Consulta</h2><br />
-            <ul class="nav nav-pills flex-column flex-sm-row">
-                  <li class="active"><a data-toggle="tab" href="#dados-pessoais">Dados Pessoais</a></li>
-                  <li><a data-toggle="tab" href="#especialidade">Especialidade</a></li>
-            </ul>
-             <div class="tab-content">
-               <div id="dados-pessoais" class="tab-pane fade in active">
-
-          <h3>Dados Pessoais</h3>
+          <h3 align="center">Cadastro de Consultas</h3>
           <br />
           
+                   
               <!--Início da coluna-->         
-                   <div class="col-md-4">
-                          
+                   <div class="col-md-2 col-md-offset-1">
+                                                                           
+                              <form action=""  method="POST" name="actionJava">
+
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > CPF do Paciente</label>
+                                        <label > Cartão SUS </label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="CPF">    
-                                    </div>
+                                         <input type="text" name="cartao_sus" id="cartao_sus"
+                                           class="form-control" target="_blank" data-toggle="tooltip"  
+                                             title="Insira o número do seu cartão SUS" placeholder="Cartão SUS" 
+                                           onblur="validar(getElementById('cpf_cnpj').value)"  
+                                        autocomplete="off" value="<?php echo $item['cartao_sus']; ?>" >
+                                        <!--funcao valida usa a mascara para cpf/cnpj-->                                    
+                                    <input type="hidden" name="usuario_cod_user" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
+                                  placeholder="cod UBS" value="<?php  echo $item ['cod_user']; ?>" >
+                                  <input type="hidden" name="total_agendados" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
+                                  placeholder="total_agendados" value="1" >                                                                      
+                                    <input type="text" name="especialidade_cod_especialidade" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
+                                  placeholder="cod_especialidade" value="<?php  echo $item['cod_especialidade'] ?>">
+
+
+
                                 </div>
-
-                   <!--Fim da coluna-->            
-                 </div>
-
-                    <!--Início da coluna-->         
-                   <div class="col-md-4">
-                                                                           
-                            <form action="#"  method="POST"> 
-
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > Nome do Paciente</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Nome" required="" >    
-                                    </div>
-                                </div>
+                            </div>
 
                    <!--Fim da coluna-->            
                  </div>  
 
-                   <!--Início da coluna-->         
-                   <div class="col-md-3">
+
+                 <!--Início da coluna-->         
+                     <div class="col-md-2 ">
                           
                                 <div class="form-group">
-                                    <div class="col">
-                                        <label > Sobrenome do Paciente</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Sobrenome">    
+                                    <div class="col">                                        
+                                       <span class="campo-obrigatorio"></span>
+                                          <button type="submit" name="pesquisar" value="pesquisar" class="btn btn-success" data-toggle="tooltip"   title="Pesquise Aqui"
+                                              style="position: absolute;left: 40px;top: 30px;width: 100px">
+                                                <i class="glyphicon glyphicon-search" style="color:#ffffff;"></i></button>
                                     </div>
                                 </div>
 
                    <!--Fim da coluna-->            
                  </div>     
 
-                     
-
-                    <!--Início da coluna-->         
-                   <div class="col-md-4">
-                           
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > Data de Nascimento do Paciente</label>
-                                       <span class="campo-obrigatorio"></span>
-                                        <input type="date" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Nome">    
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div>  
-
                    <!--Início da coluna-->         
-                   <div class="col-md-4">
+                   <div class="col-md-4 ">
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > RG do Paciente</label>
-                                       <span class="campo-obrigatorio"></span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="RG">    
+                                        <label > Nome </label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_user" id="nome_user" class="form-control" autocomplete="off"
+                                        value="<?php echo $item ['nome_user']; ?>"  placeholder="Nome">    
                                     </div>
                                 </div>
 
@@ -299,183 +304,40 @@ if(empty($_SESSION['lg'])) {
                  </div>     
 
                   <!--Início da coluna-->         
-                   <div class="col-md-3">
+                   <div class="col-md-3 ">
                           
                                 <div class="form-group">
                                     <div class="col">
-                                        <label > Nº Cartão SUS</label>
+                                        <label > Sobrenome</label>
                                        <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Cartão SUS">    
+                                        <input type="email" name="sobrenome_user" id="sobrenome_user" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"
+                                        value="<?php echo $item ['sobrenome_user']; ?>"  placeholder="Sobrenome">    
                                     </div>
                                 </div>
 
                    <!--Fim da coluna-->            
                  </div>     
-
-                    <!--Início da coluna-->         
-                   <div class="col-md-4">
-                                                                           
-                            <form action="#"  method="POST"> 
-
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > Rua do Paciente</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Rua">    
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div>  
-
-                   <!--Início da coluna-->         
-                   <div class="col-md-4">
-                          
-                                <div class="form-group">
-                                    <div class="col">
-                                        <label > Bairro do Paciente</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Bairro" >    
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div>     
-
-                  <!--Início da coluna-->         
-                   <div class="col-md-3">
-                          
-                                <div class="form-group">
-                                    <div class="col">
-                                        <label > Nº Casa do Paciente</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Nº casa" >    
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div>     
-
-
-                    <!--Início da coluna-->         
-                   <div class="col-md-4">
-                                                                           
-                            <form action="#"  method="POST"> 
-
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > Cidade do Paciente</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Cidade"  >    
-                                    </div>
-                                </div>
 
                   
-                   <!--Fim da coluna-->            
-                 </div>  
 
-                   <!--Início da coluna-->         
-                   <div class="col-md-4">
-                          
-                                <div class="form-group">
-                                    <div class="col">
-                                        <label > UF do Paciente</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="UF" >    
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div>     
-
-                  <!--Início da coluna-->         
-                   <div class="col-md-3">
-                          
-                                <div class="form-group">
-                                    <div class="col">
-                                        <label > Pais do Paciente</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="pais">    
-                                    </div>
-                                </div>
-
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                                <!-- Espaço no final da tab dados "pessoais" -->
-
-                   <!--Fim da coluna-->            
-                 </div>  
-
-             
-
-              <!-- Fim da TAB-->    
-             </div>
+                
+             <!-- inicio da coluna-->
+               <div class="col-md-6 col-md-offset-1">
 
 
-
-             
-        
-
-        <div id="especialidade" class="tab-pane fade">
-          <h3>Especialidade</h3>
-
-                  <br />
-
-                    <!--Início da coluna-->         
-                   <div class="col-md-6">
-                                                                           
-                            <form action="#"  method="POST"> 
-
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > Escolher Especialidades</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                       <select class="form-control">
-                                         <option>Selecionar</option>
-                                          <option>Clinico Geral</option>
-                                           <option>Ginecologista</option>
-                                       </select>
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div>  
-
-
-                 <div class="col-md-5">
-                          
-
-                                <div class="form-group">
-                                    <div class="   col">
-                                        <label > Nome do Médico</label>
-                                       <span class="campo-obrigatorio">*</span>
-                                        <input type="text" name="nome_medico" id="nome_medico" class="form-control" autocomplete="off"  placeholder="Nome Médico" readonly  required="" >    
-                                    </div>
-                                </div>
-
-                   <!--Fim da coluna-->            
-                 </div> 
-
-
-                <!-- inicio da coluna-->
-               <div class="col-md-6">
-
-
-                  <br />
-                  <br />
+                      <br />
+                      <br />
                           
                        <!--Botão para navegar até a próxima página-->
-                       <button class="btn btn-success">Cancelar </button>             
+                       <button   class="btn btn-success" value="reset">Cancelar </button>             
 
                           
-                       <!--Botão para navegar até a próxima página-->
-                       <button class="btn btn-success">Cadastrar</button>             
+                       <!--Botão para cadastrar-->
+                       <button type="submit" class="btn btn-success" onclick="selecionaAction('insert_consulta');">Cadastrar</button>
 
                       
-
-                     </form>
+                      </form>
+                     
                    <!--Fim da coluna-->            
                  </div> 
 
@@ -513,8 +375,22 @@ if(empty($_SESSION['lg'])) {
 
 
     </body>
+ </body>
 
-     
-</script> 
+     <!--javascript para mascara  CPF/CNPJ-->
+     <script type="text/javascript">
+        var maskCpfOuCnpj = IMask(document.getElementById('cpf_cnpj'), {
+    mask:[
+        {
+            mask: '000.000.000-00',
+            maxLength: 11
+        },
+        {
+            mask: '00.000.000/0000-00'
+        }
+    ]
+});
+</script>
+
 
 </html>
