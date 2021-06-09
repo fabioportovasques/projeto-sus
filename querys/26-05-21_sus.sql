@@ -11,6 +11,8 @@ SELECT * FROM medico_atende_ubs;
 SELECT * FROM usuario;
 SELECT * FROM permissao;
 SELECT * FROM paciente;		
+SELECT * FROM consulta;
+SELECT * FROM agenda_ubs_possui_consulta;	
 
 
 UPDATE  usuario set cpf_user ='123';							
@@ -192,7 +194,10 @@ inner join agenda_ubs a on user.cod_user = a.usuario_cod_user
 delete
 from 
 agenda_ubs;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8c90a858641f97d868414fad5339b787a7d2fbbb
 
 
 

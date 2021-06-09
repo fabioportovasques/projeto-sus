@@ -8,7 +8,11 @@ if(empty($_SESSION['lg'])) {
 
    
    require 'modelo/consulta.class.php';
+<<<<<<< HEAD
 
+=======
+    require 'modelo/agendamento.class.php';
+>>>>>>> 8c90a858641f97d868414fad5339b787a7d2fbbb
 
           $consulta = new Consulta();
 
@@ -261,8 +265,13 @@ if(empty($_SESSION['lg'])) {
                                   placeholder="cod UBS" value="<?php  echo $item ['cod_user']; ?>" >
                                   <input type="hidden" name="total_agendados" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
                                   placeholder="total_agendados" value="1" >                                                                      
+<<<<<<< HEAD
                                     <input type="hidden" name="especialidade_cod_especialidade" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
                                   placeholder="cod_especialidade">
+=======
+                                    <input type="text" name="especialidade_cod_especialidade" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
+                                  placeholder="cod_especialidade" value="<?php  echo $item['cod_especialidade'] ?>">
+>>>>>>> 8c90a858641f97d868414fad5339b787a7d2fbbb
 
 
 

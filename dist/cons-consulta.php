@@ -253,10 +253,11 @@ if(empty($_SESSION['lg'])) {
                   </td>
                   <td><?php echo $item['hora_agendamento']; ?></td>
 
-                  <td><?php echo $item['num_fichas'] - $item['total_agendados']; ?></td>
+                  <td><?php echo $item['num_fichas'] - $item['num_fichas']; ?></td>
                  
+                  <!-- Calcula se ainda possiu fichas disponiveis, se não possuir, desabilita o botão-->
 
-                  <td > <?php if ($item['num_fichas'] > $item['total_agendados'] ){
+                  <td > <?php if ($item['num_fichas'] > $item['num_fichas'] ){
                       echo "<button  class='btn btn-success btn-block icones' type='submit'><i class='fas fa-calendar-check'></i>&nbsp &nbspAgendar</button>";
                    }else {
                     echo "<button  class='btn btn-muted btn-block icones' type='button'><i class='fas fa-calendar-check'></i>&nbsp &nbspAgendar</button>";

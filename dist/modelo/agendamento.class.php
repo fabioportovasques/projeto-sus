@@ -86,7 +86,11 @@
 						select  user.nome_user AS 'nome do medico',
 								e.nome_especialidade,
 								 m.cod_medico,a.hora_agendamento,
+<<<<<<< HEAD
 						        a.data_agendamento,a.num_fichas,a.total_agendados
+=======
+						        a.data_agendamento,a.num_fichas,e.cod_especialidade
+>>>>>>> 8c90a858641f97d868414fad5339b787a7d2fbbb
 						from
 								medico m 
 						
