@@ -82,22 +82,25 @@
 
 					$sql = "
 				
+						
 						select  user.nome_user AS 'nome do medico',
-								u.cod_ubs, u.bairro_ubs,e.nome_especialidade,
-								u.nome_ubs AS 'lOCAL DE ATENDIMENTO', m.cod_medico,a.hora_agendamento,a.total_agendados,
-						        a.data_agendamento,a.num_fichas
+								e.nome_especialidade,
+								 m.cod_medico,a.hora_agendamento,
+						        a.data_agendamento,a.num_fichas,a.total_agendados
 						from
 								medico m 
-						inner join medico_atende_ubs me on m.cod_medico = me.medico_cod_medico
-						inner join ubs u on u.cod_ubs = me.ubs_cod_ubs
+						
+
 						inner join especialidade_compoe_medico espec on m.cod_medico = espec.medico_cod_medico
 						inner join especialidade e on e.cod_especialidade = espec.especialidade_cod_especialidade
 
 						inner join usuario user on  user.cod_user = m.usuario_cod_user
 						inner join agenda_ubs a on user.cod_user = a.usuario_cod_user
 
-							where cod_ubs='1' AND status_agenda ='A'
+							
+							AND status_agenda ='A'
 							;
+							
 
 						";
 						

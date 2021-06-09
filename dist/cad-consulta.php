@@ -6,17 +6,20 @@ if(empty($_SESSION['lg'])) {
     exit;
 }
 
+   
+   require 'modelo/consulta.class.php';
 
-        require 'modelo/agendamento.class.php';
 
-        $agendamento = new Agendamento();
+          $consulta = new Consulta();
 
-       $lista = $agendamento->select();
-          foreach ($lista as $item):
-          
-    ?>
+         $lista = $consulta->pesquisar();
+            foreach ($lista as $item):
 
-                <?php endforeach;  ?>
+
+  ?>
+  <?php endforeach; ?>
+
+
 
 
 <!DOCTYPE html>
@@ -38,12 +41,41 @@ if(empty($_SESSION['lg'])) {
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--link para ajax-->
+         <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script> 
+         <script type="text/javascript" src="./js/script2.js"></script>   
+
          <!--javascript para API IBGE Valida cep-->
         <script type="text/javascript" src="./js/validaCep.js"></script>
             <!--javascript para validar CPF/CNPJ-->
          <script type="text/javascript" src="./js/validaCpfCnpj.js"></script>
            <!--javascript para mascara  CPF/CNPJ-->
          <script src="https://unpkg.com/imask"></script>
+
+
+     
+     <script>
+
+     
+              $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();   
+        });
+
+        /*
+            Função do botão que navega entre as paginas (tab)
+          
+        */
+
+        /*
+
+        $('button').click(function(){
+        $('a[href="#dados-acesso"]').tab('show');
+        })
+
+      */
+
+    </script>
+
 
          <!--multiplos submit-->
               <script type="text/javascript">
@@ -53,18 +85,7 @@ if(empty($_SESSION['lg'])) {
                 }
 
            </script>
-
-     <script>
-        $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();   
-        });
-
-
-        $('button').click(function(){
-        $('a[href="#home"]').tab('show');
-        })
-
-    </script>   
+   
 
         <!--Link para icones-->
        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
@@ -92,7 +113,7 @@ if(empty($_SESSION['lg'])) {
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             </form>
-           <div class="menu" style = "color: #ffffff "><?php include 'listar.php';  ?></div>
+        <div class="menu" style = "color: #ffffff "><?php include 'listar.php';  ?></div>
 
 
     <ul class="navbar-nav ml-auto ml-md-0">
@@ -153,9 +174,10 @@ if(empty($_SESSION['lg'])) {
                             <div class="collapse"  id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                    <a class="nav-link" href="cad-user.php">Usuários</a>
-                                    <a class="nav-link" href="cad-medico.php">Médicos</a>
+                                    <a class="nav-link" href="cad-medico.php" id="medico">Médicos</a>
                                      <a class="nav-link" href="cad-pac.php">Pacientes</a>
                                       <a class="nav-link" href="cad-agendamento.php">Agendamentos</a>
+                                      <a class="nav-link" href="cad-especialidade.php">Especialidades</a>
 
                                 </nav>
                             </div>
@@ -178,7 +200,7 @@ if(empty($_SESSION['lg'])) {
 
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="cad-pac.php">
+                                    <a class="nav-link collapsed" style="color: #F6FAEF" href="pesq-pac.php">
                                         Pacientes
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
@@ -204,10 +226,11 @@ if(empty($_SESSION['lg'])) {
       
                 </div>
                 <br />
-              
+       
+  <div id="pagina">            
 
 <!--CONTEUDO DO MEIO -->
-  <div class="container">
+  <div class="container ">
 
                 <br />
                 <br />
@@ -215,78 +238,122 @@ if(empty($_SESSION['lg'])) {
                 <br />
                  
     
-            <h2>Agendamento de Consultas</h2><br />
-          
+          <h3 align="center">Cadastro de Consultas</h3>
           <br />
+          
+                   
+              <!--Início da coluna-->         
+                   <div class="col-md-2 col-md-offset-1">
+                                                                           
+                              <form action=""  method="POST" name="actionJava">
 
-              <p class="text-center text-sm-left">Agendamentos</p>
-  <hr />
-  <br />
-  <div class="table-responsive-sm">
-    <form method="POST" action="cad-consulta.php">
-      <table class="table">
-          <thead class="thead-light">
-            <tr>
-              
-              <th scope="col">Nome Especialidade</th>
-              <th scope="col">Nome Médico</th>
-              <th scope="col">Data da Consulta</th>
-              <th scope="col">Horário Consulta</th>
-              <th scope="col">Fichas Disponíveis</th>
-              <th scope="col" colspan="2">Ações</th>
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Cartão SUS </label>
+                                       <span class="campo-obrigatorio">*</span>
+                                         <input type="text" name="cartao_sus" id="cartao_sus"
+                                           class="form-control" target="_blank" data-toggle="tooltip"  
+                                             title="Insira o número do seu cartão SUS" placeholder="Cartão SUS" 
+                                           onblur="validar(getElementById('cpf_cnpj').value)"  
+                                        autocomplete="off" value="<?php echo $item['cartao_sus']; ?>" >
+                                        <!--funcao valida usa a mascara para cpf/cnpj-->                                    
+                                    <input type="hidden" name="usuario_cod_user" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
+                                  placeholder="cod UBS" value="<?php  echo $item ['cod_user']; ?>" >
+                                  <input type="hidden" name="total_agendados" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
+                                  placeholder="total_agendados" value="1" >                                                                      
+                                    <input type="hidden" name="especialidade_cod_especialidade" id="usuario_ubs_cod_ubs" class="form-control" autocomplete="off" 
+                                  placeholder="cod_especialidade">
 
-            </tr>
-          </thead>
-            <tbody>
 
-              <?php foreach ($lista as $item){
-            ?>
-                <tr>
+
+                                </div>
+                            </div>
+
+                   <!--Fim da coluna-->            
+                 </div>  
+
+
+                 <!--Início da coluna-->         
+                     <div class="col-md-2 ">
+                          
+                                <div class="form-group">
+                                    <div class="col">                                        
+                                       <span class="campo-obrigatorio"></span>
+                                          <button type="submit" name="pesquisar" value="pesquisar" class="btn btn-success" data-toggle="tooltip"   title="Pesquise Aqui"
+                                              style="position: absolute;left: 40px;top: 30px;width: 100px">
+                                                <i class="glyphicon glyphicon-search" style="color:#ffffff;"></i></button>
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
+
+                   <!--Início da coluna-->         
+                   <div class="col-md-4 ">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Nome </label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="text" name="nome_user" id="nome_user" class="form-control" autocomplete="off"
+                                        value="<?php echo $item ['nome_user']; ?>"  placeholder="Nome">    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
+
+                  <!--Início da coluna-->         
+                   <div class="col-md-3 ">
+                          
+                                <div class="form-group">
+                                    <div class="col">
+                                        <label > Sobrenome</label>
+                                       <span class="campo-obrigatorio">*</span>
+                                        <input type="email" name="sobrenome_user" id="sobrenome_user" class="form-control" data-toggle="tooltip"  title="Insira seu CPF" autocomplete="off"
+                                        value="<?php echo $item ['sobrenome_user']; ?>"  placeholder="Sobrenome">    
+                                    </div>
+                                </div>
+
+                   <!--Fim da coluna-->            
+                 </div>     
+
                   
-                  <td><?php echo $item['nome_especialidade']; ?></td>
-                  <td><?php echo $item['nome do medico']; ?></td>
-                  
-                  <td>
-                    <?php 
-                       echo date('d/m/Y', strtotime($item['data_agendamento']));
-                      ?>
-                  </td>
-                  <td><?php echo $item['hora_agendamento']; ?></td>
 
-                  <td><?php echo $item['num_fichas'] - $item['total_agendados']; ?></td>
-                 
+                
+             <!-- inicio da coluna-->
+               <div class="col-md-6 col-md-offset-1">
 
-                  <td > <?php if ($item['num_fichas'] > $item['total_agendados'] ){
-                      echo "<button  class='btn btn-success btn-block icones' type='submit'><i class='fas fa-calendar-check'></i>&nbsp &nbspAgendar</button>";
-                   }else {
-                    echo "<button  class='btn btn-muted btn-block icones' type='button'><i class='fas fa-calendar-check'></i>&nbsp &nbspAgendar</button>";
-                   }
 
-                    ?></td>
-                  
-                </tr>
+                      <br />
+                      <br />
+                          
+                       <!--Botão para navegar até a próxima página-->
+                       <button   class="btn btn-success" value="reset">Cancelar </button>             
 
-                <?php
-            }
-            ?>
-            
-            </tbody>
-          </form>
+                          
+                       <!--Botão para cadastrar-->
+                       <button type="submit" class="btn btn-success" onclick="selecionaAction('insert_consulta');">Cadastrar</button>
 
-    </table> 
-       
-  
+                      
+                      </form>
+                     
+                   <!--Fim da coluna-->            
+                 </div> 
+
+                              
+         </div> 
 
 
 
+        <!-- fim da tab-->
+        </div>
+      
 
-
-
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
 </div>
+
+
+
 
 
 </div>
@@ -308,8 +375,22 @@ if(empty($_SESSION['lg'])) {
 
 
     </body>
+ </body>
 
-     
-</script> 
+     <!--javascript para mascara  CPF/CNPJ-->
+     <script type="text/javascript">
+        var maskCpfOuCnpj = IMask(document.getElementById('cpf_cnpj'), {
+    mask:[
+        {
+            mask: '000.000.000-00',
+            maxLength: 11
+        },
+        {
+            mask: '00.000.000/0000-00'
+        }
+    ]
+});
+</script>
+
 
 </html>
